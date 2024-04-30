@@ -4,6 +4,7 @@ import instaLogo from '../assets/images/instagram-logo.svg'
 import twitterLogo from '../assets/images/twitter-logo.svg'
 import globalLogo from '../assets/images/global-logo.svg'
 import copyrightImage from '../assets/images/copyright-image.svg'
+
 const Footer = () => {
     return (
         <footer className='bg-[#052115] w-full text-white py-[80px]'>
@@ -98,9 +99,9 @@ const Footer = () => {
                             <p>United States (English)</p>
                         </div>
                         <div className='flex items-center gap-x-5'>
-                            <a href="#"><img src={facebookLogo} alt="facebook-logo" /> </a>
-                            <a href="#"><img src={instaLogo} alt="instagram-logo" /> </a>
-                            <a href="#"><img src={twitterLogo} alt="twitter-logo" />  </a>
+                            <a href="#" target='_blank'><img src={facebookLogo} alt="facebook-logo" /> </a>
+                            <a href="#" target='_blank'><img src={instaLogo} alt="instagram-logo" /> </a>
+                            <a href="#" target='_blank'><img src={twitterLogo} alt="twitter-logo" />  </a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +119,6 @@ const Footer = () => {
                         <a href="#">Square Capital, LLC Licenses</a>
                         <a href="#">Block, Inc.</a>
                     </div>
-
                 </div>
             </MainContainer>
         </footer>
