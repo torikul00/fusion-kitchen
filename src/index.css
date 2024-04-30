@@ -9,5 +9,34 @@
 
 html {
     font-family: 'Helvetica', sans-serif;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.5px;
+}
+
+.radial-gradient {
+    background: rgb(0,54,32);
+    background: radial-gradient(circle, rgba(0,54,32,1) 0%, rgba(23,23,23,1) 100%);
+}
+/* Define CSS animation for expanding */
+@keyframes expand {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 200px; /* Adjust this value according to your content */
+  }
+}
+
+/* Define CSS animation for collapsing */
+@keyframes collapse {
+  0% {
+    max-height: 200px; /* Adjust this value to match the expanded height */
+  }
+  100% {
+    max-height: 0;
+  }
+}
+
+/* Apply transition effect to smoothly transition between states */
+.transition {
+  transition: max-height 0.5s ease;
 }

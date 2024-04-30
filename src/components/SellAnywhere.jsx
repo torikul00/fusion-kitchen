@@ -24,7 +24,7 @@ const SellAnywhere = () => {
     };
 
     return (
-        <section className='h-fit max-w-[1450px] mx-auto my-[150px] px-5'>
+        <section className='h-fit max-w-[1450px] mx-auto mt-[120px] mb-20 px-5'>
             <div className='max-w-[80%] mx-auto mb-6'>
                 <h3 className='mx-auto text-[#1A1A1A] text-5xl font-bold mb-6'>Sell anywhere easily, <br /> quickly, and seamlessly.</h3>
                 <div className='flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
