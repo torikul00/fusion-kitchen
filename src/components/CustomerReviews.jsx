@@ -86,7 +86,7 @@ const CustomerReviews = () => {
                             reviews.map(review => <SwiperSlide
                                 key={review.id}
                                 className='w-full p-5'>
-                                <div style={{ boxShadow: '0px 4px 25px -4px rgba(0,0,0,0.15)' }} className='w-full bg-[#9FE8700A] p-10 rounded-2xl border-4 border-[#9FE870] flex md:gap-12 items-center justify-between'>
+                                <div style={{ boxShadow: '0px 4px 25px -4px rgba(0,0,0,0.15)' }} className='w-full bg-[#9FE8700A] p-10 rounded-[32px] border-4 border-[#9FE870] flex md:gap-12 items-center justify-between'>
                                     <div className='order-2 sm:order-1'>
                                         <span><RiDoubleQuotesL size={70} /></span>
                                         <p className='text-gray mt-4'>{review.feedbackMessage.slice(0, 260)}...</p>
