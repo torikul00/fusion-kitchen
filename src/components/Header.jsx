@@ -44,14 +44,14 @@ const Header = () => {
                                 <h3 className={`${isSticky ? 'text-lg font-medium' : 'text-[22px] font-bold'}`}>Customize your experience by</h3>
                                 <span className={`${isSticky ? '-rotate-90' : 'rotate-0'}`}><FaArrowDown size={isSticky ? 16 : 20} /></span>
                             </div>
-                            <div data-aos={isSticky && "fade-left"} className={`w-3/5 flex text-sm font-bold ${isSticky ? 'gap-4' : 'gap-6'}`}>
+                            <div data-aos={isSticky && "fade-left"} className={`flex text-sm font-bold ${isSticky ? 'gap-4' : 'gap-6 w-3/5'}`}>
                                 <button onClick={() => setIndustry("All")} className={`py-2.5 px-7 rounded-full transition ${industry === "All" ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>All</button>
                                 <button onClick={() => setIndustry("Restaurant")} className={`py-2.5 px-6 rounded-full transition ${industry === 'Restaurant' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Restaurant</button>
                                 <button onClick={() => setIndustry("Retail")} className={`py-2.5 px-6 rounded-full transition ${industry === 'Retail' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Retail</button>
                                 <button onClick={() => setIndustry("Beauty")} className={`py-2.5 px-6 rounded-full transition ${industry === 'Beauty' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Beauty</button>
                             </div>
 
-                            {isSticky && <div data-aos="fade-right" className={`ml-auto flex gap-4 ${isSticky ? 'text-sm font-bold' : 'text-lg font-bold'}`}>
+                            {isSticky && <div data-aos="fade-right" className={`ml-auto w-fit flex gap-4 ${isSticky ? 'text-sm font-bold' : 'text-lg font-bold'}`}>
                                 <button className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
                                 <button className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>}

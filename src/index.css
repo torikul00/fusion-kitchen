@@ -57,3 +57,22 @@ html {
 .sticky-nav {
   box-shadow: 0px 10px 15px -6px #f1ffe82c;
 }
+
+.swiper-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet{
+  margin-left: 0px !important;
+  margin-right: 20px !important;
+  background-color: #686868 !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+.swiper-pagination-bullet-active{
+  background-color: #9FE870 !important;
+  width: 27px !important;
+  height: 27px !important;
+}
