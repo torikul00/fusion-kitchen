@@ -17,17 +17,17 @@ const Navbar = () => {
           <img src={logo} alt="" className="h-9 w-auto" />
         </Link>
 
-        <ul className="flex items-center gap-8">
+        <ul className="flex items-center">
           <li className="hoverable group">
-            <Link className="relative py-8 flex items-center gap-[9px] cursor-pointer">
+            <Link className="relative py-8 px-4 flex items-center gap-[9px] cursor-pointer">
               <span>Industries</span> <span className="group-hover:rotate-180 transition-all duration-200"><FaAngleDown /></span>
             </Link>
 
             <div className="mega-menu shadow-xl bg-[#1a1a1a4d] h-fit">
-              <div className="bg-[#1A1A1A] border-y border-gray-700 h-[85%] w-full py-7">
+              <div className="bg-[#1A1A1A] border-y border-gray-700 h-[700px] w-full py-7">
                 <HeaderContainer>
                   <div className="grid grid-cols-4">
-                    <ul data-aos="fade-down" className="space-y-5">
+                    <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Types</li>
                       <li><Link>All restaurants solutions</Link></li>
                       <li><Link>Quick service</Link></li>
@@ -40,7 +40,7 @@ const Navbar = () => {
                       <li><Link>Large businesses</Link></li>
                       <li><Link>Franchises</Link></li>
                     </ul>
-                    <ul data-aos="fade-down" className="space-y-5">
+                    <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Products</li>
                       <li><Link>Restaurants POS</Link></li>
                       <li><Link>Fusion Point of Sale</Link></li>
@@ -55,7 +55,7 @@ const Navbar = () => {
                       <li><Link>Invoices</Link></li>
                       <li><Link>Integrations</Link></li>
                     </ul>
-                    <ul data-aos="fade-down" className="space-y-5">
+                    <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Explore</li>
                       <li><Link>Restaurants pricing</Link></li>
                       <li><Link>Quick service solution demo</Link></li>
@@ -67,7 +67,7 @@ const Navbar = () => {
                       <li><Link>Referrals</Link></li>
                       <li><Link>Testimonials</Link></li>
                     </ul>
-                    <ul data-aos="fade-down" className="space-y-6">
+                    <ul className="nav-list space-y-6">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Features</li>
                       <div className="w-[63%]">
                         <img src={featureImg1} alt="" className="w-full rounded-lg mb-3 border border-[#474747]" />
@@ -86,17 +86,16 @@ const Navbar = () => {
               </div>
             </div>
           </li>
-
           <li className="hoverable group">
-            <Link className="relative py-8 flex items-center gap-[9px] cursor-pointer">
+            <Link className="relative py-8 px-4 flex items-center gap-[9px] cursor-pointer">
               <span>Products</span> <span className="group-hover:rotate-180 transition-all duration-200"><FaAngleDown /></span>
             </Link>
 
-            <div className="mega-menu shadow-xl bg-[#1a1a1a4d] h-[822px]">
-              <div className="bg-[#1A1A1A] border-y border-gray-700 h-[85%] w-full py-7">
+            <div className="mega-menu shadow-xl bg-[#1a1a1a4d] h-fit">
+              <div className="bg-[#1A1A1A] border-y border-gray-700 h-[620px] w-full py-7">
                 <HeaderContainer>
                   <div className="grid grid-cols-4">
-                    <ul className="space-y-5">
+                    <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Types</li>
                       <li><Link>All restaurants solutions</Link></li>
                       <li><Link>Quick service</Link></li>
@@ -109,7 +108,7 @@ const Navbar = () => {
                       <li><Link>Large businesses</Link></li>
                       <li><Link>Franchises</Link></li>
                     </ul>
-                    <ul className="space-y-5">
+                    <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Products</li>
                       <li><Link>Restaurants POS</Link></li>
                       <li><Link>Fusion Point of Sale</Link></li>
@@ -124,7 +123,7 @@ const Navbar = () => {
                       <li><Link>Invoices</Link></li>
                       <li><Link>Integrations</Link></li>
                     </ul>
-                    <ul className="space-y-5">
+                    <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Explore</li>
                       <li><Link>Restaurants pricing</Link></li>
                       <li><Link>Quick service solution demo</Link></li>
@@ -136,7 +135,7 @@ const Navbar = () => {
                       <li><Link>Referrals</Link></li>
                       <li><Link>Testimonials</Link></li>
                     </ul>
-                    <ul className="space-y-6">
+                    <ul className="nav-list space-y-6">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Features</li>
                       <div className="w-[63%]">
                         <img src={featureImg1} alt="" className="w-full rounded-lg mb-3 border border-[#474747]" />
@@ -156,37 +155,37 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <Link>Shop</Link>
+            <Link className="py-8 px-4">Shop</Link>
           </li>
           <li>
-            <Link>Demo</Link>
+            <Link className="py-8 px-4">Demo</Link>
           </li>
           <li>
-            <Link>Blog</Link>
+            <Link className="py-8 px-4">Blog</Link>
           </li>
           <li>
-            <Link>Pricing</Link>
+            <Link className="py-8 px-4">Pricing</Link>
           </li>
           <li>
-            <Link>Contact Us</Link>
+            <Link className="py-8 px-4">Contact Us</Link>
           </li>
         </ul>
       </div>
 
-      <ul className="flex items-center gap-6">
-        <li className="flex items-center gap-[9px]">
+      <ul className="flex items-center">
+        <li className="flex items-center gap-[9px] py-8 px-3 cursor-pointer">
           <img src={flag} alt="" /> <FaAngleDown />
         </li>
         <li>
-          <Link>Signin</Link>
+          <Link className="py-8 px-3">Signin</Link>
         </li>
         <li>
-          <Link>Support</Link>
+          <Link className="py-8 px-3">Support</Link>
         </li>
         <li>
-          <Link>Shop</Link>
+          <Link className="py-8 px-3">Shop</Link>
         </li>
-        <li>
+        <li className="py-8 px-3 cursor-pointer">
           <img src={shoppingBag} alt="" />
         </li>
       </ul>
