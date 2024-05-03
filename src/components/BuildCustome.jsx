@@ -5,20 +5,29 @@ import owners from '../assets/images/owners.svg'
 import rightArrow from '../assets/images/right-arrow.svg'
 import phone from '../assets/images/phone.svg'
 import circelLight from '../assets/images/light.svg'
-import { animated } from '@react-spring/web'
+import { animated, useScroll, useSpring } from '@react-spring/web'
 
 const BuildCustome = () => {
+ 
+    const styles = useSpring({
+        from: { transform: 'translateY(0%)' },
+        to: { transform: 'translateY(50%)' },
+        config: { duration: 2000, loop: true },
+    });
+
     return (
-        <section className='w-full relative overflow-hidden my-[100px] bg-gradient-to-l from-[#002415] to-[#062F1D] py-[100px]'>
+        <section className=' w-full relative overflow-hidden my-[100px] bg-[#002415] py-[100px]'>
+          <div className='mainSection'>
+
+          </div>
             <MainContainer>
-                <animated.div
+                {/* <animated.div
+                    className="absolute right-0  w-[700px] h-[500px] bg-cover bg-center"
                     style={{
-                        width: 80,
-                        height: 80,
-                        background: '#ff6d6d',
-                        borderRadius: 8,
+                        backgroundImage: `url(${circelLight})`,
+                        ...styles,
                     }}
-                />
+                /> */}
                 <div className='flex flex-col-reverse lg:flex-row items-center sm:gap-x-10 '>
                     <div className='w-[90%]'>
                         <h1 className='mt-20 lg:mt-0 text-[25px] sm:text-3xl md:text-4xl lg:text-5xl text-white'>Build custom commerce <br /> experiences.</h1>
@@ -39,7 +48,7 @@ const BuildCustome = () => {
                             <p className='text-white mt-4 text-sm sm:-text-[16px] w-[80%]'><span className='text-[#9FE870]'>Hire a Square specialis</span> to customize <span className='text-[#9FE870]'>how Square works for you.</span></p>
                         </div>
                     </div>
-                    <div className='w-[90%] mt-0 lg:mt-20 '>
+                    <div className='w-[90%] z-10 mt-0 lg:mt-20 '>
                         <img src={phone} alt="phone" />
                         {/* <img  className='absolute top-[-500px] w-[50%] right-0' src={circelLight} alt="" /> */}
                     </div>

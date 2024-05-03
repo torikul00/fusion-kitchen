@@ -1,0 +1,22 @@
+/* megamenu styles */
+.mega-menu {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -900;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    transition: all 0.15s linear 0s;
+}
+
+/* #hoverable Class Styles */
+.hoverable {
+    position: static;
+}
+
+.hoverable:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 900;
+}
