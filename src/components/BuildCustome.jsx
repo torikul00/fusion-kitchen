@@ -5,11 +5,20 @@ import owners from '../assets/images/owners.svg'
 import rightArrow from '../assets/images/right-arrow.svg'
 import phone from '../assets/images/phone.svg'
 import circelLight from '../assets/images/light.svg'
+import { animated } from '@react-spring/web'
 
 const BuildCustome = () => {
     return (
         <section className='w-full relative overflow-hidden my-[100px] bg-gradient-to-l from-[#002415] to-[#062F1D] py-[100px]'>
             <MainContainer>
+                <animated.div
+                    style={{
+                        width: 80,
+                        height: 80,
+                        background: '#ff6d6d',
+                        borderRadius: 8,
+                    }}
+                />
                 <div className='flex flex-col-reverse lg:flex-row items-center sm:gap-x-10 '>
                     <div className='w-[90%]'>
                         <h1 className='mt-20 lg:mt-0 text-[25px] sm:text-3xl md:text-4xl lg:text-5xl text-white'>Build custom commerce <br /> experiences.</h1>
