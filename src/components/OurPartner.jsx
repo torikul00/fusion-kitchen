@@ -122,7 +122,7 @@ const OurPartner = () => {
 
                                 </div>
                             </Marquee>
-                            <Marquee direction='right' speed={30}>
+                            {/* <Marquee direction='right' speed={30}>
                                 <div className='flex items-center gap-x-10 sm:gap-x-20 ml-[70px] mt-5 sm:mt-10'>
                                     <img className='w-[100px]' src={worldPlay} alt="worldPlay" />
                                     <img className='w-[100px]' src={hungy} alt="hungy" />
@@ -146,7 +146,7 @@ const OurPartner = () => {
                                     <img className='w-[100px]' src={hungy} alt="hungy" />
 
                                 </div>
-                            </Marquee>
+                            </Marquee> */}
                         </div>
 
                     </div>

@@ -1,3 +1,4 @@
+import BuildCustome from "../components/BuildCustome";
 import CustomTailored from "../components/CustomTailored";
 import CustomerReviews from "../components/CustomerReviews";
 import ElegantProducts from "../components/ElegantProducts";
@@ -14,6 +15,7 @@ const Home = () => {
             <SellAnywhere />
             <ElegantProducts />
             <CustomTailored />
+            <BuildCustome />
             <Faq />
             <CustomerReviews />
             <OurPartner />
