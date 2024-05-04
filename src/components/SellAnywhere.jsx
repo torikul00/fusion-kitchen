@@ -51,51 +51,51 @@ const SellAnywhere = () => {
                         breakpoints={{
                             // Responsive breakpoints
                             320: {
-                                slidesPerView: 1 // Display 1 card on mobile
+                                slidesPerView: 1 
                             },
                             768: {
-                                slidesPerView: 2 // Display 2 cards on tablets
+                                slidesPerView: 2 
                             },
                             1024: {
-                                slidesPerView: 2 // Display 3 cards on desktop
+                                slidesPerView: 2 
                             },
                             1440: {
-                                slidesPerView: 3 // Display 3 cards on desktop
+                                slidesPerView: 3 
                             }
 
                         }}
                     >
                         <SwiperSlide
                             className='w-[33.33%] p-4 lg:p-5 mb-14'>
-                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-8 pb-0 rounded-[32px]'>
+                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-8 pb-0 rounded-[32px]'>
                                 <h3 className='text-[20px] md:text-2xl font-medium text-center mb-7'>Hardware and POS systems designed to sell anywhere.</h3>
                                 <img src={computerImg} alt="" className='h-[350px] w-auto' />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide
                             className='w-[33.33%] p-4 lg:p-5 mb-14'>
-                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px]'>
+                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px]'>
                                 <h3 className='text-[20px] md:text-2xl font-medium text-center mb-5'>Secure payments anywhere your customers are.</h3>
                                 <img src={stripeImg} alt="" className='h-[350px] w-auto' />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide
                             className='w-[33.33%] p-4 lg:p-5 mb-14'>
-                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative'>
+                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative'>
                                 <h3 className='text-[20px] md:text-2xl font-medium text-center mb-5'>In-store pickup, online ordering, delivery, and shipment options.</h3>
                                 <img src={iphoneImg} alt="" className='w-[240px] block absolute bottom-0 right-[15.6%]' />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide
                             className='w-[33.33%] p-4 lg:p-5 mb-14'>
-                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative'>
+                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative'>
                                 <h3 className='text-[20px] md:text-2xl font-medium text-center mb-5'>In-store pickup, online ordering, delivery, and shipment options.</h3>
                                 <img src={computerImg} alt="" className='w-[240px] block absolute bottom-0 right-[15.6%]' />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide
                             className='w-[33.33%] p-4 lg:p-5 mb-14'>
-                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative'>
+                            <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative'>
                                 <h3 className='text-[20px] md:text-2xl font-medium text-center mb-5'>In-store pickup, online ordering, delivery, and shipment options.</h3>
                                 <img src={stripeImg} alt="" className='w-[240px] block absolute bottom-0 right-[15.6%]' />
                             </div>

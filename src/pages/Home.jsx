@@ -11,7 +11,7 @@ import SellAnywhere from "../components/SellAnywhere";
 const Home = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <SellAnywhere />
             <ElegantProducts />
             <CustomTailored />

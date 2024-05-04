@@ -17,17 +17,9 @@ const BuildCustome = () => {
 
     return (
         <section className=' w-full relative overflow-hidden my-[100px] bg-[#002415] py-[100px]'>
-          <div className='mainSection'>
-
+          <div className='greenCustomAnimation'>
           </div>
             <MainContainer>
-                {/* <animated.div
-                    className="absolute right-0  w-[700px] h-[500px] bg-cover bg-center"
-                    style={{
-                        backgroundImage: `url(${circelLight})`,
-                        ...styles,
-                    }}
-                /> */}
                 <div className='flex flex-col-reverse lg:flex-row items-center sm:gap-x-10 '>
                     <div className='w-[90%]'>
                         <h1 className='mt-20 lg:mt-0 text-[25px] sm:text-3xl md:text-4xl lg:text-5xl text-white'>Build custom commerce <br /> experiences.</h1>

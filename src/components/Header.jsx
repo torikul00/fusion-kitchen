@@ -15,7 +15,6 @@ const Header = () => {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
         const triggerScrollPos = 750;
@@ -27,10 +26,12 @@ const Header = () => {
     };
 
     return (
-        <header className={`w-full bg-[#1A1A1A] overflow-hidden ${isSticky ? 'mb-[200px] h-[811px]' : 'mb-0 h-[911px]'}`}>
+        <header className={`w-full bg-[#1A1A1A] z-10 relative overflow-hidden ${isSticky ? 'mb-[200px] h-[811px]' : 'mb-0 h-[911px]'}`}>
+            <div className='greenCustomAnimationHeader'>
+            </div>
             <HeaderContainer>
                 <Navbar />
-                <div className={`h-[811px] w-full text-white flex justify-between items-center overflow-hidden`}>
+                <div className={`h-[811px] z-10 w-full text-white flex justify-between items-center overflow-hidden`}>
                     <div className="w-2/5">
                         <h1 className="text-[80px] leading-[86px] font-bold"><span className="text-[#9FE870]">Powering</span> all the ways you do business.</h1>
                         <p className="mb-8 mt-3 text-[#CCCCCC] text-[22px] tracking-widest">Work smarter and automate for efficiency on the software and hardware platform millions of businesses trust</p>

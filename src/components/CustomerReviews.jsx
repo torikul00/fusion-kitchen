@@ -89,20 +89,20 @@ const CustomerReviews = () => {
                                 <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full bg-[#9FE8700A] p-5 xl:p-10 rounded-[32px] border-4 border-[#9FE870] flex flex-col sm:flex-col-reverse lg:flex-row md:gap-12 items-center justify-between shadow-xl'>
                                     <div className='order-2 sm:order-1'>
                                         <span><RiDoubleQuotesL className='text-[40px] xl:text-[70px]'  /></span>
-                                        <p className='text-[15px] xl:text-2xl text-gray mt-4'>{review.feedbackMessage.slice(0, 260)}...</p>
+                                        <p className='text-[15px] xl:text-2xl text-gray mt-2 lg:mt-4'>{review.feedbackMessage.slice(0, 260)}...</p>
 
-                                        <div className='my-6'>
-                                            <p className='text-[16px] xl:text-2xl mb-2 text-primary capitalize'>{review.customerName}</p>
-                                            <p className='text-gray capitalize text-lg'>{review.customerDesignation}</p>
+                                        <div className='my-3 lg:my-6'>
+                                            <p className='text-[16px] xl:text-2xl mb-1 lg:mb-2 text-primary capitalize'>{review.customerName}</p>
+                                            <p className='text-gray capitalize text-[16px] md:text-lg'>{review.customerDesignation}</p>
                                         </div>
 
                                         <div className='flex items-center gap-4'>
-                                            <p className='text-lg'>Watch Video</p>
+                                            <p className='text-[16px] md:text-lg'>Watch Video</p>
                                             <FaAngleRight />
                                         </div>
                                     </div>
                                     <div className='order-1 sm:order-2 w-fit h-fit'>
-                                        <div className='w-[150px] h-[150px] md:w-[300px] lg:w-[250px] md:h-[300px]'>
+                                        <div className='w-[200px] h-[200px] md:w-[300px] lg:w-[250px] md:h-[300px]'>
                                             <img className='rounded-2xl h-full w-full object-cover' src={review.customerImg} alt="Customer image" />
                                         </div>
                                     </div>

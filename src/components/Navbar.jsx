@@ -11,7 +11,7 @@ import featureImg2 from "../assets/featured2.png"
 const Navbar = () => {
 
   return (
-    <nav className="h-[90px] w-full flex items-center justify-between text-white">
+    <nav className="h-[90px] w-full flex items-center justify-between text-white z-10">
       <div className="flex gap-[60px] items-center">
         <Link to="/">
           <img src={logo} alt="" className="h-9 w-auto" />
