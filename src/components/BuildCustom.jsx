@@ -4,16 +4,8 @@ import experts from '../assets/images/experts.svg'
 import owners from '../assets/images/owners.svg'
 import rightArrow from '../assets/images/right-arrow.svg'
 import phone from '../assets/images/phone.svg'
-import circelLight from '../assets/images/light.svg'
-import { animated, useScroll, useSpring } from '@react-spring/web'
 
-const BuildCustome = () => {
- 
-    const styles = useSpring({
-        from: { transform: 'translateY(0%)' },
-        to: { transform: 'translateY(50%)' },
-        config: { duration: 2000, loop: true },
-    });
+const BuildCustom = () => {
 
     return (
         <section className=' w-full relative overflow-hidden my-[100px] bg-[#002415] py-[100px]'>
@@ -40,7 +32,7 @@ const BuildCustome = () => {
                             <p className='text-white mt-4 text-sm sm:-text-[16px] w-[80%]'><span className='text-[#9FE870]'>Hire a Square specialis</span> to customize <span className='text-[#9FE870]'>how Square works for you.</span></p>
                         </div>
                     </div>
-                    <div className='w-[90%] z-10 mt-0 lg:mt-20 '>
+                    <div className='w-[90%] mt-0 lg:mt-20 '>
                         <img src={phone} alt="phone" />
                         {/* <img  className='absolute top-[-500px] w-[50%] right-0' src={circelLight} alt="" /> */}
                     </div>
@@ -79,4 +71,4 @@ const BuildCustome = () => {
     );
 };
 
-export default BuildCustome;
+export default BuildCustom;

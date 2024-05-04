@@ -17,11 +17,10 @@ const ElegantProducts = () => {
                         modules={[Pagination, Autoplay]}
                         onSwiper={(swiper) => setSwiperInstance(swiper)}
                         pagination={{ clickable: true }}
-                        // autoplay={{
-                        //     "delay": 2500,
-                        //     "disableOnInteraction": false
-                        // }}
-
+                        autoplay={{
+                            "delay": 2500,
+                            "disableOnInteraction": false
+                        }}
                     >
                         <SwiperSlide>
                             <img className='w-full' src={fireFly} alt="fireFly" />

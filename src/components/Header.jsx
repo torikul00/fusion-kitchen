@@ -40,7 +40,7 @@ const Header = () => {
                             <button className="py-[18px] px-9 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                         </div>
 
-                        <div key={isSticky} className={`${isSticky ? 'px-[30px] h-[70px] fixed z-50 top-0 left-0 right-0 w-screen bg-[#1A1A1A] text-white flex gap-5 items-center sticky-nav' : 'mt-[74px]'}`}>
+                        <div key={isSticky} className={`${isSticky ? ' px-[30px] h-[70px] fixed top-0 left-0 right-0 w-screen bg-[#1A1A1A] text-white flex gap-5 items-center sticky-nav' : 'mt-[74px]'} z-[99]`}>
                             <div data-aos={isSticky && "fade-left"} className={`flex items-center gap-[9px] ${isSticky ? 'mb-0' : 'mb-6'}`}>
                                 <h3 className={`${isSticky ? 'text-lg font-medium' : 'text-[22px] font-bold'}`}>Customize your experience by</h3>
                                 <span className={`${isSticky ? '-rotate-90' : 'rotate-0'}`}><FaArrowDown size={isSticky ? 16 : 20} /></span>
