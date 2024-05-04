@@ -88,13 +88,28 @@ html {
   height: 27px !important;
 }
 
+.elegantClass .swiper-pagination-bullet {
+  background-color: #d6cece !important;
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 1 !important;
+
+}
+
+.elegantClass .swiper-pagination-bullet-active {
+  background-color: #9FE870 !important;
+  width: 20px !important;
+  height: 20px !important;
+
+}
+
 .greenCustomAnimationHeader {
   content: "";
   display: block;
   position: absolute;
   z-index: -1;
   top: -35vw;
-  margin-left: 0;
+  margin-left: -100px;
   width: 70vw;
   height: 70vw;
   transform: scale(1, 1);
