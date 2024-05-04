@@ -4,6 +4,7 @@ import instaLogo from '../assets/images/instagram-logo.svg'
 import twitterLogo from '../assets/images/twitter-logo.svg'
 import globalLogo from '../assets/images/global-logo.svg'
 import copyrightImage from '../assets/images/copyright-image.svg'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -13,62 +14,62 @@ const Footer = () => {
                     <div>
                         <h1 className='text-[#808080] mb-4'>Products</h1>
                         <div className='flex flex-col gap-y-4'>
-                            <a href="#">Commerce</a>
-                            <a href="#">Point of sale</a>
-                            <a href="#">Payments</a>
-                            <a href="#">Online</a>
-                            <a href="#">Invoices</a>
-                            <a href="#">Customers</a>
-                            <a href="#">Marketing</a>
-                            <a href="#">Loyalty</a>
-                            <a href="#">Customer Directory</a>
-                            <a href="#">Banking</a>
-                            <a href="#">Staff</a>
-                            <a href="#">Payroll</a>
-                            <a href="#">Team Management</a>
-                            <a href="#">Buy Now, Pay Later</a>
-                            <a href="#">Hardware</a>
-                            <a href="#">Business software & solutions</a>
+                            <Link to="#">Commerce</Link>
+                            <Link to="#">Point of sale</Link>
+                            <Link to="#">Payments</Link>
+                            <Link to="#">Online</Link>
+                            <Link to="#">Invoices</Link>
+                            <Link to="#">Customers</Link>
+                            <Link to="#">Marketing</Link>
+                            <Link to="#">Loyalty</Link>
+                            <Link to="#">Customer Directory</Link>
+                            <Link to="#">Banking</Link>
+                            <Link to="#">Staff</Link>
+                            <Link to="#">Payroll</Link>
+                            <Link to="#">Team Management</Link>
+                            <Link to="#">Buy Now, Pay Later</Link>
+                            <Link to="#">Hardware</Link>
+                            <Link to="#">Business software & solutions</Link>
                         </div>
                     </div>
                     <div>
                         <h1 className='text-[#808080] mb-4'>Business Types</h1>
                         <div className='flex flex-col gap-y-4'>
-                            <a href="#">Food & Beverage</a>
-                            <a href="#">Quick Service</a>
-                            <a href="#">Full Service</a>
-                            <a href="#">Fast Casual</a>
-                            <a href="#">Bars & Breweries</a>
-                            <a href="#">Retail</a>
-                            <a href="#">Beauty Salon</a>
-                            <a href="#">Barbershop</a>
-                            <a href="#">Hair Salon</a>
-                            <a href="#">Hair Salon</a>
-                            <a href="#">Nail Salon</a>
-                            <a href="#">Day Spa</a>
-                            <a href="#">Tattoo & Piercing</a>
-                            <a href="#">Med spa</a>
-                            <a href="#">Fitness</a>
-                            <a href="#">Professional Services</a>
-                            <a href="#">Home & Repair</a>
-                            <a href="#">Large Businesses</a>
-                            <a href="#">Franchises</a>
+                            <Link to="#">Food & Beverage</Link>
+                            <Link to="#">Quick Service</Link>
+                            <Link to="#">Full Service</Link>
+                            <Link to="#">Fast Casual</Link>
+                            <Link to="#">Bars & Breweries</Link>
+                            <Link to="#">Retail</Link>
+                            <Link to="#">Beauty Salon</Link>
+                            <Link to="#">Barbershop</Link>
+                            <Link to="#">Hair Salon</Link>
+                            <Link to="#">Hair Salon</Link>
+                            <Link to="#">Nail Salon</Link>
+                            <Link to="#">Day Spa</Link>
+                            <Link to="#">Tattoo & Piercing</Link>
+                            <Link to="#">Med spa</Link>
+                            <Link to="#">Fitness</Link>
+                            <Link to="#">Professional Services</Link>
+                            <Link to="#">Home & Repair</Link>
+                            <Link to="#">Large Businesses</Link>
+                            <Link to="#">Franchises</Link>
 
                         </div>
                     </div>
                     <div>
                         <h1 className='text-[#808080] mb-4'>Resources</h1>
                         <div className='flex flex-col gap-y-4'>
-                            <a href="#">Pricing</a>
-                            <a href="#">Why Square?</a>
-                            <a href="#">Testimonials</a>
-                            <a href="#">The Bottom Line</a>
-                            <a href="#">Sales</a>
-                            <a href="#">Support</a>
-                            <a href="#">Seller Community</a>
-                            <a href="#">Developer Platform</a>
-                            <a href="#">Merchant Services</a>
-                            <a href="#">Rent Hardware</a>
+                            <Link to="#">Pricing</Link>
+                            <Link to="#">Why Square?</Link>
+                            <Link to="#">Testimonials</Link>
+                            <Link to="#">The Bottom Line</Link>
+                            <Link to="#">Sales</Link>
+                            <Link to="#">Support</Link>
+                            <Link to="#">Seller Community</Link>
+                            <Link to="#">Developer Platform</Link>
+                            <Link to="#">Merchant Services</Link>
+                            <Link to="#">Rent Hardware</Link>
                         </div>
                     </div>
                     <div>
@@ -83,11 +84,11 @@ const Footer = () => {
                         <div className='mt-[60px]'>
                             <h1 className='text-[#808080] mb-4'>Square</h1>
                             <div className='flex flex-col gap-y-4'>
-                                <a href="#">About</a>
-                                <a href="#">Press & Media</a>
-                                <a href="#">Careers</a>
-                                <a href="#">Affiliates</a>
-                                <a href="#">Partners</a>
+                                <Link to="#">About</Link>
+                                <Link to="#">Press & Media</Link>
+                                <Link to="#">Careers</Link>
+                                <Link to="#">Affiliates</Link>
+                                <Link to="#">Partners</Link>
                             </div>
                         </div>
                     </div>
@@ -99,9 +100,9 @@ const Footer = () => {
                             <p>United States (English)</p>
                         </div>
                         <div className='flex items-center gap-x-5'>
-                            <a href="#" target='_blank'><img src={facebookLogo} alt="facebook-logo" /> </a>
-                            <a href="#" target='_blank'><img src={instaLogo} alt="instagram-logo" /> </a>
-                            <a href="#" target='_blank'><img src={twitterLogo} alt="twitter-logo" />  </a>
+                            <Link to="#" target='_blank'><img src={facebookLogo} alt="facebook-logo" /> </Link>
+                            <Link to="#" target='_blank'><img src={instaLogo} alt="instagram-logo" /> </Link>
+                            <Link to="#" target='_blank'><img src={twitterLogo} alt="twitter-logo" />  </Link>
                         </div>
                     </div>
                 </div>
@@ -111,13 +112,13 @@ const Footer = () => {
                         <h2 className='text-[#cccccc]'>Fusion Kitchen 2024</h2>
                     </div>
                     <div className='flex flex-col text-right text-sm sm:text-base font-[300] gap-y-4'>
-                        <a href="#">Privacy Notice</a>
-                        <a href="#">Security</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Licenses</a>
-                        <a href="#">PGovernment</a>
-                        <a href="#">Square Capital, LLC Licenses</a>
-                        <a href="#">Block, Inc.</a>
+                        <Link to="#">Privacy Notice</Link>
+                        <Link to="#">Security</Link>
+                        <Link to="#">Terms of Service</Link>
+                        <Link to="#">Licenses</Link>
+                        <Link to="#">PGovernment</Link>
+                        <Link to="#">Square Capital, LLC Licenses</Link>
+                        <Link to="#">Block, Inc.</Link>
                     </div>
                 </div>
             </MainContainer>

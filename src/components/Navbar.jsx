@@ -3,19 +3,22 @@ import logo from "../assets/logo.png"
 import flag from "../assets/language-flag.png"
 import shoppingBag from "../assets/shopping-bag.svg"
 import { FaAngleDown } from "react-icons/fa6";
+import { IoCloseSharp } from "react-icons/io5";
 import '../styles/Navbar.css'
 import HeaderContainer from "./HeaderContainer";
 import featureImg1 from "../assets/featured1.png"
 import featureImg2 from "../assets/featured2.png"
 import menuIcon from "../assets/menu-right.svg"
+import { useState } from "react";
 
 const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false)
 
   return (
-    <nav className="h-[90px] w-full flex items-center justify-between text-white">
+    <nav className="h-[70px] xl:h-[90px] w-full flex items-center justify-between text-white z-10">
       <div className="flex gap-10 2xl:gap-[60px] items-center">
         <Link to="/">
-          <img src={logo} alt="" className="h-9 w-auto" />
+          <img src={logo} alt="" className="h-6 sm:h-7 xl:h-9 w-auto" />
         </Link>
 
         <ul className="hidden xl:flex items-center">
@@ -193,8 +196,8 @@ const Navbar = () => {
       </ul>
 
       {/* small devices design */}
-      <button className="py-8 px-3 xl:hidden cursor-pointer">
-        <img src={menuIcon} alt="" className="w-5 h-5" />
+      <button onClick={() => setOpenMenu(!openMenu)} className="xl:hidden cursor-pointer">
+        {openMenu ? <IoCloseSharp size={25} /> : <img src={menuIcon} alt="" className="w-5 h-5" />}
       </button>
     </nav>
   );
