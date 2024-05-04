@@ -3,14 +3,18 @@ import support from '../assets/images/support.svg'
 import experts from '../assets/images/experts.svg'
 import owners from '../assets/images/owners.svg'
 import rightArrow from '../assets/images/right-arrow.svg'
-import phone from '../assets/images/phone.svg'
+import phone from '../assets/images//animation phone/phone.svg'
+import visa from '../assets/images//animation phone/visa.svg'
+import pay from '../assets/images//animation phone/pay.svg'
+import applePay from '../assets/images//animation phone/applePay.svg'
+import master from '../assets/images//animation phone/master.svg'
 
 const BuildCustom = () => {
 
     return (
         <section className=' w-full relative overflow-hidden my-[100px] bg-[#002415] py-[100px]'>
-          <div className='greenCustomAnimation'>
-          </div>
+            <div className='greenCustomAnimation'>
+            </div>
             <MainContainer>
                 <div className='flex flex-col-reverse lg:flex-row items-center sm:gap-x-10 '>
                     <div className='w-[90%]'>
@@ -33,8 +37,16 @@ const BuildCustom = () => {
                         </div>
                     </div>
                     <div className='w-[90%] mt-0 lg:mt-20 '>
-                        <img src={phone} alt="phone" />
-                        {/* <img  className='absolute top-[-500px] w-[50%] right-0' src={circelLight} alt="" /> */}
+                        <div className='relative w-fit ml-[100px]' data-aos-anchor=".animation-anchor">
+                            <div className="animation-anchor"></div>
+                            <img src={phone} alt="phone" />
+                            <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[-60px] top-[330px]' src={visa} alt="visa" />
+                            <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-90px] top-[400px]' src={applePay} alt="visa" />
+                            <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[-60px] top-[100px]' src={pay} alt="visa" />
+                            <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-90px] top-[170px]' src={master} alt="visa" />
+                        </div>
+
+
                     </div>
                 </div>
                 <div className='mt-[80px] lg:mt-[120px]'>
