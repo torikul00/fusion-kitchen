@@ -47,10 +47,13 @@ html {
 }
 
 /* swiper styles */
-.swiper-slide-active>div {
+.swiper-slide>div:hover {
   box-shadow: none !important;
   border: 4px solid #9FE870;
   background-color: #9FE8700A;
+}
+.swiper-slide>div {
+  border: 4px solid #9ee87000;
 }
 
 .suppor-shadow {

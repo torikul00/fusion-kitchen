@@ -67,32 +67,32 @@ const CustomerReviews = () => {
     };
 
     return (
-        <section className='h-fit max-w-[1450px] mx-auto mt-[150px] px-5' >
-            <h3 className='max-w-[80%] mx-auto text-[#1A1A1A] text-5xl font-bold mb-9'>Don’t just take it form us</h3>
+        <section className='h-fit max-w-[1450px] mx-auto mt-[80px] lg:mt-[150px] px-5' >
+            <h3 className='max-w-[80%] mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-9'>Don’t just take it form us</h3>
             <div className='flex gap-8 justify-between items-center'>
-                <button style={{boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)'}} className='p-7 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
+                <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden lg:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
                     <HiOutlineArrowLeft size={30} />
                 </button>
 
-                <div className='max-w-[82%]'>
+                <div className='max-w-[95%] sm:max-w-[70%] xl:max-w-[82%] mx-auto'>
                     <Swiper
                         slidesPerView="auto"
                         effect={'fade'}
                         modules={[Pagination]}
                         onSwiper={(swiper) => setSwiperInstance(swiper)}
-                        pagination={{clickable: true}}
+                        pagination={{ clickable: true }}
                     >
                         {
                             reviews.map(review => <SwiperSlide
                                 key={review.id}
                                 className='w-full mb-14 px-5'>
-                                <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full bg-[#9FE8700A] p-10 rounded-[32px] border-4 border-[#9FE870] flex md:gap-12 items-center justify-between shadow-xl'>
+                                <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full bg-[#9FE8700A] p-5 xl:p-10 rounded-[32px] border-4 border-[#9FE870] flex flex-col sm:flex-col-reverse lg:flex-row md:gap-12 items-center justify-between shadow-xl'>
                                     <div className='order-2 sm:order-1'>
-                                        <span><RiDoubleQuotesL size={70} /></span>
-                                        <p className='text-gray mt-4'>{review.feedbackMessage.slice(0, 260)}...</p>
+                                        <span><RiDoubleQuotesL className='text-[40px] xl:text-[70px]'  /></span>
+                                        <p className='text-[15px] xl:text-2xl text-gray mt-4'>{review.feedbackMessage.slice(0, 260)}...</p>
 
                                         <div className='my-6'>
-                                            <p className='text-2xl mb-2 text-primary capitalize'>{review.customerName}</p>
+                                            <p className='text-[16px] xl:text-2xl mb-2 text-primary capitalize'>{review.customerName}</p>
                                             <p className='text-gray capitalize text-lg'>{review.customerDesignation}</p>
                                         </div>
 
@@ -102,7 +102,7 @@ const CustomerReviews = () => {
                                         </div>
                                     </div>
                                     <div className='order-1 sm:order-2 w-fit h-fit'>
-                                        <div className='w-[150px] h-[150px] md:w-[300px] md:h-[300px]'>
+                                        <div className='w-[150px] h-[150px] md:w-[300px] lg:w-[250px] md:h-[300px]'>
                                             <img className='rounded-2xl h-full w-full object-cover' src={review.customerImg} alt="Customer image" />
                                         </div>
                                     </div>
@@ -111,8 +111,8 @@ const CustomerReviews = () => {
                         }
                     </Swiper>
                 </div>
-                
-                <button style={{boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)'}} className='p-7 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}>
+
+                <button style={{ boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden lg:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}>
                     <HiOutlineArrowRight size={30} />
                 </button>
             </div>
