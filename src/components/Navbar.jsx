@@ -329,7 +329,7 @@ const Navbar = () => {
             </li>
             <li>
               <button onClick={() => (openParentNav === 'products' && openChildNav === 'customers') ? setOpenChildNav(null) : setOpenChildNav('customers')} className="w-full py-3 px-6 flex justify-between items-center outline-none">
-                Customers <span className={`${(openParentNav === 'customers' && openChildNav === 'customers') ? 'rotate-180' : 'rotate-0'} transition-all`}>
+                Customers <span className={`${(openParentNav === 'products' && openChildNav === 'customers') ? 'rotate-180' : 'rotate-0'} transition-all`}>
                   <FaAngleDown /></span>
               </button>
 
