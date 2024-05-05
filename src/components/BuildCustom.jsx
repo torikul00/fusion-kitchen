@@ -8,6 +8,7 @@ import visa from '../assets/images//animation phone/visa.svg'
 import pay from '../assets/images//animation phone/pay.svg'
 import applePay from '../assets/images//animation phone/applePay.svg'
 import master from '../assets/images//animation phone/master.svg'
+import blur from '../assets/images//animation phone/blur.svg'
 
 const BuildCustom = () => {
 
@@ -36,14 +37,24 @@ const BuildCustom = () => {
                             <p className='text-white mt-4 text-sm sm:-text-[16px] w-[80%]'><span className='text-[#9FE870]'>Hire a Square specialis</span> to customize <span className='text-[#9FE870]'>how Square works for you.</span></p>
                         </div>
                     </div>
-                    <div className='w-[90%] mt-0 lg:mt-20 '>
-                        <div className='relative w-fit ml-[100px]' data-aos-anchor=".animation-anchor">
-                            <div className="animation-anchor"></div>
-                            <img src={phone} alt="phone" />
-                            <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[-60px] top-[330px]' src={visa} alt="visa" />
-                            <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-90px] top-[400px]' src={applePay} alt="visa" />
-                            <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[-60px] top-[100px]' src={pay} alt="visa" />
-                            <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-90px] top-[170px]' src={master} alt="visa" />
+                    <div className='lg:w-[90%] sm:mr-[215px] mt-0 sm:mt-20 '>
+                        {/* for desktop view */}
+                        <div className='hidden sm:block relative w-fit lg:ml-[100px]'>
+                            <img data-aos="fade-up-right" data-aos-delay="600" data-aos-once="true" className='absolute left-[60%] top-[-17%] z-1 max-w-[460px]' src={blur} alt="" />
+                            <img className='z-10 relative' src={phone} alt="phone" />
+                            <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='absolute z-20 right-[-60px] top-[60%]' src={visa} alt="visa" />
+                            <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='absolute z-20 left-[-90px] top-[70%]' src={applePay} alt="visa" />
+                            <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[-60px] top-[10%] z-20' src={pay} alt="visa" />
+                            <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-90px] top-[25%] z-20' src={master} alt="visa" />
+                        </div>
+                        {/* for mobile view */}
+                        <div className='block sm:hidden relative w-fit lg:ml-[100px]'>
+                        <img data-aos="fade-up-right" data-aos-delay="600" data-aos-once="true" className='absolute left-[29%] top-[-17%] z-1 max-w-[255px]' src={blur} alt="" />
+                            <img className='w-[60%] z-10 relative' src={phone} alt="phone" />
+                            <img width={60} data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[75px] top-[60%] z-20' src={visa} alt="visa" />
+                            <img width={60} data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-45px] top-[70%] z-20' src={applePay} alt="visa" />
+                            <img width={60} data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[75px] top-[10%] z-20' src={pay} alt="visa" />
+                            <img width={60} data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-45px] top-[25%] z-20' src={master} alt="visa" />
                         </div>
 
 
