@@ -40,7 +40,7 @@ const BuildCustom = () => {
                     <div className='lg:w-[90%] sm:mr-[215px] mt-0 sm:mt-20 '>
                         {/* for desktop view */}
                         <div className='hidden sm:block relative w-fit lg:ml-[100px]'>
-                            <img data-aos="fade-up-right" data-aos-delay="600" data-aos-once="true" className='absolute left-[60%] top-[-17%] z-1 max-w-[460px]' src={blur} alt="" />
+                            <img data-aos="fade-up-right" data-aos-delay="600" data-aos-once="true" className='absolute left-[60%] top-[-17%] z-1 max-w-[460px]' src={blur} alt="blur" />
                             <img className='z-10 relative' src={phone} alt="phone" />
                             <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='absolute z-20 right-[-60px] top-[60%]' src={visa} alt="visa" />
                             <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='absolute z-20 left-[-90px] top-[70%]' src={applePay} alt="visa" />
@@ -49,7 +49,7 @@ const BuildCustom = () => {
                         </div>
                         {/* for mobile view */}
                         <div className='block sm:hidden relative w-fit lg:ml-[100px]'>
-                        <img data-aos="fade-up-right" data-aos-delay="600" data-aos-once="true" className='absolute left-[29%] top-[-17%] z-1 max-w-[255px]' src={blur} alt="" />
+                        <img data-aos="fade-up-right" data-aos-delay="600" data-aos-once="true" className='absolute left-[29%] top-[-17%] z-1 max-w-[255px] ' src={blur} alt="blur" />
                             <img className='w-[60%] z-10 relative' src={phone} alt="phone" />
                             <img width={60} data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='absolute right-[75px] top-[60%] z-20' src={visa} alt="visa" />
                             <img width={60} data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='absolute left-[-45px] top-[70%] z-20' src={applePay} alt="visa" />
