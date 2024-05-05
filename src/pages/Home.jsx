@@ -1,4 +1,4 @@
-import BuildCustome from "../components/BuildCustome";
+import BuildCustom from "../components/BuildCustom";
 import CustomTailored from "../components/CustomTailored";
 import CustomerReviews from "../components/CustomerReviews";
 import ElegantProducts from "../components/ElegantProducts";
@@ -15,7 +15,7 @@ const Home = () => {
             <SellAnywhere />
             <ElegantProducts />
             <CustomTailored />
-            <BuildCustome />
+            <BuildCustom />
             <Faq />
             <CustomerReviews />
             <OurPartner />

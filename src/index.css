@@ -74,6 +74,12 @@ html {
   justify-content: center;
 }
 
+.elegantClass .swiper-pagination {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .swiper-pagination-bullet {
   margin-left: 0px !important;
   margin-right: 20px !important;
@@ -101,6 +107,13 @@ html {
   width: 20px !important;
   height: 20px !important;
 
+}
+
+@media screen and (max-width: 768px) {
+  .elegantClass .swiper-pagination {
+    display: none;
+  }
+  
 }
 
 .greenCustomAnimationHeader {
@@ -141,7 +154,7 @@ html {
   width: 45vw;
   height: 45vw;
   transform: rotate(0deg) scale(1, 1);
-  background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0.1) 55%);
+  background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0) 55%);
   animation: greenCustomGradient 12s ease-in-out infinite;
 }
 
@@ -156,7 +169,7 @@ html {
     width: 70vw;
     height: 70vw;
     transform: rotate(0deg) scale(1, 1);
-    background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0.1) 55%);
+    background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0) 55%);
     animation: greenCustomGradient 12s ease-in-out infinite;
   }
 }

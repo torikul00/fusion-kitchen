@@ -27,11 +27,11 @@ const Navbar = () => {
   return (
     <nav className={`h-[70px] xl:h-[90px] w-full flex items-center justify-between text-white z-10`}>
       <div className="flex gap-10 2xl:gap-[60px] items-center">
-        <Link to="/">
+        <button>
           <img src={logo} alt="" className="h-6 sm:h-7 xl:h-9 w-auto" />
-        </Link>
+        </button>
 
-        <ul className="hidden xl:flex items-center">
+        <ul className="hidden xl:flex items-center large">
           <li className="hoverable group">
             <Link className="relative py-8 px-4 flex items-center gap-[9px] cursor-pointer">
               <span>Industries</span> <span className="group-hover:rotate-180 transition-all duration-200"><FaAngleDown /></span>
@@ -187,7 +187,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <ul className="hidden xl:flex items-center">
+      <ul className="hidden xl:flex items-center large">
         <li className="flex items-center gap-[9px] py-8 px-3 cursor-pointer">
           <img src={flag} alt="" /> <FaAngleDown />
         </li>
@@ -206,8 +206,8 @@ const Navbar = () => {
       </ul>
 
       {/* small devices design */}
-      <button onClick={() => {setOpenMenu(!openMenu); setOpenParentNav(null), setOpenChildNav(null)}} className="block xl:hidden cursor-pointer">
-        {openMenu ? <IoCloseSharp size={25} /> :  <HiOutlineMenuAlt3 size={25} />}
+      <button onClick={() => { setOpenMenu(!openMenu); setOpenParentNav(null), setOpenChildNav(null) }} className="block xl:hidden cursor-pointer">
+        {openMenu ? <IoCloseSharp size={25} /> : <HiOutlineMenuAlt3 size={25} />}
       </button>
 
       <div className={`${openMenu ? 'opcacity-1 z-[999] visible' : 'opacity-0 -z-[999] invisible'} transition-all duration-300 xl:hidden fixed z-[990] top-[70px] right-0 w-screen h-screen bg-[#000000a8] border-t border-[#d9d9d9] border-opacity-20`}>
