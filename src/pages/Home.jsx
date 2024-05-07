@@ -1,16 +1,26 @@
-import HeaderContainer from "../components/HeaderContainer";
-import Navbar from "../components/Navbar";
+import BuildCustom from "../components/BuildCustom";
+import CustomTailored from "../components/CustomTailored";
+import CustomerReviews from "../components/CustomerReviews";
+import ElegantProducts from "../components/ElegantProducts";
+import Faq from "../components/Faq";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import OurPartner from "../components/OurPartner";
+import SellAnywhere from "../components/SellAnywhere";
 
 const Home = () => {
     return (
-        <header className="w-full h-screen bg-[#1A1A1A]">
-            <HeaderContainer>
-                <Navbar />
-                <div>
-                    <h1 className="text-3xl text-center">Home page Header here</h1>
-                </div>
-            </HeaderContainer>
-        </header>
+        <>
+            <Header />
+            <SellAnywhere />
+            <ElegantProducts />
+            <CustomTailored />
+            <BuildCustom />
+            <Faq />
+            <CustomerReviews />
+            <OurPartner />
+            <Footer />
+        </>
     );
 };
 

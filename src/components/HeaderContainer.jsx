@@ -1,6 +1,6 @@
 const HeaderContainer = ({ children }) => {
     return (
-        <div className="max-w-[1400px] mx-auto px-5">
+        <div className="max-w-[1620px] mx-auto px-5">
             {children}
         </div>
     );
