@@ -113,7 +113,6 @@ html {
   .elegantClass .swiper-pagination {
     display: none;
   }
-  
 }
 
 .greenCustomAnimationHeader {
@@ -127,7 +126,24 @@ html {
   height: 70vw;
   transform: scale(1, 1);
   background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0) 55%);
-  animation: greenCustomAnimationHeader 40s ease-in-out infinite;
+  animation: greenCustomAnimationHeader 30s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .greenCustomAnimationHeader {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -50vw;
+    margin-left: -100px;
+    width: 120vw;
+    height: 120vw;
+    transform: scale(1, 1);
+    background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0) 55%);
+    animation: greenCustomAnimationHeader 20s ease-in-out infinite;
+  }
+
 }
 
 @keyframes greenCustomAnimationHeader {
