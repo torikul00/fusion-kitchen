@@ -42,6 +42,11 @@ a {
 .large a::after {
     content: '';
     position: absolute;
+    width: 76%;
+    left: 12%;
+}
+.large .mega-menu a::before,
+.large .mega-menu a::after {
     width: 100%;
     left: 0;
 }
@@ -52,7 +57,7 @@ a {
     bottom: 0;
     transform-origin: 100% 50%;
     transform: scaleX(0);
-    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    transition: transform .4s cubic-bezier(0.76, 1, 0.76, 1);
 }
 
 .large a::after {
@@ -61,7 +66,7 @@ a {
     top: 0;
     transform-origin: 100% 50%;
     transform: translate3d(200%, 0, 0);
-    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    transition: transform .4s cubic-bezier(0.76, 1, 0.76, 1);
     color: #9FE870;
 }
 

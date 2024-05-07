@@ -2,7 +2,7 @@ import { FaArrowDown, FaAngleDown } from "react-icons/fa6";
 import HeaderContainer from "./HeaderContainer";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
-import bannerImg from "../assets/banner-img.gif"
+import bannerImg from "../assets/banner-img.png"
 
 const Header = () => {
     const [industry, setIndustry] = useState("All")
@@ -35,7 +35,7 @@ const Header = () => {
       }, [openBussinessType])
 
     return (
-        <header className={`w-full bg-[#1A1A1A] relative overflow-hidden ${isSticky ? 'mb-[200px] h-[811px]' : 'mb-0 h-fit lg:h-[911px]'}`}>
+        <header className={`w-full z-50 bg-[#1A1A1A] relative overflow-hidden ${isSticky ? 'mb-[200px] h-[811px]' : 'mb-0 h-fit lg:h-[911px]'}`}>
             <div className='greenCustomAnimationHeader'>
             </div>
             <HeaderContainer>
