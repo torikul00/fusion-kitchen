@@ -2,7 +2,7 @@ import { FaArrowDown, FaAngleDown } from "react-icons/fa6";
 import HeaderContainer from "./HeaderContainer";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
-import bannerImg from "../assets/banner-img.png"
+import bannerImg from "../assets/FusionPOS_EX.gif"
 
 const Header = () => {
     const [industry, setIndustry] = useState("All")
@@ -50,7 +50,7 @@ const Header = () => {
                         </div>
 
                         <div className="lg:hidden w-full mt-6 flex justify-center items-center">
-                            <img src={bannerImg} alt="" className="h-[250px]" />
+                            <img src={bannerImg} alt="" className="w-[300px] md:w-[800px]" />
                         </div>
 
                         <div key={isSticky} className={`${isSticky ? 'px-7 h-[70px] fixed z-[99] top-0 left-0 right-0 w-screen bg-[#1A1A1A] text-white hidden lg:flex gap-5 items-center sticky-nav' : 'mt-6 xl:mt-[74px]'}`}>
@@ -97,8 +97,8 @@ const Header = () => {
                             <button className="py-2 px-5 text-sm rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                         </div>
                     </div>
-                    <div className="hidden w-3/5 sm:w-4/5 lg:w-[50%] xl:w-3/5 h-full lg:flex justify-end items-center xl:items-end">
-                        <img src={bannerImg} alt="" className="" />
+                    <div className="hidden w-3/5 sm:w-4/5 lg:w-[70%] xl:w-3/5 h-full lg:flex justify-end items-center xl:items-end">
+                        <img src={bannerImg} alt="" className="w-[80%]" />
                     </div>
                 </div>
             </HeaderContainer>
