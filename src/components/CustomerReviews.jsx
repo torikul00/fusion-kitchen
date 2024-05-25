@@ -67,7 +67,7 @@ const CustomerReviews = () => {
     };
 
     return (
-        <section className='h-fit max-w-[1450px] mx-auto mt-[80px] lg:mt-[150px] px-5' >
+        <section className='h-fit max-w-[1450px] mx-auto mt-[80px] lg:mt-[150px] md:px-5' >
             <h3 className='max-w-[80%] mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-9'>Don’t just take it form us</h3>
             <div className='flex gap-8 justify-between items-center'>
                 <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden lg:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>

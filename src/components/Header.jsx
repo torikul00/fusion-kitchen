@@ -28,14 +28,14 @@ const Header = () => {
 
     useEffect(() => {
         if (openBussinessType) {
-          document.body.style.overflow = 'hidden'
+            document.body.style.overflow = 'hidden'
         } else {
-          document.body.style.overflow = 'auto'
+            document.body.style.overflow = 'auto'
         }
-      }, [openBussinessType])
+    }, [openBussinessType])
 
     return (
-        <header className={`w-full z-50 headerImage relative overflow-hidden ${isSticky ? 'mb-[200px] h-[811px]' : 'mb-0 h-fit lg:h-[911px]'}`}>
+        <header className={`w-full z-50 bg-gradient-to-b from-[#052115] to-[#131513] relative overflow-hidden ${isSticky ? 'mb-[200px] h-[811px]' : 'mb-0 h-fit lg:h-[911px]'}`}>
             <div className='greenCustomAnimationHeader'>
             </div>
             <HeaderContainer>
@@ -98,7 +98,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="hidden w-3/5 sm:w-4/5 lg:w-[70%] xl:w-3/5 h-full lg:flex justify-end items-center xl:items-end">
-                        <img src={bannerImg} alt="" className="w-[80%]" />
+                        <img src={bannerImg} alt="" className="w-[90%]" /> 
                     </div>
                 </div>
             </HeaderContainer>
