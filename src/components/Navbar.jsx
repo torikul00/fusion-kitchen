@@ -37,8 +37,8 @@ const Navbar = () => {
               <span>Industries</span> <span className="group-hover:rotate-180 transition-all duration-200"><FaAngleDown /></span>
             </Link>
 
-            <div className="mega-menu shadow-xl bg-[#1a1a1a4d] h-fit">
-              <div className="bg-[#1A1A1A] border-y border-gray-700 h-[700px] w-full py-7">
+            <div className="mega-menu shadow-xl bg-[#1418174d] h-fit">
+              <div className="bg-[#141817] border-y border-gray-700 h-[700px] w-full py-7">
                 <HeaderContainer>
                   <div className="grid grid-cols-4">
                     <ul className="nav-list space-y-5">
@@ -105,8 +105,8 @@ const Navbar = () => {
               <span>Products</span> <span className="group-hover:rotate-180 transition-all duration-200"><FaAngleDown /></span>
             </Link>
 
-            <div className="mega-menu shadow-xl bg-[#1a1a1a4d] h-fit">
-              <div className="bg-[#1A1A1A] border-y border-gray-700 h-[620px] w-full py-7">
+            <div className="mega-menu shadow-xl bg-[#1418174d] h-fit">
+              <div className="bg-[#141817] border-y border-gray-700 h-[620px] w-full py-7">
                 <HeaderContainer>
                   <div className="grid grid-cols-5">
                     <ul className="nav-list space-y-5">

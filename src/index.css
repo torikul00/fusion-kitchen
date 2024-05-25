@@ -41,6 +41,12 @@ html {
   }
 }
 
+/* .headerImage{
+  background-image: url('./assets/images/headerBannerImage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
 /* Apply transition effect to smoothly transition between states */
 .transition {
   transition: max-height 0.5s ease;
@@ -113,7 +119,7 @@ html {
   .elegantClass .swiper-pagination {
     display: none;
   }
-  
+
 }
 
 .greenCustomAnimationHeader {
@@ -121,26 +127,38 @@ html {
   display: block;
   position: absolute;
   z-index: -1;
-  top: -35vw;
-  margin-left: -100px;
+  top: -33vw;
+  left: -150px;
   width: 70vw;
   height: 70vw;
   transform: scale(1, 1);
   background: radial-gradient(circle, #9ee87074 0%, rgba(158, 232, 112, 0.424) 11%, rgba(158, 232, 112, 0.305) 25%, rgba(0, 36, 21, 0) 55%);
-  animation: greenCustomAnimationHeader 30s ease-in-out infinite;
+  animation: greenCustomAnimationHeader 25s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .greenCustomAnimationHeader {
+    top: -50vw;
+    width: 120vw;
+    height: 120vw;
+    animation: greenCustomAnimationHeader 20s ease-in-out infinite;
+  }
 }
 
 @keyframes greenCustomAnimationHeader {
   0% {
     transform: translateX(0) scale(1, 1);
+    top: -33vw;
   }
 
   50% {
     transform: translateX(calc(100vw - 45vw)) scale(1, 1);
+    top: -50vw;
   }
 
   100% {
     transform: translateX(0) scale(1, 1);
+    top: -33vw;
   }
 }
 

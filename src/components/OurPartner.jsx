@@ -20,7 +20,7 @@ const OurPartner = () => {
         <section className='max-w-[1400px] px-5 mx-auto mt-[150px] mb-[120px]'>
             <div>
                 <h1 className='text-[25px] mb-10 sm:text-[30px] md:text-[45px] lg:text-5xl font-bold'>Ours partners</h1>
-                <div className='mt-10 rounded-[35px] border-[3px] overflow-hidden border-[#1A1A1A]'>
+                <div className='mt-10 rounded-[35px] border-[3px] overflow-hidden border-[#141817]'>
                     <div>
                         <h1 className='text-center font-semibold sm:font-normal mb-3 sm:mb-0 text-[20px] sm:text-[40px] mt-[60px]'>Restaurant Partners</h1>
                         <p className='text-center font-semibold  sm:font-normal w-[70%] mx-auto sm:w-full text-[14px] sm:text-[20px]'>Together we power 1000s of businesses around the world</p>

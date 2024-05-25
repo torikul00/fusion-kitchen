@@ -11,7 +11,7 @@ const CustomTailored = () => {
                 <div className="w-full rounded-[20px] sm:rounded-[32px] bg-[#F2F2F2] pb-[60px] overflow-hidden">
                     <div className='flex justify-between flex-col md:flex-row items-center mt-10'>
                         <h1 className='w-[85%] md:w-[460px] md:ml-[30px] lg:ml-[80px] text-[16px] sm:text-[26px] md:text-[26px] lg:text-[36px] font-bold'>Custom-tailored product suites for <span className='bg-[#9FE870] px-1'>restaurants,</span> <span className='bg-[#9FE870] px-1'>retail,</span> and <span className='bg-[#9FE870] px-1'>beauty</span> businesses.</h1>
-                        <img className='ml-auto w-full md:w-[70%]' src={customeTailored} alt="customeTailored" />
+                        <img className='ml-auto w-full md:w-[50%]' src={customeTailored} alt="customeTailored" />
                     </div>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-[90%] gap-x-10 gap-y-10 mt-10 mx-auto '>
                         <div className='flex justify-between'>
