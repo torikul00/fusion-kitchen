@@ -111,7 +111,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="hidden h-full lg:w-[70%] xl:w-3/5 lg:flex justify-end items-center xl:items-end -z-10">
-                        <Lottie options={defaultOptions} width="90%" height="auto" />
+                        <Lottie options={defaultOptions} width="100%" height="auto" />
                     </div>
                 </div>
             </HeaderContainer>
