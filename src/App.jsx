@@ -1,11 +1,12 @@
+import MainContainer from './components/MainContainer'
 import Home from './pages/Home'
-
+import Pos from './pages/Pos'
 function App() {
 
   return (
-    <>
-    <Home />
-    </>
+    <section>
+        <Pos />
+    </section>
   )
 }
 
