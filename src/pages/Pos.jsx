@@ -48,7 +48,7 @@ const Pos = () => {
 
                         <div className=" w-[50%] mt-6">
                             <img className="" src={header} alt="header" />
-                            <button className="text-primary flex items-center gap-x-3 mt-10 tracking-[3px]">Scroll <FaArrowDown /></button>
+                            <button className="text-primary flex items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
                     </div>
                 </HeaderContainer>

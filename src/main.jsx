@@ -5,6 +5,8 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Pos from './pages/Pos.jsx'
+import OnlineOrdering from './pages/OnlineOrdering.jsx'
 AOS.init({
   duration: 600,
 });
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />
+  },
+  {
+    path: "/pos",
+    element: <Pos />
+  },
+  { 
+    path:"/online-ordering",
+    element: <OnlineOrdering />
   }
 ])
 
