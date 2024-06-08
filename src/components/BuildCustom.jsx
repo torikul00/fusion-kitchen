@@ -63,7 +63,7 @@ const BuildCustom = () => {
                 <div className='mt-[80px] lg:mt-[120px]'>
                     <h1 className='text-[25px] sm:text-3xl md:text-4xl lg:text-5xl text-white'>Get Support</h1>
                     <div className='grid grid-cols-1 gap-y-4 sm:grid-cols-2 md:grid-cols-3  gap-x-8 mt-10 lg:mt-16'>
-                        <div className='suppor-shadow bg-[#00000038] p-6 rounded-[32px]'>
+                        <div className='support-shadow bg-[#00000038] p-6 rounded-[32px]'>
                             <img src={support} alt="support" />
                             <p className='text-white text-[22px] sm:text-[24px] mt-[60px]'>For around the clock < br /> product support.</p>
                             <button className='flex items-center gap-x-2 mt-[40px] text-[#9FE870]'>
@@ -71,7 +71,7 @@ const BuildCustom = () => {
                                 <img width={20} src={rightArrow} alt="rightArrow" />
                             </button>
                         </div>
-                        <div className='suppor-shadow bg-[#00000038] p-6 rounded-[32px]'>
+                        <div className='support-shadow bg-[#00000038] p-6 rounded-[32px]'>
                             <img src={experts} alt="support" />
                             <p className='text-white text-[22px] sm:text-[24px] mt-[60px]'>For exclusive insights from <br /> Square business experts.</p>
                             <button className='flex items-center gap-x-2 mt-[40px] text-[#9FE870]'>
@@ -79,7 +79,7 @@ const BuildCustom = () => {
                                 <img width={20} src={rightArrow} alt="rightArrow" />
                             </button>
                         </div>
-                        <div className='suppor-shadow bg-[#00000038] p-6 rounded-[32px]'>
+                        <div className='support-shadow bg-[#00000038] p-6 rounded-[32px]'>
                             <img src={owners} alt="support" />
                             <p className='text-white text-[22px] sm:text-[24px] mt-[60px]'>To connect with other <br /> business owners.</p>
                             <button className='flex items-center gap-x-2 mt-[40px] text-[#9FE870]'>
