@@ -237,6 +237,11 @@ html {
   }
 }
 
+.radial-gradient {
+  background: rgb(0, 54, 32);
+  background: radial-gradient(circle, rgba(0, 54, 32, 1) 0%, rgba(23, 23, 23, 1) 100%);
+}
+
 .tab-section-gradient {
   background: hsla(0, 0%, 100%, 1);
   background-image: linear-gradient(to bottom, #141817, #46494a, #7f8182, #bdbebf, #ffffff);
