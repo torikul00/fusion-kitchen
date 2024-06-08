@@ -105,7 +105,7 @@ const SellAnywhere = () => {
                     <HiOutlineArrowRight size={30} />
                 </button>
             </div>
-        </section >
+        </section>
     );
 };
 

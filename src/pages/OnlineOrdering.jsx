@@ -16,6 +16,16 @@ import preOrder from "../assets/images/online ordering/pre-order.svg"
 import timeBased from "../assets/images/online ordering/time-slot.svg"
 import marketingTools from "../assets/images/online ordering/marketing-tools.svg"
 import mobileApp from "../assets/images/online ordering/mobile-app.svg"
+import CustomerReviews from "../components/CustomerReviews";
+import Footer from "../components/Footer";
+import onlineOrdering from "../assets/images/online ordering/online-ordering.png"
+import pointOfSlae from "../assets/images/online ordering/point-of-sale.png"
+import kitchenDisplay from "../assets/images/online ordering/kitchen-display.png"
+import qrPay from "../assets/images/online ordering/qr-pay.png"
+import payment from "../assets/images/online ordering/payment.png"
+import { HiOutlineArrowRight } from "react-icons/hi";
+import { FaArrowRight } from "react-icons/fa6";
+import done from "../assets/images/online ordering/done.svg";
 
 const OnlineOrdering = () => {
     const [categoryTab, setCategoryTab] = useState("Electronics");
@@ -173,6 +183,113 @@ const OnlineOrdering = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="my-[180px]">
+                <MainContainer>
+                    <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Payments, fully integrated across <br /> your channels</h3>
+                    <div className="grid grid-cols-3 gap-7">
+                        <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Online Ordering</h3>
+                            <p className="text-lg my-3 text-center">Low cost, totally flexible payments fully integrated into your POS products</p>
+                            <img src={onlineOrdering} alt="" className='w-[150px] block absolute bottom-[11%] right-[28%] scale-[1.6]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                        <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Point of Sale</h3>
+                            <p className="text-lg my-3 text-center">A complete ePOS and kitchen management solution to keep you in control</p>
+                            <img src={pointOfSlae} alt="" className='w-[150px] block absolute bottom-[24%] right-[28%] scale-[1.6]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                        <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Kitchen Display</h3>
+                            <p className="text-lg my-3 text-center">Streamline service and cut costs using automated customer ordering</p>
+                            <img src={kitchenDisplay} alt="" className='w-[150px] block absolute bottom-[28%] right-[28%] scale-[1.6]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                    </div>
+                    <div className="flex justify-center gap-7 mt-7">
+                        <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-[31.7%] h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>QR Order & Pay</h3>
+                            <p className="text-lg my-3 text-center">From stock control to staff rotas, automate your operational admin</p>
+                            <img src={qrPay} alt="" className='w-[170px] block absolute bottom-[26%] right-[26%] scale-[1.6]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                        <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-[31.7%] h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Payment Terminal</h3>
+                            <p className="text-lg my-3 text-center">Automate customer ordering, increase revenue by 30% and reduce customer queues</p>
+                            <img src={payment} alt="" className='w-[150px] block absolute bottom-[20%] right-[28%] scale-[1.6]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                    </div>
+                </MainContainer>
+            </section>
+
+            <section className="mb-[180px]">
+                <MainContainer>
+                    <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>We’re here to help!</h3>
+                    <div className="radial-gradient rounded-3xl flex gap-[100px] p-8">
+                        <div className="w-[40%] text-white border border-primary rounded-[32px] overflow-hidden px-12 py-10" style={{boxShadow: '1px 1px 22px -7px #9ee87094'}}>
+                            <h1 className="text-[32px] font-bold">Free</h1>
+                            <h3 className="text-[20px] mb-3">Unlimited orders</h3>
+                            <h3 className="text-[32px]"><span className="text-primary">£0</span> / per month</h3>
+                            <h3 className="text-[32px]"><span className="text-primary">39%</span> Commission</h3>
+                            <div className="flex items-start gap-x-3 mt-3">
+                                <img className="mt-1" src={done} alt="" />
+                                <p className="leading-[30px]">Fully branded mobile app</p>
+                            </div>
+                            <div className="flex items-start gap-x-3 mt-3">
+                                <img className="mt-1" src={done} alt="" />
+                                <p className="leading-[30px]">Interactive website builder</p>
+                            </div>
+                            <div className="flex items-start gap-x-3 mt-3">
+                                <img className="mt-1" src={done} alt="" />
+                                <p className="leading-[30px]">Online ordering platform</p>
+                            </div>
+                            <div className="flex items-start gap-x-3 mt-3">
+                                <img className="mt-1" src={done} alt="" />
+                                <p className="leading-[30px]">Marketing & promotional tools</p>
+                            </div>
+                            <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
+                        </div>
+
+                        <form className="w-[55%] text-white">
+                            <h4 className="text-[22px] font-bold mb-1">Need some advice?</h4>
+                            <p className="text-sm mb-5">Our friendly team are on hand to answer any questions you may have, no hard sale, we promise!</p>
+                            <input type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Full name" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
+                            <input type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Business name" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
+                            <input type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Phone no" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
+                            <input type="email" id="email" name="email" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Email address" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
+                            <textarea rows={3} id="message" name="message" className="w-full border-none outline-none bg-white rounded-[32px] py-2.5 px-5 placeholder:text-[#808080]" placeholder="Message" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.25)' }}></textarea>
+                            <button type="button" className="border border-primary hover:shadow-md hover:shadow-[#9ee8705d] transition-all text-lg font-bold flex gap-3 items-center px-8 py-3 mt-5 rounded-full">
+                                Send Message
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24.8054 2.03428L16.0559 23.564C15.8593 24.0228 15.5193 24.3054 15.0359 24.4119C14.5526 24.5184 14.1307 24.3914 13.7702 24.031L0.990024 11.2508C0.629557 10.8903 0.502574 10.4684 0.609076 9.98504C0.715577 9.50168 0.998216 9.1617 1.45699 8.96508L22.9867 0.21556C23.5766 -0.0138278 24.0845 0.0844815 24.5105 0.510488C24.9365 0.936494 25.0348 1.44443 24.8054 2.03428ZM14.2618 20.5901L20.9959 4.02504L4.43084 10.7592L7.87166 14.2L15.2449 9.77613L10.8209 17.1493L14.2618 20.5901Z" fill="white" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </MainContainer>
+            </section>
+
+            <div className="mb-[150px]">
+                <CustomerReviews />
+            </div>
+            <Footer />
         </>
     );
 };
