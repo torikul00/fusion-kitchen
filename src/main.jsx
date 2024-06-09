@@ -9,6 +9,12 @@ import Pos from './pages/Pos.jsx'
 import OnlineOrdering from './pages/OnlineOrdering.jsx'
 AOS.init({
   duration: 600,
+  once: true,
+  easing: 'ease-in-out',
+  delay: 100,
+  mirror: false,
+  offset: 300,
+
 });
 
 const router = createBrowserRouter([
