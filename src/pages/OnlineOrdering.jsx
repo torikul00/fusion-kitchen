@@ -26,6 +26,10 @@ import payment from "../assets/images/online ordering/payment.png"
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { FaArrowRight } from "react-icons/fa6";
 import done from "../assets/images/online ordering/done.svg";
+import wixLogo from "../assets/images/online ordering/wixLogo.svg";
+import withWix from "../assets/images/online ordering/with-wix.png";
+import phoneTabletCom from "../assets/images/online ordering/phone-table-computer.svg";
+import GetAQuote from "../components/GetAQuote";
 
 const OnlineOrdering = () => {
     const [categoryTab, setCategoryTab] = useState("Electronics");
@@ -184,6 +188,33 @@ const OnlineOrdering = () => {
                 </div>
             </section>
 
+            <section className="mt-[180px] mb-[220px]">
+                <MainContainer>
+                    <div className="flex gap-8 items-center">
+                        <h3 className='text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold'>We are now integrated with</h3>
+                        <img src={wixLogo} alt="" />
+                    </div>
+                    <p className="w-3/5 text-[22px] mt-3 text-[#1A1A1A]">Instantly launch your very own online ordering platform on your Wix website, no code required!</p>
+
+                    <div className="bg-[#9ee8705d] rounded-full p-2 grid grid-cols-3 gap-[14px] mt-7 mb-9 w-3/5" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.1)' }}>
+                        <button className={`bg-white rounded-full shadow-lg px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Install the Fusion App</button>
+                        <button className={`bg-white rounded-full shadow-lg px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Add your menu</button>
+                        <button className={`bg-white rounded-full shadow-lg px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Start receiving orders</button>
+                    </div>
+                    <img src={withWix} alt="" />
+                </MainContainer>
+            </section>
+
+            <section className="mb-[200px]">
+                <MainContainer>
+                    <h3 className='text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold'>Receive orders directly to <br /> your phone, tablet, or computer</h3>
+                    <p className="w-3/5 text-[22px] my-7 text-[#1A1A1A]">Effortlessly oversee your online orders from your phone, tablet, or desktop with our user-friendly platform. Simplifying order management like never before.</p>
+                    <img src={phoneTabletCom} alt="" />
+                </MainContainer>
+            </section>
+
+            <GetAQuote />
+
             <section className="my-[180px]">
                 <MainContainer>
                     <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Payments, fully integrated across <br /> your channels</h3>
@@ -243,7 +274,7 @@ const OnlineOrdering = () => {
                 <MainContainer>
                     <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>We’re here to help!</h3>
                     <div className="radial-gradient rounded-3xl flex gap-[100px] p-8">
-                        <div className="w-[40%] text-white border border-primary rounded-[32px] overflow-hidden px-12 py-10" style={{boxShadow: '1px 1px 22px -7px #9ee87094'}}>
+                        <div className="w-[40%] text-white border border-primary rounded-[32px] overflow-hidden px-12 py-10" style={{ boxShadow: '1px 1px 22px -7px #9ee87094' }}>
                             <h1 className="text-[32px] font-bold">Free</h1>
                             <h3 className="text-[20px] mb-3">Unlimited orders</h3>
                             <h3 className="text-[32px]"><span className="text-primary">£0</span> / per month</h3>
@@ -270,11 +301,11 @@ const OnlineOrdering = () => {
                         <form className="w-[55%] text-white">
                             <h4 className="text-[22px] font-bold mb-1">Need some advice?</h4>
                             <p className="text-sm mb-5">Our friendly team are on hand to answer any questions you may have, no hard sale, we promise!</p>
-                            <input type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Full name" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
-                            <input type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Business name" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
-                            <input type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Phone no" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
-                            <input type="email" id="email" name="email" className="w-full border-none outline-none bg-white rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080]" placeholder="Email address" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.)' }} />
-                            <textarea rows={3} id="message" name="message" className="w-full border-none outline-none bg-white rounded-[32px] py-2.5 px-5 placeholder:text-[#808080]" placeholder="Message" style={{ boxShadow: 'inset 10px 15px 15px -3px rgba(0,0,0,0.25)' }}></textarea>
+                            <input type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Full name" />
+                            <input type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Business name"/>
+                            <input type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Phone no" />
+                            <input type="email" id="email" name="email" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Email address" />
+                            <textarea rows={3} id="message" name="message" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-[32px] py-2.5 px-5 placeholder:text-[#808080] shadow-inset" placeholder="Message"></textarea>
                             <button type="button" className="border border-primary hover:shadow-md hover:shadow-[#9ee8705d] transition-all text-lg font-bold flex gap-3 items-center px-8 py-3 mt-5 rounded-full">
                                 Send Message
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

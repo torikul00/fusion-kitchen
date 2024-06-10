@@ -299,3 +299,11 @@ html {
   background: hsla(0, 0%, 100%, 1);
   background-image: linear-gradient(to bottom, #141817, #46494a, #7f8182, #bdbebf, #ffffff);
 }
+
+.quote-swiper .swiper > .swiper-pagination.swiper-pagination-bullets {
+  display: none !important;
+}
+
+.shadow-inset{
+  box-shadow: inset 10px 10px 13px -3px rgba(0,0,0,0.25);
+}
