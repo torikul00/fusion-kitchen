@@ -63,8 +63,8 @@ const GetAQuote = () => {
     return (
         <section>
             <MainContainer>
-                <h3 className='text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold w-3/5 mb-10'>Join 1000s businesses across the world using Fusion to elevate their operations.</h3>
-                <h4 className="text-4xl font-medium mb-8">Get a quote!</h4>
+                <h3 className='text-[28px] lg:text-[60px] font-bold lg:leading-[70px]'>Join 1000s businesses across the world using Fusion to elevate their operations.</h3>
+                <h4 className="text-[28px] lg:text-[60px] lg:leading-[70px] mt-[80px] mb-[50px]">Get a quote!</h4>
                 <div className="flex mb-10">
                     <div className={`w-[100px] border-b-2 ${step >= 1 ? 'border-[#1A1A1A]' : 'border-primary'} relative`}>
                         <span className={`w-5 h-5 ${step >= 1 ? 'bg-[#1A1A1A]' : 'bg-primary'} rounded-full inline-block absolute -top-2.5 transition-all`}></span>
