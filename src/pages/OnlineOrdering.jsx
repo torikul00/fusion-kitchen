@@ -28,7 +28,7 @@ import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
