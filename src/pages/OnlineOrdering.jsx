@@ -28,13 +28,13 @@ import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
 const OnlineOrdering = () => {
-    const [categoryTab, setCategoryTab] = useState("Electronics");
+    const [categoryTab, setCategoryTab] = useState("Fasion & Beauty");
 
     return (
         <>
@@ -90,22 +90,44 @@ const OnlineOrdering = () => {
                 </HeaderContainer>
             </header>
 
-            <section className="tab-section-gradient w-full py-12 mb-[180px]">
+            <section className="tab-section-gradient w-full py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
                 <div className="max-w-[1300px] mx-auto">
-                    <div className="bg-[#9FE870] rounded-full p-2 grid grid-cols-7 gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
-                        <button onClick={() => setCategoryTab('Fasion & Beauty')} className={`${categoryTab === 'Fasion & Beauty' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Fashion & Beauty</button>
-                        <button onClick={() => setCategoryTab('Electronics')} className={`${categoryTab === 'Electronics' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Electronics</button>
-                        <button onClick={() => setCategoryTab('Arts & Crafts')} className={`${categoryTab === 'Arts & Crafts' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Arts & Crafts</button>
-                        <button onClick={() => setCategoryTab('Home & Kitchen')} className={`${categoryTab === 'Home & Kitchen' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Home & Kitchen</button>
-                        <button onClick={() => setCategoryTab('Jewelry')} className={`${categoryTab === 'Jewelry' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Jewelry</button>
-                        <button onClick={() => setCategoryTab('Supermarket')} className={`${categoryTab === 'Supermarket' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Supermarket</button>
-                        <button onClick={() => setCategoryTab('Restaurants')} className={`${categoryTab === 'Restaurants' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Restaurants</button>
+                    <div className="bg-[#9FE870] hide-scrollbar md:rounded-full p-2 overflow-scroll flex lg:grid lg:grid-cols-7 gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
+                        <button onClick={() => setCategoryTab('Fasion & Beauty')} className={`${categoryTab === 'Fasion & Beauty' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Fashion & Beauty</button>
+                        <button onClick={() => setCategoryTab('Electronics')} className={`${categoryTab === 'Electronics' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Electronics</button>
+                        <button onClick={() => setCategoryTab('Arts & Crafts')} className={`${categoryTab === 'Arts & Crafts' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Arts & Crafts</button>
+                        <button onClick={() => setCategoryTab('Home & Kitchen')} className={`${categoryTab === 'Home & Kitchen' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Home & Kitchen</button>
+                        <button onClick={() => setCategoryTab('Jewelry')} className={`${categoryTab === 'Jewelry' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Jewelry</button>
+                        <button onClick={() => setCategoryTab('Supermarket')} className={`${categoryTab === 'Supermarket' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Supermarket</button>
+                        <button onClick={() => setCategoryTab('Restaurants')} className={`${categoryTab === 'Restaurants' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Restaurants</button>
                     </div>
                 </div>
-                <div key={categoryTab} data-aos="fade-up" data-aos-duration="1000" className="flex justify-center gap-10">
-                    <img src={electronicsImg1} alt="" />
-                    <img src={electronicsImg2} alt="" />
-                    <img src={electronicsImg3} alt="" />
+                <div key={categoryTab} data-aos="fade-up" data-aos-duration="500" className="">
+                    <div className="lg:flex hidden justify-center gap-10">
+                        <img className="" src={electronicsImg1} alt="" />
+                        <img className="" src={electronicsImg2} alt="" />
+                        <img className="" src={electronicsImg3} alt="" />
+                    </div>
+                    <div className="lg:hidden block">
+                        <Swiper
+                            slidesPerView="auto"
+                            modules={[Autoplay]}
+                        >
+                            <SwiperSlide>
+                                <div>
+                                    <img className="mx-auto" src={electronicsImg1} alt="" />
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img className="mx-auto" src={electronicsImg2} alt="" />
+
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img className="mx-auto w-[50%]" src={electronicsImg3} alt="" />
+                            </SwiperSlide>
+
+                        </Swiper>
+                    </div>
                 </div>
             </section>
 
@@ -227,9 +249,9 @@ const OnlineOrdering = () => {
                     <p className="w-5/6 mb-6 md:mb-8 mt-3 text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Instantly launch your very own online ordering platform on your Wix website, no code required!</p>
 
                     <div className="bg-[#9ee8705d] hide-scrollbar overflow-scroll md:overflow-hidden w-full rounded-full p-2 flex md:grid md:grid-cols-3 gap-[14px] mt-7 mb-9 lg:w-3/5" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.1)' }}>
-                        <button className={`bg-white min-w-[200px] rounded-full shadow-lg px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Install the Fusion App</button>
-                        <button className={`bg-white min-w-[200px] rounded-full shadow-lg px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Add your menu</button>
-                        <button className={`bg-white min-w-[200px] rounded-full shadow-lg px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Start receiving orders</button>
+                        <button className={`bg-white min-w-fit rounded-full shadow-lg px-4 lg:px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Install the Fusion App</button>
+                        <button className={`bg-white min-w-fit rounded-full shadow-lg px-4 lg:px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Add your menu</button>
+                        <button className={`bg-white min-w-fit rounded-full shadow-lg px-4 lg:px-0 py-2.5 text-[#1A1A1A] cursor-text`}>Start receiving orders</button>
                     </div>
                     <img src={withWix} alt="" />
                 </MainContainer>
@@ -243,7 +265,7 @@ const OnlineOrdering = () => {
                 </MainContainer>
             </section>
 
-            <GetAQuote />
+            {/* <GetAQuote /> */}
 
             <MainContainer>
                 <PaymentGridCard />
