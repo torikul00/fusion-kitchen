@@ -14,7 +14,7 @@ import timeSlot from "../assets/images/online ordering/time-slot.svg"
 import clickCollect from "../assets/images/online ordering/click-collect.svg"
 import preOrder from "../assets/images/online ordering/pre-order.svg"
 import timeBased from "../assets/images/online ordering/time-slot.svg"
-import marketingTools from "../assets/images/online ordering/marketing-tools.svg"
+import marketingTools from "../assets/images/online ordering/marketing-tools.png"
 import mobileApp from "../assets/images/online ordering/mobile-app.svg"
 import CustomerReviews from "../components/CustomerReviews";
 import Footer from "../components/Footer";
@@ -22,7 +22,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import done from "../assets/images/online ordering/done.svg";
 import wixLogo from "../assets/images/online ordering/wixLogo.svg";
 import withWix from "../assets/images/online ordering/with-wix.png";
-import phoneTabletCom from "../assets/images/online ordering/phone-table-computer.svg";
+import phoneTabletCom from "../assets/images/online ordering/phone-table-computer.png";
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 
@@ -43,7 +43,6 @@ const OnlineOrdering = () => {
                                     <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
                                     <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
-
                             </div>
                             <div className="lg:hidden w-full mt-6 flex justify-center items-center">
                                 <div className="w-full md:w-[800px]">
@@ -58,7 +57,7 @@ const OnlineOrdering = () => {
                 </HeaderContainer>
             </header>
 
-            {/* <section className="tab-section-gradient w-full py-12 mb-[180px]">
+            <section className="tab-section-gradient w-full py-12 mb-[180px]">
                 <div className="max-w-[1300px] mx-auto">
                     <div className="bg-[#9FE870] rounded-full p-2 grid grid-cols-7 gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
                         <button onClick={() => setCategoryTab('Fasion & Beauty')} className={`${categoryTab === 'Fasion & Beauty' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Fashion & Beauty</button>
@@ -75,7 +74,7 @@ const OnlineOrdering = () => {
                     <img src={electronicsImg2} alt="" />
                     <img src={electronicsImg3} alt="" />
                 </div>
-            </section> */}
+            </section>
 
             <section className="mb-[135px]">
                 <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center gap-32">
@@ -159,7 +158,7 @@ const OnlineOrdering = () => {
                 <div className="max-w-[1300px] px-5 mx-auto mb-[180px]">
                     <div className="flex flex-col-reverse lg:flex-row gap-20 items-center">
                         <div className="lg:w-[58%]">
-                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Marketing <span className="text-primary">tools</span> built in</h1>
+                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Connect with your customers directly, build relationships, create loyal customers and generate more repeat orders</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
@@ -211,7 +210,7 @@ const OnlineOrdering = () => {
                 </MainContainer>
             </section>
 
-            {/* <GetAQuote /> */}
+            <GetAQuote />
 
             <MainContainer>
                 <PaymentGridCard />
