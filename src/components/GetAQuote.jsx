@@ -58,7 +58,6 @@ const GetAQuote = () => {
         setAnswers([...updatedAnswers])
     }
 
-    console.log(answers)
 
     return (
         <section>

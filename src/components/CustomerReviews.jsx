@@ -88,7 +88,7 @@ const CustomerReviews = () => {
                                 className='w-full mb-14 px-5'>
                                 <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='w-full bg-[#9FE8700A] p-5 xl:p-10 rounded-[32px] border-4 border-[#9FE870] flex flex-col sm:flex-col-reverse lg:flex-row md:gap-12 items-center justify-between shadow-xl'>
                                     <div className='order-2 sm:order-1'>
-                                        <span><RiDoubleQuotesL className='text-[40px] xl:text-[70px]'  /></span>
+                                        <span><RiDoubleQuotesL className='text-[40px] xl:text-[70px]' /></span>
                                         <p className='text-[15px] xl:text-2xl text-gray mt-2 lg:mt-4'>{review.feedbackMessage.slice(0, 260)}...</p>
 
                                         <div className='my-3 lg:my-6'>

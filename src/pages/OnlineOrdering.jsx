@@ -3,6 +3,7 @@ import HeaderContainer from "../components/HeaderContainer";
 import Navbar from "../components/Navbar";
 import MainContainer from "../components/MainContainer";
 import bannerImg from "../assets/images/online ordering/banner.png";
+import bannerImg2 from "../assets/images/online ordering/banner2.png";
 import image1 from "../assets/images/online ordering/image 200.png"
 import image2 from "../assets/images/online ordering/image 807.png"
 import electronicsImg1 from "../assets/images/online ordering/electronics-img-1 1.png"
@@ -26,6 +27,12 @@ import phoneTabletCom from "../assets/images/online ordering/phone-table-compute
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
+
 const OnlineOrdering = () => {
     const [categoryTab, setCategoryTab] = useState("Electronics");
 
@@ -46,12 +53,38 @@ const OnlineOrdering = () => {
                             </div>
                             <div className="lg:hidden w-full mt-6 flex justify-center items-center">
                                 <div className="w-full md:w-[800px]">
-                                    <img src={bannerImg} alt="" />
+                                    <Swiper
+                                        effect={'fade'}
+                                        autoplay={{
+                                            delay: 3000,
+                                        }}
+                                        modules={[Autoplay]}
+                                    >
+                                        <SwiperSlide>
+                                            <img src={bannerImg} alt="" />
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <img src={bannerImg2} alt="" />
+                                        </SwiperSlide>
+                                    </Swiper>
                                 </div>
                             </div>
                         </div>
-                        <div className="hidden h-full lg:w-[70%] xl:w-[55%] lg:flex justify-end items-center -z-10">
-                            <img src={bannerImg} alt="" />
+                        <div className="hidden select-none h-full lg:w-[70%] xl:w-[55%] lg:flex justify-end items-center -z-10">
+                            <Swiper
+                                effect={'fade'}
+                                autoplay={{
+                                    delay: 3000,
+                                }}
+                                modules={[Autoplay]}
+                            >
+                                <SwiperSlide>
+                                    <img src={bannerImg} alt="" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img src={bannerImg2} alt="" />
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
                     </div>
                 </HeaderContainer>
