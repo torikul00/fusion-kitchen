@@ -22,8 +22,6 @@ import image6 from '../assets/images/pos/image6.svg'
 import image8 from '../assets/images/pos/image8.png'
 import done from '../assets/images/pos/done.svg'
 import circle from '../assets/images/pos/circle.svg'
-import halfCir from '../assets/images/pos/halfCir.svg'
-import minCir from '../assets/images/pos/minCir.svg'
 import send from '../assets/images/pos/send.svg'
 import Footer from "../components/Footer";
 import GetAQuote from "../components/GetAQuote";
@@ -44,10 +42,10 @@ const Pos = () => {
     };
     return (
         <>
-            <header className={`w-full z-50 bg-[#141817] relative overflow-hidden mb-0 h-fit lg:h-[911px]`}>
+            <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
                 <HeaderContainer>
                     <Navbar />
-                    <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center overflow-hidden`}>
+                    <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center`}>
                         <div className="w-full lg:w-2/5 flex flex-col mt-10 lg:mt-0">
                             <h1 className="w-[90%] md:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">ePOS </span>Software for Hospitality</h1>
                             <p className="mb-6 md:mb-8 mt-3 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Work smarter and automate for efficiency on the software and hardware platform millions of businesses trust</p>
@@ -58,7 +56,7 @@ const Pos = () => {
                             <button className="lg:hidden flex mx-auto text-primary  items-center gap-x-3 mt-28 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
 
-                        <div className="w-full lg:w-[50%] mt-6">
+                        <div className="w-full lg:absolute lg:right-0 lg:w-[45%] mt-6">
                             <img className="" src={header} alt="header" />
                             <button className="lg:flex hidden text-primary  items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
@@ -217,11 +215,11 @@ const Pos = () => {
                                 <p className="text-[17px] md:text-[20px]">Intuitive menu builder with modifiers, variants and customizers</p>
                             </div>
                             <div className="flex items-center gap-x-6 ml-[20px] my-3">
-                                <div className="min-w-[17px] h-[17px] "><img src={halfCir} alt="halfCir" /></div>
+                                <div className="min-w-[17px] h-[17px] "><img src={circle} alt="halfCir" /></div>
                                 <p className="text-[17px] md:text-[20px]">Powerful meal deal and auto up-selling features</p>
                             </div>
                             <div className="flex items-center gap-x-6 ml-[20px]">
-                                <div className="min-w-[17px] h-[17px]"><img src={minCir} alt="minCir" /></div>
+                                <div className="min-w-[17px] h-[17px]"><img src={circle} alt="minCir" /></div>
                                 <p className="text-[17px] md:text-[20px]">Update or edit your menu or item availability in seconds</p>
                             </div>
                         </div>
@@ -237,11 +235,11 @@ const Pos = () => {
                                 <p className="text-[17px] md:text-[20px]">Build weekly rotas & automatically send them to staff</p>
                             </div>
                             <div className="flex gap-x-6 ml-[20px] my-3">
-                                <div className="min-w-[17px] h-[17px] mt-1"><img src={halfCir} alt="halfCir" /></div>
+                                <div className="min-w-[17px] h-[17px] mt-1"><img src={circle} alt="halfCir" /></div>
                                 <p className="text-[17px] md:text-[20px]">Create employee profiles and track training requirements</p>
                             </div>
                             <div className="flex gap-x-6 ml-[20px]">
-                                <div className="min-w-[17px] h-[17px] mt-1"><img src={minCir} alt="minCir" /></div>
+                                <div className="min-w-[17px] h-[17px] mt-1"><img src={circle} alt="minCir" /></div>
                                 <p className="text-[17px] md:text-[20px]">Gain insight into top sellers and most productive staff
                                     with intelligent productivity tracking</p>
                             </div>
@@ -324,8 +322,7 @@ const Pos = () => {
 
             <section className="my-[100px] lg:my-[180px]">
                 <MainContainer>
-                   <PaymentGridCard />
-
+                    <PaymentGridCard />
                     <form >
                         <div className="mt-[150px] lg:mt-[200px]">
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">We’re here to help!</h1>
