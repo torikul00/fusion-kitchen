@@ -75,6 +75,12 @@ const Pos = () => {
         console.log(full_name, phone_no, business_name, email, inquery);
         setSubmitMessage('Form submitted successfully!')
     }
+    const handleScrollBottom = () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        })
+    }
     return (
         <>
             <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
@@ -92,15 +98,15 @@ const Pos = () => {
                         </div>
 
                         <div className="w-full lg:absolute lg:right-0 lg:w-[45%] mt-6">
-                            <img className="" src={header} alt="header" />
-                            <button className="lg:flex hidden text-primary  items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
+                            <img className="scale-[1.1] md:scale-100" src={header} alt="header" />
+                            <button onClick={handleScrollBottom} className="lg:flex hidden text-primary  items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
                     </div>
 
                     {/* large device sticky */}
                     <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
                         <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
-                            <h4 className="text-medium text-xl">Online Ordering</h4>
+                            <h4 className="text-medium text-xl">Point of sale</h4>
                             <div className="flex items-center gap-7">
                                 <ul className="flex items-center gap-6">
                                     <li onClick={() => setIndustry("Restaurant")} className={`${industry === 'Restaurant' ? 'text-primary' : ''} cursor-pointer`}>Restaurant</li>
@@ -119,7 +125,7 @@ const Pos = () => {
                     {/* small device sticky */}
                     <div className={`${isSticky ? 'block lg:hidden fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} ${openBussinessType ? 'w-full h-[calc(100vh-54px)]' : 'w-full h-fit'} transition-all`}>
                         <div onClick={() => setOpenBusinessType(!openBussinessType)} className={`w-full h-[54px] flex gap-5 items-center justify-between px-7 sm:px-10 ${openBussinessType ? 'border-b border-[#d9d9d9] border-opacity-20' : ''}`}>
-                            <h4 className="text-medium">Online Ordering</h4>
+                            <h4 className="text-medium">Point of sale</h4>
                             <button className={`${openBussinessType ? 'rotate-180' : 'rotate-0'} transition-all`}><FaAngleDown /></button>
                         </div>
 
@@ -143,7 +149,7 @@ const Pos = () => {
                 </HeaderContainer>
             </header>
 
-            <section className="py-[100px]">
+            <section className="py-[50px] md:py-[100px]">
                 <MainContainer>
                     <div className="flex flex-col-reverse lg:flex-row justify-between w-full items-center">
                         <div className="w-full lg:w-[55%]">
@@ -160,7 +166,7 @@ const Pos = () => {
                     </div>
                 </MainContainer>
 
-                <div className='h-fit max-w-[1450px] mx-auto mt-[80px] md:mt-[40px] px-5'>
+                <div className='h-fit max-w-[1450px] mx-auto mt-[30px] md:mt-[40px] px-5'>
                     <div className='flex gap-8 justify-between items-center'>
                         <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden xl:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
                             <HiOutlineArrowLeft size={30} />
@@ -279,7 +285,7 @@ const Pos = () => {
 
             </section>
 
-            <section className="py-[150px]">
+            <section className="py-[100px] lg:py-[150px]">
                 <div className="flex justify-between flex-col lg:flex-row items-center max-w-[1400px] px-5 mx-auto">
                     <div data-aos="fade-right" className="w-[100%] lg:w-[48%]">
                         <img src={image4} alt="" />
@@ -287,8 +293,8 @@ const Pos = () => {
                     <div data-aos="fade-left" className="w-[100%] lg:w-[48%] mt-10 lg:mt-0">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Build an intelligent menu
                             in seconds</h1>
-                        <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-10">Our interactive menu builder allows you to add new items and customize your menu in seconds, while our powerful promotional tools make sure you’re always maximizing revenue</p>
-                        <div className="mt-10">
+                        <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-5">Our interactive menu builder allows you to add new items and customize your menu in seconds, while our powerful promotional tools make sure you’re always maximizing revenue</p>
+                        <div className="mt-5">
                             <div className="flex items-center gap-x-6 ml-[20px]">
                                 <div className="min-w-[17px] h-[17px]"><img src={circle} alt="circle" /></div>
                                 <p className="text-[17px] md:text-[20px]">Intuitive menu builder with modifiers, variants and customizers</p>
@@ -304,11 +310,11 @@ const Pos = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-between flex-col-reverse lg:flex-row items-center max-w-[1300px] px-5 mx-auto lg:mt-[200px] mt-[100px]">
+                <div className="flex justify-between flex-col-reverse lg:flex-row items-center max-w-[1300px] px-5 mx-auto lg:mt-[200px] mt-[50px]">
                     <div className="w-[100%] lg:w-[48%]">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Staff rotes and HR management built in</h1>
-                        <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-10">You don&apos;t need a dedicated HR platform, Grafterr POS can look after your staff! Create full staff profiles, build rotas, track payroll costs, and monitor productivity with staff login.</p>
-                        <div className="mt-10">
+                        <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-5">You don&apos;t need a dedicated HR platform, Grafterr POS can look after your staff! Create full staff profiles, build rotas, track payroll costs, and monitor productivity with staff login.</p>
+                        <div className="mt-5">
                             <div className="flex gap-x-6 ml-[20px]">
                                 <div className="min-w-[17px] h-[17px] mt-1"><img src={circle} alt="circle" /></div>
                                 <p className="text-[17px] md:text-[20px]">Build weekly rotas & automatically send them to staff</p>
@@ -329,9 +335,6 @@ const Pos = () => {
                     </div>
                 </div>
 
-                {/* <div className="max-w-[1300px] px-5 mt-[200px] mx-auto">
-                        <GetAQuote />
-                    </div> */}
             </section>
 
             <GetAQuote />
@@ -355,7 +358,7 @@ const Pos = () => {
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Choose a plan that&apos;s <span className="text-primary">right</span> for you</h1>
                         <p className="w-[90%] lg:w-[55%] mb-6 md:mb-8 my-6 text-[#CCCCCC] sm:text-base md:text-lg xl:text-[22px] tracking-widest">All of our packages are totally flexible, so you can upgrade, downgrade or pause your subscription anytime!</p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-10 lg:gap-8 mt-[60px] lg:mt-[100px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-8 mt-[40px] lg:mt-[100px]">
                             <div className=" bg-black/10 support-shadow rounded-[32px] overflow-hidden px-8 py-12">
                                 <h1 className="text-[32px] font-bold">Free</h1>
                                 <h3 className="text-[20px]">Unlimited orders</h3>
@@ -403,7 +406,7 @@ const Pos = () => {
                 <MainContainer>
                     <PaymentGridCard />
                     <form onSubmit={handleFormSubmit}>
-                        <div className="mt-[150px] lg:mt-[200px]">
+                        <div className="mt-[60px] lg:mt-[200px]">
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">We&apos;re here to help!</h1>
 
                             <div className="w-full radial-gradient overflow-hidden rounded-[20px] md:rounded-[32px] py-6 mt-10 p-4 md:p-8">

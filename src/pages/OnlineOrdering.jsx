@@ -65,7 +65,7 @@ const OnlineOrdering = () => {
         const businessName = formData.get('businessName');
         const phone = formData.get('phone');
         const email = formData.get('email');
-        console.log(fullName, businessName, phone,email);
+        console.log(fullName, businessName, phone, email);
         e.target.reset();
         setSubmitMessage('Form submitted successfully!');
     }
@@ -240,15 +240,15 @@ const OnlineOrdering = () => {
                 </div>
             </section>
 
-            <section className="mb-[135px]">
-                <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center gap-32">
+            <section className="mb-[50px] lg:mb-[135px]">
+                <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-32">
                     <img src={image1} alt="" className="w-full lg:w-[70%] lg:-ml-[24%] rounded-lg " />
 
                     <div className="w-full px-5 lg:w-[55%]">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Cut the commission & generate your own online orders</h1>
-                        <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-10">Everything you need to take online orders directly from your customers without using 3rd parties. Grow your business with online ordering, marketing and loyalty campaigns.</p>
+                        <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-5">Everything you need to take online orders directly from your customers without using 3rd parties. Grow your business with online ordering, marketing and loyalty campaigns.</p>
 
-                        <div className="mt-10 space-y-3">
+                        <div className="mt-5 space-y-3">
                             <div className="flex items-center gap-x-5">
                                 <div className="min-w-[17px] h-[17px] bg-[#1A1A1A] rounded-full"></div>
                                 <p className="text-[17px] md:text-[20px]">Automatically sync new online orders to your POS + Kitchen or manage everything from your mobile or computer</p>
@@ -320,7 +320,7 @@ const OnlineOrdering = () => {
                     </div>
                 </MainContainer>
 
-                <div className="max-w-[1300px] px-5 mx-auto mb-[180px]">
+                <div className="max-w-[1300px] px-5 mx-auto mb-[100px] lg:mb-[180px]">
                     <div className="flex flex-col-reverse lg:flex-row gap-20 items-center">
                         <div className="lg:w-[58%]">
                             <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
@@ -350,7 +350,7 @@ const OnlineOrdering = () => {
 
             </section>
 
-            <section className="mt-[180px] mb-[220px]">
+            <section className="my-[70px] lg:my-[180px]">
                 <MainContainer>
                     <div className="flex gap-3 lg:gap-8 items-center">
                         <h3 className='text-[#1A1A1A] text-xl md:text-3xl lg:text-5xl font-bold'>We are now integrated with</h3>
@@ -381,7 +381,7 @@ const OnlineOrdering = () => {
                 <PaymentGridCard />
             </MainContainer>
 
-            <section className="mt-[100px] mb-[180px]">
+            <section className="my-[60px] lg:my-[120px]">
                 <MainContainer>
                     <h3 className='text-[28px] lg:text-[60px] font-bold lg:leading-[70px]'>We&apos;re here to help!</h3>
                     <div className="mt-10  radial-gradient rounded-3xl flex flex-col lg:flex-row gap-[100px] p-4 md:p-8">
@@ -431,7 +431,7 @@ const OnlineOrdering = () => {
                 </MainContainer>
             </section>
 
-            <div className="mb-[150px]">
+            <div className="mb-[60px] lg:mb-[150px]">
                 <CustomerReviews />
             </div>
             <Footer />

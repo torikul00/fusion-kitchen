@@ -10,6 +10,7 @@ import { FaAngleLeft, FaAngleRight, FaCheck } from "react-icons/fa6";
 const GetAQuote = () => {
     const [step, setStep] = useState(1)
     const [swiperInstance, setSwiperInstance] = useState(null)
+    const [requireMessage, setRequireMessage] = useState('')
     const [answers, setAnswers] = useState([
         { step: 1, answer: '' },
         { step: 2, answer: '' },
@@ -27,20 +28,21 @@ const GetAQuote = () => {
         }
     };
     const handleNext = () => {
+        setRequireMessage('')
         if (step === 1) {
-            if (answers[0].answer === '') return
+            if (answers[0].answer === '') return setRequireMessage('Please select an option')
         }
         if (step === 2) {
-            if (answers[1].answer === '') return
+            if (answers[1].answer === '') return setRequireMessage('Please select an option')
         }
         if (step === 3) {
-            if (answers[2].answer === '') return
+            if (answers[2].answer === '') return setRequireMessage('Please select an option')
         }
         if (step === 4) {
-            if (answers[3].answer?.length < 1) return
+            if (answers[3].answer?.length < 1) return setRequireMessage('Please select an option')
         }
         if (step === 5) {
-            if (answers[4].answer.fullName === '' || answers[4].answer.businessName === '' || answers[4].answer.phone === '' || answers[4].answer.email === '') return
+            if (answers[4].answer.fullName === '' || answers[4].answer.businessName === '' || answers[4].answer.phone === '' || answers[4].answer.email === '') return setRequireMessage('Please fill the form!')
         }
         if (swiperInstance) {
             swiperInstance.slideNext();
@@ -84,7 +86,7 @@ const GetAQuote = () => {
         <section className='mb-20'>
             <MainContainer>
                 <h3 className='text-[28px] lg:text-[60px] font-bold lg:leading-[70px]'>Join 1000s businesses across the world using Fusion to elevate their operations.</h3>
-                <h4 className="text-[28px] lg:text-[60px] lg:leading-[70px] mt-[80px] mb-[50px]">Get a quote!</h4>
+                <h4 className="text-[28px] lg:text-[60px] lg:leading-[70px] mt-5 lg:mt-[80px] mb-[50px]">Get a quote!</h4>
                 <div className="flex mb-10">
                     <div className={`w-[100px] border-b-2 ${step >= 1 ? 'border-[#1A1A1A]' : 'border-primary'} relative`}>
                         <span className={`w-4 h-4 md:w-5 md:h-5 ${step >= 1 ? 'bg-[#1A1A1A]' : 'bg-primary'} rounded-full inline-block absolute -top-2 md:-top-2.5 transition-all`}></span>
@@ -129,6 +131,7 @@ const GetAQuote = () => {
                         <SwiperSlide>
                             <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">What type of business do you run?</p>
+                                {requireMessage && <p className='text-red-500 text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
                                     <div className={`${answers[0].answer === 'Takeaway/QSR' ? 'ring-4 ring-primary' : ''} rounded-full transition-all`}>
                                         <button onClick={() => handleSingleAns('Takeaway/QSR')} className="py-2 px-5 md:py-[14px] md:px-12 rounded-full bg-white text-[17px] md:text-xl shadow-inset">Takeaway/QSR</button>
@@ -158,6 +161,7 @@ const GetAQuote = () => {
                         <SwiperSlide>
                             <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">What type of system do you require?</p>
+                                {requireMessage && <p className='text-red-500 text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
                                     <div className={`${answers[1].answer === 'Point of sale (POS)' ? 'ring-4 ring-primary' : ''} rounded-full transition-all`}>
                                         <button onClick={() => handleSingleAns('Point of sale (POS)')} className="py-2 px-5 md:py-[14px] md:px-12 rounded-full bg-white text-[17px] md:text-xl shadow-inset">Point of sale (POS)</button>
@@ -184,6 +188,7 @@ const GetAQuote = () => {
                         <SwiperSlide>
                             <div className="radial-gradient h-[276px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">How many locations do you have?</p>
+                                {requireMessage && <p className='text-red-500 text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
                                     <div className={`${answers[2].answer === '1 - 2' ? 'ring-4 ring-primary' : ''} rounded-full transition-all`}>
                                         <button onClick={() => handleSingleAns('1 - 2')} className="py-2 px-5 md:py-[14px] md:px-12 rounded-full bg-white text-[17px] md:text-xl shadow-inset">1 - 2</button>
@@ -207,6 +212,7 @@ const GetAQuote = () => {
                         <SwiperSlide>
                             <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">What additional features are you interested in?</p>
+                                {requireMessage && <p className='text-red-500 text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
                                     <div className={`${answers[3].answer?.includes('Integrated payment') ? 'ring-4 ring-primary' : ''} rounded-full transition-all`}>
                                         <button onClick={() => handleMultiAns('Integrated payment')} className="py-2 px-5 md:py-[14px] md:px-10 rounded-full bg-white text-[17px] md:text-xl shadow-inset flex items-center gap-4">
@@ -273,6 +279,7 @@ const GetAQuote = () => {
                         <SwiperSlide>
                             <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">Please provide us with your contact details so we can send you the best quote.</p>
+                                {requireMessage && <p className='text-red-500 text-sm mb-4'>{requireMessage}</p>}
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5'>
                                     <input onChange={handleInputChange} type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Full name" />
                                     <input onChange={handleInputChange} type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Business name" />

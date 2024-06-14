@@ -24,9 +24,10 @@ const PaymentGridCard = () => {
     return (
         <div>
             <div className='block lg:hidden'>
-                <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Payments, fully integrated across <br /> your channels</h3>
+                <h3 className='md:block hidden mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Payments, fully integrated across <br /> your channels</h3>
+                <h3 className='block md:hidden mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Payments, fully integrated across your channels</h3>
 
-                <div className='h-fit max-w-[1450px] mx-auto mt-[80px] md:mt-[40px] px-5'>
+                <div className='h-fit max-w-[1450px] mx-auto mt-[30px] md:mt-[40px]'>
                     <div className='flex gap-8 justify-between items-center'>
                         <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden xl:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
                             <HiOutlineArrowLeft size={30} />
