@@ -404,7 +404,7 @@ const Pos = () => {
                     <PaymentGridCard />
                     <form onSubmit={handleFormSubmit}>
                         <div className="mt-[150px] lg:mt-[200px]">
-                            <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">We’re here to help!</h1>
+                            <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">We&apos;re here to help!</h1>
 
                             <div className="w-full radial-gradient overflow-hidden rounded-[20px] md:rounded-[32px] py-6 mt-10 p-4 md:p-8">
                                 <h3 className="text-white">Speak to our friendly team today!</h3>
@@ -438,7 +438,7 @@ const Pos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-x-5 mt-6">
+                            <div className="flex flex-col md:flex-row items-center gap-5 mt-6">
                                 <button type="submit" className="border-2 px-6 flex items-center gap-x-3 py-3 rounded-[56px] font-semibold border-black">Send Message <img src={send} alt="" /> </button>
                                 <p className="font-semibold">{submitMessage && submitMessage}</p>
                             </div>

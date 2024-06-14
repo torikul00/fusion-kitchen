@@ -49,7 +49,6 @@ const GetAQuote = () => {
             setStep(step + 1)
         }
     };
-    console.log(answers)
 
     const handleSingleAns = (answer) => {
         if (answers[step - 1].answer === answer) {

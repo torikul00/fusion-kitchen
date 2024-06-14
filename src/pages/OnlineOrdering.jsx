@@ -381,10 +381,10 @@ const OnlineOrdering = () => {
                 <PaymentGridCard />
             </MainContainer>
 
-            <section className="mb-[180px]">
+            <section className="mt-[100px] mb-[180px]">
                 <MainContainer>
-                    <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>We&apos;re here to help!</h3>
-                    <div className="radial-gradient rounded-3xl flex flex-col lg:flex-row gap-[100px] p-4 md:p-8">
+                    <h3 className='text-[28px] lg:text-[60px] font-bold lg:leading-[70px]'>We&apos;re here to help!</h3>
+                    <div className="mt-10  radial-gradient rounded-3xl flex flex-col lg:flex-row gap-[100px] p-4 md:p-8">
                         <div className="lg:w-[40%] text-white border border-primary rounded-[32px] overflow-hidden px-12 py-10" style={{ boxShadow: '1px 1px 22px -7px #9ee87094' }}>
                             <h1 className="text-[32px] font-bold">Free</h1>
                             <h3 className="text-[20px] mb-3">Unlimited orders</h3>
@@ -417,7 +417,7 @@ const OnlineOrdering = () => {
                             <input required type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Phone no" />
                             <input required type="email" id="email" name="email" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Email address" />
                             <textarea required rows={3} id="message" name="message" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-[32px] py-2.5 px-5 placeholder:text-[#808080] shadow-inset" placeholder="Message"></textarea>
-                            <div className="flex items-center mt-5 gap-x-5">
+                            <div className="flex flex-col md:flex-row items-center mt-5 gap-5">
                                 <button type="submit" className="border border-primary hover:shadow-md hover:shadow-[#9ee8705d] transition-all text-lg font-bold flex gap-3 items-center px-8 py-3  rounded-full">
                                     Send Message
                                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
