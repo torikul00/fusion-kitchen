@@ -316,12 +316,12 @@ const Pos = () => {
                     </div>
                 </div>
 
-                <div>
-                    <div className="max-w-[1300px] px-5 mt-[200px] mx-auto">
+                {/* <div className="max-w-[1300px] px-5 mt-[200px] mx-auto">
                         <GetAQuote />
-                    </div>
-                </div>
+                    </div> */}
             </section>
+
+            <GetAQuote />
 
             <section className="w-full radial-gradient text-white py-[100px] lg:py-[150px]">
                 <MainContainer>
