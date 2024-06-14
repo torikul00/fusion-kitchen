@@ -28,7 +28,7 @@ import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
@@ -44,7 +44,7 @@ const OnlineOrdering = () => {
                     <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center overflow-hidden`}>
                         <div className="w-full lg:w-2/5 flex flex-col-reverse">
                             <div className="my-20 lg:my-0">
-                                <h1 className="w-[90%] sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">Online</span> Ordering System</h1>
+                                <h1 className="w-[90%] sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">Online</span> Ordering System</h1>
                                 <p className="w-5/6 mb-6 md:mb-8 mt-3 text-[#CCCCCC] text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Cut the commission and generate direct orders for yourself</p>
                                 <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                     <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
@@ -91,7 +91,7 @@ const OnlineOrdering = () => {
             </header>
 
             <section className="tab-section-gradient w-full py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
-                <div className="max-w-[1300px] mx-auto">
+                <div className="max-w-[1300px] px-5 mx-auto">
                     <div className="bg-[#9FE870] hide-scrollbar md:rounded-full p-2 overflow-scroll flex lg:grid lg:grid-cols-7 gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
                         <button onClick={() => setCategoryTab('Fasion & Beauty')} className={`${categoryTab === 'Fasion & Beauty' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Fashion & Beauty</button>
                         <button onClick={() => setCategoryTab('Electronics')} className={`${categoryTab === 'Electronics' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Electronics</button>
@@ -103,31 +103,61 @@ const OnlineOrdering = () => {
                     </div>
                 </div>
                 <div key={categoryTab} data-aos="fade-up" data-aos-duration="500" className="">
-                    <div className="lg:flex hidden justify-center gap-10">
-                        <img className="" src={electronicsImg1} alt="" />
-                        <img className="" src={electronicsImg2} alt="" />
-                        <img className="" src={electronicsImg3} alt="" />
+                    <div className="lg:grid grid-cols-3 hidden justify-center gap-10">
+                        <div>
+                            <img className="ml-[20%]" src={electronicsImg1} alt="" />
+                        </div>
+                        <div>
+                            <img className="ml-[20%]" src={electronicsImg2} alt="" />
+                        </div>
+                        <div>
+                            <img className="mx-auto w-[50%]" src={electronicsImg3} alt="" />
+                        </div>
                     </div>
-                    <div className="lg:hidden block">
+                    {categoryTab === 'Fasion & Beauty' && <div className="lg:hidden block px-3">
                         <Swiper
                             slidesPerView="auto"
                             modules={[Autoplay]}
                         >
                             <SwiperSlide>
                                 <div>
-                                    <img className="mx-auto" src={electronicsImg1} alt="" />
+                                    <img className="mx-auto px-2" src={electronicsImg1} alt="" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img className="mx-auto" src={electronicsImg2} alt="" />
+                                <img className="mx-auto px-2" src={electronicsImg2} alt="" />
 
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img className="mx-auto w-[50%]" src={electronicsImg3} alt="" />
+                                <img className="mx-auto px-2 w-[50%]" src={electronicsImg3} alt="" />
                             </SwiperSlide>
 
                         </Swiper>
-                    </div>
+                    </div>}
+                    {categoryTab !== 'Fasion & Beauty' && <div className="lg:hidden block px-3">
+                        <Swiper
+                            slidesPerView="auto"
+                            modules={[Autoplay]}
+                        >
+                            <SwiperSlide>
+                                <div>
+                                    <img className="mx-auto px-2" src={electronicsImg2} alt="" />
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div>
+                                    <img className="mx-auto px-2" src={electronicsImg1} alt="" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div>
+                                    <img className="mx-auto px-2 w-[50%]" src={electronicsImg3} alt="" />
+                                </div>
+                            </SwiperSlide>
+
+                        </Swiper>
+                    </div>}
                 </div>
             </section>
 
@@ -157,12 +187,13 @@ const OnlineOrdering = () => {
                 </div>
             </section >
 
-            <section className="bg-[#141817] py-[135px]">
+            <section className="bg-[#141817] py-[135px] relative overflow-hidden">
+                <div className="greenCustomAnimationPOS"></div>
                 <div className="max-w-[1300px] px-5 mx-auto mb-[130px] lg:mb-[180px]">
                     <div className="flex flex-col lg:flex-row gap-20 items-center">
                         <img src={image2} alt="" className="w-full lg:w-[42%]" />
                         <div className=" lg:w-[58%]">
-                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Create your <span className="text-primary">Free</span> online ordering page today</h1>
+                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Create your <span className="text-primary">Free</span> online ordering page today</h1>
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Accept online food orders for collection or delivery.</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
@@ -174,7 +205,7 @@ const OnlineOrdering = () => {
 
                 <MainContainer>
                     <div className='mb-[200px]'>
-                        <h1 className='w-full text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold'>All the features you need <br /> to help you <span className="text-primary">succeed</span></h1>
+                        <h1 className='w-full text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold'>All the features you need <br /> to help you <span className="text-primary">succeed</span></h1>
                         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 mt-10 lg:mt-16'>
                             <div className='support-shadow bg-[#00000038] p-6 rounded-[32px]'>
                                 <img src={branded} alt="support" />
@@ -213,7 +244,7 @@ const OnlineOrdering = () => {
                 <div className="max-w-[1300px] px-5 mx-auto mb-[180px]">
                     <div className="flex flex-col-reverse lg:flex-row gap-20 items-center">
                         <div className="lg:w-[58%]">
-                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
+                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Connect with your customers directly, build relationships, create loyal customers and generate more repeat orders</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
@@ -228,7 +259,7 @@ const OnlineOrdering = () => {
                     <div className="flex flex-col lg:flex-row gap-20 items-center">
                         <img src={mobileApp} alt="" className="lg:w-[42%]" />
                         <div className="lg:w-[58%]">
-                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Launch a fully branded mobile app for <span className="text-primary">free</span></h1>
+                            <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Launch a fully branded mobile app for <span className="text-primary">free</span></h1>
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Take your business to the next level with a fully branded mobile app. Let your customers place orders, track delivery status and collect loyalty points directly from their phone.</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
@@ -259,7 +290,7 @@ const OnlineOrdering = () => {
 
             <section className="mb-[200px]">
                 <MainContainer>
-                    <h3 className='w-[90%]sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold'>Receive orders directly to <br /> your phone, tablet, or computer</h3>
+                    <h3 className='w-[90%]sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold'>Receive orders directly to <br /> your phone, tablet, or computer</h3>
                     <p className="w-5/6 mb-6 md:mb-8 mt-3 text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Effortlessly oversee your online orders from your phone, tablet, or desktop with our user-friendly platform. Simplifying order management like never before.</p>
                     <img className="scale-110 ml-[-20px] mt-10 md:scale-100 lg:ml-0 lg:mt-0" src={phoneTabletCom} alt="" />
                 </MainContainer>
