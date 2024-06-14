@@ -90,7 +90,7 @@ const OnlineOrdering = () => {
                 </HeaderContainer>
             </header>
 
-            <section className="tab-section-gradient w-full py-12 mb-[180px]">
+            {/* <section className="tab-section-gradient w-full py-12 mb-[180px]">
                 <div className="max-w-[1300px] mx-auto">
                     <div className="bg-[#9FE870] rounded-full p-2 grid grid-cols-7 gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
                         <button onClick={() => setCategoryTab('Fasion & Beauty')} className={`${categoryTab === 'Fasion & Beauty' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full`}>Fashion & Beauty</button>
@@ -107,7 +107,7 @@ const OnlineOrdering = () => {
                     <img src={electronicsImg2} alt="" />
                     <img src={electronicsImg3} alt="" />
                 </div>
-            </section>
+            </section> */}
 
             <section className="mb-[135px]">
                 <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center gap-32">
