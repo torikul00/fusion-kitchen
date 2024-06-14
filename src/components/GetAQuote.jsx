@@ -27,6 +27,21 @@ const GetAQuote = () => {
         }
     };
     const handleNext = () => {
+        if (step === 1) {
+            if (answers[0].answer === '') return
+        }
+        if (step === 2) {
+            if (answers[1].answer === '') return
+        }
+        if (step === 3) {
+            if (answers[2].answer === '') return
+        }
+        if (step === 4) {
+            if (answers[3].answer?.length < 1) return
+        }
+        if (step === 5) {
+            if (answers[4].answer.fullName === '' || answers[4].answer.businessName === '' || answers[4].answer.phone === '' || answers[4].answer.email === '') return
+        }
         if (swiperInstance) {
             swiperInstance.slideNext();
         }
@@ -34,6 +49,7 @@ const GetAQuote = () => {
             setStep(step + 1)
         }
     };
+    console.log(answers)
 
     const handleSingleAns = (answer) => {
         if (answers[step - 1].answer === answer) {
@@ -56,6 +72,12 @@ const GetAQuote = () => {
         else {
             updatedAnswers[step - 1].answer.push(aswer)
         }
+        setAnswers([...updatedAnswers])
+    }
+
+    const handleInputChange = (e) => {
+        const updatedAnswers = [...answers]
+        updatedAnswers[step - 1].answer[e.target.name] = e.target.value
         setAnswers([...updatedAnswers])
     }
 
@@ -91,7 +113,7 @@ const GetAQuote = () => {
             </MainContainer>
 
             <div className="flex gap-5 items-center justify-center">
-                <button onClick={handlePrev} style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className={`p-7 hidden md:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200 ${step > 1 ? 'opacity-100 visible' : 'opacity-0 -z-[99] invisible'}`}>
+                <button onClick={handlePrev} style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className={`p-7 hidden xl:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200 ${step > 1 ? 'opacity-100 visible' : 'opacity-0 -z-[99] invisible'}`}>
                     <HiOutlineArrowLeft size={30} />
                 </button>
                 <div className="max-w-[1170px] px-5 quote-swiper overflow-hidden">
@@ -129,7 +151,7 @@ const GetAQuote = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
@@ -155,7 +177,7 @@ const GetAQuote = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
@@ -178,7 +200,7 @@ const GetAQuote = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
@@ -244,7 +266,7 @@ const GetAQuote = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
@@ -253,13 +275,13 @@ const GetAQuote = () => {
                             <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">Please provide us with your contact details so we can send you the best quote.</p>
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5'>
-                                    <input type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Full name" />
-                                    <input type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Business name" />
-                                    <input type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Phone no" />
-                                    <input type="email" id="email" name="email" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Email address" />
+                                    <input onChange={handleInputChange} type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Full name" />
+                                    <input onChange={handleInputChange} type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Business name" />
+                                    <input onChange={handleInputChange} type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Phone no" />
+                                    <input onChange={handleInputChange} type="email" id="email" name="email" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 md:py-[14px] px-4 md:px-6 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Email address" />
                                 </div>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
@@ -274,7 +296,7 @@ const GetAQuote = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
@@ -283,14 +305,14 @@ const GetAQuote = () => {
                             <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12 h-[290px] flex flex-col justify-center items-center">
                                 <p className="text-white text-center md:text-left font-bold text-xl md:text-2xl">Successfully submitted your information.</p>
                             </div>
-                            <div className='flex justify-center gap-5 mt-6 md:hidden'>
+                            <div className='flex justify-center gap-5 mt-6 xl:hidden'>
                                 <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                                 <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <button onClick={handleNext} style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden md:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200'>
+                <button onClick={handleNext} style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden xl:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200'>
                     <HiOutlineArrowRight size={30} />
                 </button>
             </div>
