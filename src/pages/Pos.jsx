@@ -2,8 +2,8 @@ import HeaderContainer from "../components/HeaderContainer";
 import MainContainer from "../components/MainContainer";
 import Navbar from "../components/Navbar";
 import header from '../assets/images/pos/header.png'
-import { FaArrowDown, FaArrowRight } from "react-icons/fa6";
-import { useState } from 'react';
+import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
+import { useEffect, useState } from 'react';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -26,9 +26,13 @@ import send from '../assets/images/pos/send.svg'
 import Footer from "../components/Footer";
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
+import messageIcon from "../assets/images/online ordering/messageIcon.svg"
 
 const Pos = () => {
     const [swiperInstance, setSwiperInstance] = useState(null)
+    const [isSticky, setIsSticky] = useState(false);
+    const [openBussinessType, setOpenBusinessType] = useState(false)
+    const [industry, setIndustry] = useState("Restaurant")
 
     const handlePrev = () => {
         if (swiperInstance) {
@@ -38,6 +42,24 @@ const Pos = () => {
     const handleNext = () => {
         if (swiperInstance) {
             swiperInstance.slideNext();
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+    
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        const triggerScrollPos = 750;
+        if (currentScrollPos > triggerScrollPos) {
+            setIsSticky(true);
+        } else {
+            setIsSticky(false);
         }
     };
     return (
@@ -60,6 +82,50 @@ const Pos = () => {
                             <img className="" src={header} alt="header" />
                             <button className="lg:flex hidden text-primary  items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
+                    </div>
+
+                    {/* large device sticky */}
+                    <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
+                        <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
+                            <h4 className="text-medium text-xl">Online Ordering</h4>
+                            <div className="flex items-center gap-7">
+                                <ul className="flex items-center gap-6">
+                                    <li onClick={() => setIndustry("Restaurant")} className={`${industry === 'Restaurant' ? 'text-primary' : ''} cursor-pointer`}>Restaurant</li>
+                                    <li onClick={() => setIndustry("Retail")} className={`${industry === 'Retail' ? 'text-primary' : ''} cursor-pointer`}>Retail</li>
+                                    <li onClick={() => setIndustry("Themes")} className={`${industry === 'Themes' ? 'text-primary' : ''} cursor-pointer`}>Themes</li>
+                                    <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
+                                </ul>
+                                <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
+                                    <button className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                    <button className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* small device sticky */}
+                    <div className={`${isSticky ? 'block lg:hidden fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} ${openBussinessType ? 'w-full h-[calc(100vh-54px)]' : 'w-full h-fit'} transition-all`}>
+                        <div onClick={() => setOpenBusinessType(!openBussinessType)} className={`w-full h-[54px] flex gap-5 items-center justify-between px-7 sm:px-10 ${openBussinessType ? 'border-b border-[#d9d9d9] border-opacity-20' : ''}`}>
+                            <h4 className="text-medium">Online Ordering</h4>
+                            <button className={`${openBussinessType ? 'rotate-180' : 'rotate-0'} transition-all`}><FaAngleDown /></button>
+                        </div>
+
+                        {openBussinessType && <div className="mt-8">
+                            <div className={`flex justify-center items-center gap-[9px] mb-4 sm:mb-5`}>
+                                <h3 className={`text-lg font-medium'}`}>Customize your experience by</h3>
+                                <FaArrowDown />
+                            </div>
+                            <div onClick={() => setOpenBusinessType(false)} className="text-sm flex flex-col items-center justify-center gap-4 w-[80%] sm:w-[70%] mx-auto">
+                                <button onClick={() => setIndustry("Restaurant")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Restaurant' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Restaurant</button>
+                                <button onClick={() => setIndustry("Retail")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Retail' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Retail</button>
+                                <button onClick={() => setIndustry("Themes")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Themes' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Themes</button>
+                                <button onClick={() => setIndustry("Pricing")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Pricing' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Pricing</button>
+                            </div>
+                        </div>}
+                    </div>
+                    <div className={`${isSticky ? 'lg:hidden bg-[#141817] py-2 w-full fixed text-white z-[99] left-0 bottom-0 right-0 flex gap-4 justify-center border-t border-[#d9d9d9] border-opacity-20' : 'hidden'} transition-all`}>
+                        <img src={messageIcon} alt="" />
+                        <button className="py-2.5 px-12 text-sm rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Create you site</button>
                     </div>
                 </HeaderContainer>
             </header>

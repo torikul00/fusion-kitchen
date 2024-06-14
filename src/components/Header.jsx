@@ -17,6 +17,7 @@ const Header = () => {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
         const triggerScrollPos = 750;

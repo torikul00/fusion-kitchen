@@ -22,7 +22,7 @@ const PaymentGridCard = () => {
         }
     };
     return (
-        <div className=''>
+        <div>
             <div className='block lg:hidden'>
                 <h3 className='mx-auto text-[#1A1A1A] text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Payments, fully integrated across <br /> your channels</h3>
 
