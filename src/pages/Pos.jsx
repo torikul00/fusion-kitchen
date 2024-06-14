@@ -33,7 +33,7 @@ const Pos = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [industry, setIndustry] = useState("Restaurant")
-
+    const [submitMessage, setSubmitMessage] = useState('')
     const handlePrev = () => {
         if (swiperInstance) {
             swiperInstance.slidePrev();
@@ -52,7 +52,7 @@ const Pos = () => {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
         const triggerScrollPos = 750;
@@ -62,6 +62,19 @@ const Pos = () => {
             setIsSticky(false);
         }
     };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        e.target.reset()
+        const formData = new FormData(e.target);
+        const full_name = formData.get('full_name')
+        const phone_no = formData.get('phone_no')
+        const business_name = formData.get('business_name')
+        const email = formData.get('email')
+        const inquery = formData.get('inquery')
+        console.log(full_name, phone_no, business_name, email, inquery);
+        setSubmitMessage('Form submitted successfully!')
+    }
     return (
         <>
             <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
@@ -389,43 +402,46 @@ const Pos = () => {
             <section className="my-[100px] lg:my-[180px]">
                 <MainContainer>
                     <PaymentGridCard />
-                    <form >
+                    <form onSubmit={handleFormSubmit}>
                         <div className="mt-[150px] lg:mt-[200px]">
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">We’re here to help!</h1>
 
                             <div className="w-full radial-gradient overflow-hidden rounded-[20px] md:rounded-[32px] py-6 mt-10 p-4 md:p-8">
                                 <h3 className="text-white">Speak to our friendly team today!</h3>
                                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Full name" type="text" />
-                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Phone no" type="text" />
+                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Full name" type="text" name="full_name" required />
+                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Phone no" type="text" name="phone_no" required />
                                 </div>
                                 <div className="mt-4 grid  md:grid-cols-2 gap-4 md:gap-8">
-                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Business name" type="text" />
-                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Email address" type="email" />
+                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Business name" type="text" name="business_name" />
+                                    <input className="inner-shadow focus:outline-none h-[50px] rounded-[32px] px-8" placeholder="Email address" type="email" name="email" required />
                                 </div>
-                                <textarea className="w-full px-8 py-4 mt-4 rounded-[32px] h-[150px]  inner-shadow focus:outline-none" name="" id="" placeholder="Let us know about you inquery"></textarea>
+                                <textarea className="w-full px-8 py-4 mt-4 rounded-[32px] h-[150px]  inner-shadow focus:outline-none" name="inquery" id="" required placeholder="Let us know about you inquery"></textarea>
                                 <div className="text-white mt-4 lg:block hidden">
                                     <div>
-                                        <input type="radio" />
+                                        <input type="radio" name="privacy1" required />
                                         <span className="text-xs ml-4">I agree to the processing and sharing of my personal data as required to use the Grafterr Service and as outlined within the Terms of Use and Privacy Policy.</span>
                                     </div>
                                     <div>
-                                        <input type="radio" />
+                                        <input type="radio" name="privacy2" required />
                                         <span className="text-xs ml-4">I would like to stay up to date with Grafterr&apos;s latest news and offers and agree to receive any updates and newsletter.</span>
                                     </div>
                                 </div>
                                 <div className="text-white mt-4 lg:hidden block">
                                     <div>
-                                        <input type="radio" />
+                                        <input type="radio" required />
                                         <span className="text-xs ml-4">I agree with the Terms of Use and Privacy Policy.</span>
                                     </div>
                                     <div>
-                                        <input type="radio" />
+                                        <input type="radio" required />
                                         <span className="text-xs ml-4">I agree to receive any updates and newsletter.</span>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" className="border-2 px-6 mt-6 flex items-center gap-x-3 py-3 rounded-[56px] font-semibold border-black">Send Message <img src={send} alt="" /> </button>
+                            <div className="flex items-center gap-x-5 mt-6">
+                                <button type="submit" className="border-2 px-6 flex items-center gap-x-3 py-3 rounded-[56px] font-semibold border-black">Send Message <img src={send} alt="" /> </button>
+                                <p className="font-semibold">{submitMessage && submitMessage}</p>
+                            </div>
                         </div>
                     </form>
                 </MainContainer>

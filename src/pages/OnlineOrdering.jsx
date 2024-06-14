@@ -39,7 +39,7 @@ const OnlineOrdering = () => {
     const [categoryTab, setCategoryTab] = useState("Fasion & Beauty");
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [industry, setIndustry] = useState("Restaurant")
-
+    const [submitMessage, setSubmitMessage] = useState('')
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -47,7 +47,7 @@ const OnlineOrdering = () => {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
         const triggerScrollPos = 750;
@@ -57,6 +57,19 @@ const OnlineOrdering = () => {
             setIsSticky(false);
         }
     };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const fullName = formData.get('fullName');
+        const businessName = formData.get('businessName');
+        const phone = formData.get('phone');
+        const email = formData.get('email');
+        console.log(fullName, businessName, phone,email);
+        e.target.reset();
+        setSubmitMessage('Form submitted successfully!');
+    }
+
 
     return (
         <>
@@ -396,20 +409,23 @@ const OnlineOrdering = () => {
                             <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
                         </div>
 
-                        <form className="lg:w-[55%] text-white">
+                        <form onSubmit={handleFormSubmit} className="lg:w-[55%] text-white">
                             <h4 className="text-[22px] font-bold mb-1">Need some advice?</h4>
                             <p className="text-sm mb-5">Our friendly team are on hand to answer any questions you may have, no hard sale, we promise!</p>
-                            <input type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Full name" />
-                            <input type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Business name" />
-                            <input type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Phone no" />
-                            <input type="email" id="email" name="email" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Email address" />
-                            <textarea rows={3} id="message" name="message" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-[32px] py-2.5 px-5 placeholder:text-[#808080] shadow-inset" placeholder="Message"></textarea>
-                            <button type="button" className="border border-primary hover:shadow-md hover:shadow-[#9ee8705d] transition-all text-lg font-bold flex gap-3 items-center px-8 py-3 mt-5 rounded-full">
-                                Send Message
-                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M24.8054 2.03428L16.0559 23.564C15.8593 24.0228 15.5193 24.3054 15.0359 24.4119C14.5526 24.5184 14.1307 24.3914 13.7702 24.031L0.990024 11.2508C0.629557 10.8903 0.502574 10.4684 0.609076 9.98504C0.715577 9.50168 0.998216 9.1617 1.45699 8.96508L22.9867 0.21556C23.5766 -0.0138278 24.0845 0.0844815 24.5105 0.510488C24.9365 0.936494 25.0348 1.44443 24.8054 2.03428ZM14.2618 20.5901L20.9959 4.02504L4.43084 10.7592L7.87166 14.2L15.2449 9.77613L10.8209 17.1493L14.2618 20.5901Z" fill="white" />
-                                </svg>
-                            </button>
+                            <input required type="text" id="fullName" name="fullName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Full name" />
+                            <input required type="text" id="businessName" name="businessName" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Business name" />
+                            <input required type="text" id="phone" name="phone" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Phone no" />
+                            <input required type="email" id="email" name="email" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-full py-2.5 px-5 mb-3 placeholder:text-[#808080] shadow-inset" placeholder="Email address" />
+                            <textarea required rows={3} id="message" name="message" className="w-full border-none outline-none bg-white text-[#1A1A1A] rounded-[32px] py-2.5 px-5 placeholder:text-[#808080] shadow-inset" placeholder="Message"></textarea>
+                            <div className="flex items-center mt-5 gap-x-5">
+                                <button type="submit" className="border border-primary hover:shadow-md hover:shadow-[#9ee8705d] transition-all text-lg font-bold flex gap-3 items-center px-8 py-3  rounded-full">
+                                    Send Message
+                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24.8054 2.03428L16.0559 23.564C15.8593 24.0228 15.5193 24.3054 15.0359 24.4119C14.5526 24.5184 14.1307 24.3914 13.7702 24.031L0.990024 11.2508C0.629557 10.8903 0.502574 10.4684 0.609076 9.98504C0.715577 9.50168 0.998216 9.1617 1.45699 8.96508L22.9867 0.21556C23.5766 -0.0138278 24.0845 0.0844815 24.5105 0.510488C24.9365 0.936494 25.0348 1.44443 24.8054 2.03428ZM14.2618 20.5901L20.9959 4.02504L4.43084 10.7592L7.87166 14.2L15.2449 9.77613L10.8209 17.1493L14.2618 20.5901Z" fill="white" />
+                                    </svg>
+                                </button>
+                                <p className="font-semibold text-white">{submitMessage && submitMessage}</p>
+                            </div>
                         </form>
                     </div>
                 </MainContainer>
