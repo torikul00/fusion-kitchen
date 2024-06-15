@@ -15,7 +15,7 @@ const Footer = () => {
                         <h1 className='text-[#808080] mb-4'>Products</h1>
                         <div className='flex flex-col gap-y-4'>
                             <Link to="#">Commerce</Link>
-                            <Link to="#">Point of sale</Link>
+                            <Link to="/pos">Point of sale</Link>
                             <Link to="#">Payments</Link>
                             <Link to="#">Online</Link>
                             <Link to="#">Invoices</Link>

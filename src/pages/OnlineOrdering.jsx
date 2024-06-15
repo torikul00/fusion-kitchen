@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeaderContainer from "../components/HeaderContainer";
 import Navbar from "../components/Navbar";
 import MainContainer from "../components/MainContainer";
@@ -40,6 +40,9 @@ const OnlineOrdering = () => {
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [industry, setIndustry] = useState("Restaurant")
     const [submitMessage, setSubmitMessage] = useState('')
+    const getAQuoteRef = useRef(null);
+    const formRef = useRef(null);
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -57,7 +60,12 @@ const OnlineOrdering = () => {
             setIsSticky(false);
         }
     };
-
+    const navigateToGetAQuote = () => {
+        getAQuoteRef.current.scrollIntoView()
+    }
+    const navigateToForm = () => {
+        formRef.current.scrollIntoView()
+    }
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -82,8 +90,8 @@ const OnlineOrdering = () => {
                                 <h1 className="w-[90%] sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">Online</span> Ordering System</h1>
                                 <p className="w-5/6 mb-6 md:mb-8 mt-3 text-[#CCCCCC] text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Cut the commission and generate direct orders for yourself</p>
                                 <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
-                                    <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                    <button onClick={navigateToGetAQuote} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                    <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
                             </div>
                             <div className="lg:hidden w-full mt-6 flex justify-center items-center">
@@ -135,8 +143,8 @@ const OnlineOrdering = () => {
                                     <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
                                 </ul>
                                 <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                    <button className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                    <button onClick={navigateToGetAQuote} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                    <button onClick={navigateToForm} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
                             </div>
                         </div>
@@ -276,7 +284,7 @@ const OnlineOrdering = () => {
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Accept online food orders for collection or delivery.</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
                     </div>
@@ -327,7 +335,7 @@ const OnlineOrdering = () => {
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Connect with your customers directly, build relationships, create loyal customers and generate more repeat orders</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
                         <img src={marketingTools} alt="" className="w-[80%] lg:w-[42%]" />
@@ -342,7 +350,7 @@ const OnlineOrdering = () => {
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Take your business to the next level with a fully branded mobile app. Let your customers place orders, track delivery status and collect loyalty points directly from their phone.</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
                     </div>
@@ -375,7 +383,9 @@ const OnlineOrdering = () => {
                 </MainContainer>
             </section>
 
-            <GetAQuote />
+            <div ref={getAQuoteRef}>
+                <GetAQuote />
+            </div>
 
             <MainContainer>
                 <PaymentGridCard />
@@ -383,7 +393,7 @@ const OnlineOrdering = () => {
 
             <section className="my-[60px] lg:my-[120px]">
                 <MainContainer>
-                    <h3 className='text-[28px] lg:text-[60px] font-bold lg:leading-[70px]'>We&apos;re here to help!</h3>
+                    <h3 ref={formRef} className='text-[28px] lg:text-[60px] font-bold lg:leading-[70px]'>We&apos;re here to help!</h3>
                     <div className="mt-10  radial-gradient rounded-3xl flex flex-col lg:flex-row gap-[100px] p-4 md:p-8">
                         <div className="lg:w-[40%] text-white border border-primary rounded-[32px] overflow-hidden px-12 py-10" style={{ boxShadow: '1px 1px 22px -7px #9ee87094' }}>
                             <h1 className="text-[32px] font-bold">Free</h1>

@@ -3,7 +3,7 @@ import MainContainer from "../components/MainContainer";
 import Navbar from "../components/Navbar";
 import header from '../assets/images/pos/header.png'
 import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -34,6 +34,9 @@ const Pos = () => {
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [industry, setIndustry] = useState("Restaurant")
     const [submitMessage, setSubmitMessage] = useState('')
+    const getAQuoteRef = useRef(null)
+    const formRef = useRef(null)
+    const pricingRef = useRef(null)
     const handlePrev = () => {
         if (swiperInstance) {
             swiperInstance.slidePrev();
@@ -62,7 +65,15 @@ const Pos = () => {
             setIsSticky(false);
         }
     };
-
+    const navigateToGetAQuote = () => {
+        getAQuoteRef.current.scrollIntoView()
+    }
+    const navigateToForm = () => {
+        formRef.current.scrollIntoView()
+    }
+    const navigateToPricing = () => {
+        pricingRef.current.scrollIntoView()
+    }
     const handleFormSubmit = (e) => {
         e.preventDefault();
         e.target.reset()
@@ -91,8 +102,8 @@ const Pos = () => {
                             <h1 className="w-[90%] md:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">ePOS </span>Software for Hospitality</h1>
                             <p className="mb-6 md:mb-8 mt-3 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Work smarter and automate for efficiency on the software and hardware platform millions of businesses trust</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                <button onClick={navigateToGetAQuote} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                             <button className="lg:hidden flex mx-auto text-primary  items-center gap-x-3 mt-28 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
@@ -115,8 +126,8 @@ const Pos = () => {
                                     <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
                                 </ul>
                                 <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                    <button className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                    <button onClick={navigateToGetAQuote} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                    <button onClick={navigateToForm} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
                             </div>
                         </div>
@@ -251,8 +262,8 @@ const Pos = () => {
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">All your orders from different channels, synced directly to your <span className="text-primary">POS</span></h1>
                             <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-10">OS, website, mobile, self-serve kiosk, delivery apps... Manage all your orders in one place and prepare every order quicker than before</p>
                             <div className="mt-10 flex">
-                                <button className="text-sm py-2.5 md:py-4 lg:py-[18px] px-4 md:px-7 lg:px-9 md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Fusion POS</button>
-                                <button className="text-sm py-2.5 ml-5 md:py-4 lg:py-[18px] px-4 md:px-7 lg:px-9 md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                <button onClick={navigateToPricing} className="text-sm py-2.5 md:py-4 lg:py-[18px] px-4 md:px-7 lg:px-9 md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Fusion POS</button>
+                                <button onClick={navigateToForm} className="text-sm py-2.5 ml-5 md:py-4 lg:py-[18px] px-4 md:px-7 lg:px-9 md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
                         <img data-aos="fade-up" src={image2} alt="" />
@@ -337,7 +348,9 @@ const Pos = () => {
 
             </section>
 
-            <GetAQuote />
+            <div ref={getAQuoteRef}>
+                <GetAQuote />
+            </div>
 
             <section className="w-full radial-gradient text-white py-[100px] lg:py-[150px]">
                 <MainContainer>
@@ -346,20 +359,20 @@ const Pos = () => {
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Process more orders,<br />faster than ever before</h1>
                             <p className="mb-6 md:mb-8 my-6 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Allow staff to focus on preparing orders and <br /> delivering a better service</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Buy now</button>
-                                <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Speak to an expert</button>
+                                <button onClick={navigateToPricing} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Buy now</button>
+                                <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Speak to an expert</button>
                             </div>
                         </div>
                         <img data-aos="fade-up" className="mt-10 lg:block hidden" src={image6} alt="image6" />
                         <img data-aos="fade-up" className="mt-10 lg:hidden block" src={image8} alt="image6" />
                     </div>
 
-                    <div className="mt-[150px] lg:mt-[200px]">
+                    <div ref={pricingRef} className="mt-[150px] lg:mt-[200px]">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Choose a plan that&apos;s <span className="text-primary">right</span> for you</h1>
                         <p className="w-[90%] lg:w-[55%] mb-6 md:mb-8 my-6 text-[#CCCCCC] sm:text-base md:text-lg xl:text-[22px] tracking-widest">All of our packages are totally flexible, so you can upgrade, downgrade or pause your subscription anytime!</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-8 mt-[40px] lg:mt-[100px]">
-                            <div className=" bg-black/10 support-shadow rounded-[32px] overflow-hidden px-8 py-12">
+                            <div className=" bg-black/10 hover:border-[2px] support-shadow transition-all border-primary hover:lg:scale-110 rounded-[32px] overflow-hidden px-8 py-12">
                                 <h1 className="text-[32px] font-bold">Free</h1>
                                 <h3 className="text-[20px]">Unlimited orders</h3>
                                 <h3 className="text-[32px] my-5"><span className="text-primary">£55</span> / per month</h3>
@@ -373,7 +386,7 @@ const Pos = () => {
                                 </div>
                                 <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
                             </div>
-                            <div className="bg-black/10 border-[2px] border-primary lg:scale-110 rounded-[32px] overflow-hidden px-8 py-12">
+                            <div className="bg-black/10 hover:border-[2px] support-shadow transition-all border-primary hover:lg:scale-110 rounded-[32px] overflow-hidden px-8 py-12">
                                 <h1 className="text-[32px] font-bold">Premium</h1>
                                 <h3 className="text-[20px]">Unlimited orders</h3>
                                 <h3 className="text-[32px] my-5"><span className="text-primary">£75</span> / per month</h3>
@@ -387,7 +400,7 @@ const Pos = () => {
                                 </div>
                                 <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
                             </div>
-                            <div className="bg-black/10 support-shadow rounded-[32px] overflow-hidden px-8 py-12">
+                            <div className="bg-black/10 hover:border-[2px] support-shadow transition-all border-primary hover:lg:scale-110 rounded-[32px] overflow-hidden px-8 py-12">
                                 <h1 className="text-[32px] font-bold">Enterprise</h1>
                                 <h3 className="text-[20px]">Multi-location + Franchise</h3>
                                 <h3 className="text-[32px] my-5 text-primary">Speak to sales</h3>
@@ -405,7 +418,7 @@ const Pos = () => {
             <section className="my-[100px] lg:my-[180px]">
                 <MainContainer>
                     <PaymentGridCard />
-                    <form onSubmit={handleFormSubmit}>
+                    <form ref={formRef} onSubmit={handleFormSubmit}>
                         <div className="mt-[60px] lg:mt-[200px]">
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">We&apos;re here to help!</h1>
 
@@ -422,21 +435,21 @@ const Pos = () => {
                                 <textarea className="w-full px-8 py-4 mt-4 rounded-[32px] h-[150px]  inner-shadow focus:outline-none" name="inquery" id="" required placeholder="Let us know about you inquery"></textarea>
                                 <div className="text-white mt-4 lg:block hidden">
                                     <div>
-                                        <input type="radio" name="privacy1" required />
+                                        <input type="radio" name="privacy1" />
                                         <span className="text-xs ml-4">I agree to the processing and sharing of my personal data as required to use the Grafterr Service and as outlined within the Terms of Use and Privacy Policy.</span>
                                     </div>
                                     <div>
-                                        <input type="radio" name="privacy2" required />
+                                        <input type="radio" name="privacy2" />
                                         <span className="text-xs ml-4">I would like to stay up to date with Grafterr&apos;s latest news and offers and agree to receive any updates and newsletter.</span>
                                     </div>
                                 </div>
                                 <div className="text-white mt-4 lg:hidden block">
                                     <div>
-                                        <input type="radio" required />
+                                        <input type="radio" />
                                         <span className="text-xs ml-4">I agree with the Terms of Use and Privacy Policy.</span>
                                     </div>
                                     <div>
-                                        <input type="radio" required />
+                                        <input type="radio" />
                                         <span className="text-xs ml-4">I agree to receive any updates and newsletter.</span>
                                     </div>
                                 </div>

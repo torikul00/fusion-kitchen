@@ -27,9 +27,9 @@ const Navbar = () => {
   return (
     <nav className={`h-[70px] xl:h-[90px] w-full flex items-center justify-between text-white z-10`}>
       <div className="flex gap-10 2xl:gap-[60px] items-center">
-        <button>
+        <Link to="/">
           <img src={logo} alt="" className="h-6 sm:h-7 xl:h-9 w-auto" />
-        </button>
+        </Link>
 
         <ul className="hidden xl:flex items-center large">
           <li className="hoverable group">
@@ -113,12 +113,12 @@ const Navbar = () => {
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Commerce</li>
                       <li><Link>All commerce products</Link></li>
                       <li><Link>Hardware</Link></li>
-                      <li><Link>Point of sale</Link></li>
+                      <li><Link to="/pos">Point of sale</Link></li>
                       <li><Link>Restaurants POS</Link></li>
                       <li><Link>Retail POS</Link></li>
                       <li><Link>Appointment POS</Link></li>
                       <li><Link>Invoices</Link></li>
-                      <li><Link>Online ordering</Link></li>
+                      <li><Link to="/online-ordering">Online ordering</Link></li>
                       <li><Link>Online store</Link></li>
                       <li><Link>Payment links</Link></li>
                       <li><Link>Payments</Link></li>
