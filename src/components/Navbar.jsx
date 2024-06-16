@@ -65,7 +65,7 @@ const Navbar = () => {
                       <li><Link>Loyality programs</Link></li>
                       <li><Link>Gift cards</Link></li>
                       <li><Link>Staff & payroll</Link></li>
-                      <li><Link>Payments</Link></li>
+                      <li><Link to='/payments'>Payments</Link></li>
                       <li><Link>Invoices</Link></li>
                       <li><Link>Integrations</Link></li>
                     </ul>
@@ -257,7 +257,7 @@ const Navbar = () => {
                 <li><Link className="py-2.5 px-12 inline-block w-full">Loyality programs</Link></li>
                 <li><Link className="py-2.5 px-12 inline-block w-full">Gift cards</Link></li>
                 <li><Link className="py-2.5 px-12 inline-block w-full">Staff & payroll</Link></li>
-                <li><Link className="py-2.5 px-12 inline-block w-full">Payments</Link></li>
+                <li><Link to='/payments' className="py-2.5 px-12 inline-block w-full">Payments</Link></li>
                 <li><Link className="py-2.5 px-12 inline-block w-full">Invoices</Link></li>
                 <li><Link className="py-2.5 px-12 inline-block w-full">Integrations</Link></li>
               </ul>}
