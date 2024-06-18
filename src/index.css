@@ -95,6 +95,22 @@ html {
   height: 15px !important;
 }
 
+.payment .swiper-pagination-bullet {
+  margin-left: 0px !important;
+  margin-right: 20px !important;
+  background-color: white !important;
+  width: 15px !important;
+  height: 15px !important;
+  opacity: 0.8;
+}
+
+.payment .swiper-pagination-bullet-active {
+  background-color: #9FE870 !important;
+  opacity: 1;
+  width: 18px !important;
+  height: 18px !important;
+}
+
 .swiper-pagination-bullet-active {
   background-color: #9FE870 !important;
   width: 18px !important;
@@ -300,15 +316,15 @@ html {
   background-image: linear-gradient(to bottom, #141817, #46494a, #7f8182, #bdbebf, #ffffff);
 }
 
-.quote-swiper .swiper > .swiper-pagination.swiper-pagination-bullets {
+.quote-swiper .swiper>.swiper-pagination.swiper-pagination-bullets {
   display: none !important;
 }
 
-.shadow-inset{
-  box-shadow: inset 10px 10px 13px -3px rgba(0,0,0,0.25);
+.shadow-inset {
+  box-shadow: inset 10px 10px 13px -3px rgba(0, 0, 0, 0.25);
 }
 
-.hide-scrollbar{
+.hide-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
