@@ -121,7 +121,7 @@ const Navbar = () => {
                       <li><Link to="/online-ordering">Online ordering</Link></li>
                       <li><Link>Online store</Link></li>
                       <li><Link>Payment links</Link></li>
-                      <li><Link>Payments</Link></li>
+                      <li><Link to='/payments'>Payments</Link></li>
                     </ul>
                     <ul className="nav-list space-y-5">
                       <li className="text-[#b8b8b8ea] font-semibold uppercase text-sm tracking-[3px] mb-8">Customers</li>
