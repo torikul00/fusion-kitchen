@@ -11,7 +11,6 @@ import CustomerReviews from "../components/CustomerReviews";
 import Faq from "../components/Faq";
 import done from '../assets/images/pos/done.svg'
 import pricingData from "../Utilities/pricingData";
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,15 +25,20 @@ const Pricing = () => {
     const [subscriptionTypeTwo, setSubscriptionTypeTwo] = useState('monthly')
     const [activeFeature, setActiveFeature] = useState(null)
     const [swiperInstance, setSwiperInstance] = useState(null)
+    const [activePlan, setActivePlan] = useState('standard')
 
     const handlePrev = () => {
         if (swiperInstance) {
             swiperInstance.slidePrev();
+            if(activePlan === 'enterprise') setActivePlan('premium')
+            else if(activePlan === 'premium') setActivePlan('standard')
         }
     };
     const handleNext = () => {
         if (swiperInstance) {
             swiperInstance.slideNext();
+            if(activePlan === 'standard') setActivePlan('premium')
+            else if(activePlan === 'premium') setActivePlan('enterprise')
         }
     };
 
@@ -72,6 +76,7 @@ const Pricing = () => {
         console.log(full_name, phone_no, business_name, email, inquery);
         setSubmitMessage('Form submitted successfully!')
     }
+
     return (
         <>
             <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
@@ -141,8 +146,8 @@ const Pricing = () => {
             <section className="w-full bg-[#141817] text-white py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
                 <MainContainer>
                     <div className="w-fit mx-auto bg-[#9FE870] rounded-full p-2 flex gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
-                        <button onClick={() => setSubscriptionType('monthly')} className={`${subscriptionType === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
-                        <button onClick={() => setSubscriptionType('yearly')} className={`${subscriptionType === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
+                        <button onClick={() => setSubscriptionType('monthly')} className={`${subscriptionType === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
+                        <button onClick={() => setSubscriptionType('yearly')} className={`${subscriptionType === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-8 my-[40px] lg:my-[100px]">
@@ -319,13 +324,13 @@ const Pricing = () => {
                                 {activeFeature?.subFeatures?.map((subFeature) => <div key={subFeature?.id} className="grid grid-cols-4">
                                     <p className="font-semibold">{subFeature?.name}</p>
                                     <div className="px-12">
-                                        {subFeature?.standard ? <img src={done} alt="" /> : '-'}
+                                        {subFeature?.standard ? <img src={done} alt="" /> : <span className="block w-6 text-center">-</span>}
                                     </div>
                                     <div className="px-12">
-                                        {subFeature?.premium ? <img src={done} alt="" /> : '-'}
+                                        {subFeature?.premium ? <img src={done} alt="" /> : <span className="block w-6 text-center">-</span>}
                                     </div>
                                     <div className="px-12">
-                                        {subFeature?.enterprise ? <img src={done} alt="" /> : '-'}
+                                        {subFeature?.enterprise ? <img src={done} alt="" /> : <span className="block w-6 text-center">-</span>}
                                     </div>
                                 </div>)}
                             </div>
@@ -333,22 +338,23 @@ const Pricing = () => {
 
                         {/* small device */}
                         <div className="lg:hidden w-fit mx-auto bg-[#9FE870] rounded-full p-2 flex gap-2 mb-8" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
-                            <button onClick={() => setSubscriptionTypeTwo('monthly')} className={`${subscriptionTypeTwo === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
-                            <button onClick={() => setSubscriptionTypeTwo('yearly')} className={`${subscriptionTypeTwo === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
+                            <button onClick={() => setSubscriptionTypeTwo('monthly')} className={`${subscriptionTypeTwo === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 py-2 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
+                            <button onClick={() => setSubscriptionTypeTwo('yearly')} className={`${subscriptionTypeTwo === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 py-2 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
                         </div>
 
                         <div className="flex lg:hidden gap-5 justify-between items-end pb-4 mb-8 border-b-[0.5px] border-primary">
                             <p>Feature List</p>
                             <div className="w-2/3 gap-7 flex items-end">
                                 <button onClick={handlePrev}><svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.18164 1L1.61134 9.32733C1.2646 9.70875 1.2646 10.2913 1.61134 10.6727L9.18164 19" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M9.18164 1L1.61134 9.32733C1.2646 9.70875 1.2646 10.2913 1.61134 10.6727L9.18164 19" stroke="#EAEAEA" strokeWidth="2" strokeLinecap="round" />
                                 </svg>
                                 </button>
                                 <Swiper
                                     slidesPerView="auto"
                                     effect={'fade'}
                                     onSwiper={(swiper) => setSwiperInstance(swiper)}
-                                    pagination={{ clickable: true }}
+                                    allowTouchMove={false}
+                                    simulateTouch={false}
                                 >
                                     <SwiperSlide>
                                         <div className="mt-12">
@@ -371,23 +377,23 @@ const Pricing = () => {
                                     </SwiperSlide>
                                 </Swiper>
                                 <button onClick={handleNext}><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L8.5703 9.32733C8.91704 9.70875 8.91704 10.2913 8.5703 10.6727L1 19" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M1 1L8.5703 9.32733C8.91704 9.70875 8.91704 10.2913 8.5703 10.6727L1 19" stroke="#EAEAEA" strokeWidth="2" strokeLinecap="round" />
                                 </svg>
                                 </button>
                             </div>
                         </div>
 
-                        <div className="flex lg:hidden gap-5">
-                            <div className="w-[60%] space-y-8">
-                                {pricingData.map(item => <div key={item.id} onClick={() => setActiveFeature(item)} className={`w-fit pb-[18px] cursor-pointer ${activeFeature?.id === item.id ? 'font-semibold border-b-[3px] border-primary' : 'border-b-[0.5px] border-[#ffffff]/50'}`}>
+                        <div className="flex lg:hidden gap-2">
+                            <div className="w-[55%] space-y-8">
+                                {pricingData.map(item => <div key={item.id} onClick={() => setActiveFeature(item)} className={`w-fit pb-[18px] text-sm cursor-pointer ${activeFeature?.id === item.id ? 'font-semibold border-b-[3px] border-primary' : 'border-b-[0.5px] border-[#ffffff]/50'}`}>
                                     {item.feature}
                                 </div>)}
                             </div>
-                            <div className="w-[40%] space-y-[51px]">
-                                {activeFeature?.subFeatures?.map((subFeature) => <div key={subFeature?.id} className="grid grid-cols-4">
-                                    <p className="font-semibold">{subFeature?.name}</p>
-                                    <div className="px-12">
-                                        {subFeature?.standard ? <img src={done} alt="" /> : '-'}
+                            <div className="w-[45%] space-y-8">
+                                {activeFeature?.subFeatures?.map((subFeature) => <div key={subFeature?.id} className="grid grid-cols-5 gap-2 items-center">
+                                    <p className="font-semibold col-span-4 text-sm">{subFeature?.name}</p>
+                                    <div>
+                                        {subFeature?.[activePlan] ? <img src={done} alt="" className="w-5" /> : <span className="block w-6 text-center">-</span>}
                                     </div>
                                 </div>)}
                             </div>
