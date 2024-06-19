@@ -19,7 +19,6 @@ const Pricing = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [industry, setIndustry] = useState("Restaurant");
     const [openBussinessType, setOpenBusinessType] = useState(false);
-    const formRef = useRef(null)
     const [submitMessage, setSubmitMessage] = useState('')
     const [subscriptionType, setSubscriptionType] = useState('monthly')
     const [subscriptionTypeTwo, setSubscriptionTypeTwo] = useState('monthly')
@@ -77,6 +76,13 @@ const Pricing = () => {
         setSubmitMessage('Form submitted successfully!')
     }
 
+    const handleScrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView();
+        }
+    }
+
     return (
         <>
             <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
@@ -87,8 +93,8 @@ const Pricing = () => {
                             <h1 className="w-[90%] md:w-4/5 text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Simple and transparent <span className="text-[#9FE870]">POS pricing</span></h1>
                             <p className="mb-6 md:mb-8 mt-4 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Power your business with award-winning, purpose built technology</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
-                                <button onClick="" className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                <button onClick="" className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                <button onClick={() => handleScrollToSection('deeper-pricing-section')} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                <button onClick={() => handleScrollToSection('contact-section')} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
 
@@ -109,8 +115,8 @@ const Pricing = () => {
                                     <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
                                 </ul>
                                 <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                    <button onClick="" className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button onClick="" className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
+                                    <button onClick={() => handleScrollToSection('deeper-pricing-section')} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
+                                    <button onClick={() => handleScrollToSection('contact-section')} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +293,7 @@ const Pricing = () => {
 
                     <button className="mb-[40px] lg:mb-[100px] flex mx-auto text-primary items-center gap-x-3 tracking-[3px] animate-bounce">Compare Plans <FaArrowDown /></button>
 
-                    <div className="mb-[40px] lg:mb-[100px]">
+                    <div id="deeper-pricing-section" className="mb-[40px] lg:mb-[100px]">
                         <h3 className='text-center lg:text-left text-3xl lg:text-5xl font-bold mb-12'>Want to know more? <span className="text-primary">Let&apos;s dig deeper</span></h3>
 
                         {/* large device */}
@@ -406,9 +412,9 @@ const Pricing = () => {
 
             <CustomerReviews heading="Customers love our products" />
 
-            <section className="my-[100px] lg:my-[180px]">
+            <section id="contact-section" className="my-[100px] lg:my-[180px]">
                 <MainContainer>
-                    <form ref={formRef} onSubmit={handleFormSubmit}>
+                    <form onSubmit={handleFormSubmit}>
                         <div className="mt-[60px] lg:mt-[200px]">
                             <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Contact Us</h1>
 
