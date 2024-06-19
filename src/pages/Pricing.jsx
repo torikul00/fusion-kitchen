@@ -10,6 +10,7 @@ import send from '../assets/images/pos/send.svg'
 import CustomerReviews from "../components/CustomerReviews";
 import Faq from "../components/Faq";
 import done from '../assets/images/pos/done.svg'
+import pricingData from "../Utilities/pricingData";
 
 const Pricing = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -19,6 +20,7 @@ const Pricing = () => {
     const [submitMessage, setSubmitMessage] = useState('')
     const [subscriptionType, setSubscriptionType] = useState('monthly')
     const [subscriptionTypeTwo, setSubscriptionTypeTwo] = useState('monthly')
+    const [activeFeature, setActiveFeature] = useState(null)
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -27,6 +29,10 @@ const Pricing = () => {
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useEffect(() => {
+        setActiveFeature(pricingData[1])
+    }, [])
 
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
@@ -263,7 +269,7 @@ const Pricing = () => {
                     <div>
                         <h3 className='text-left text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Want to know more? <span className="text-primary">Let&apos;s dig deeper</span></h3>
 
-                        <div className="grid grid-cols-5 items-end pb-5 border-b border-primary">
+                        <div className="grid grid-cols-5 items-end pb-5 mb-10 border-b-[0.5px] border-primary">
                             <div className="col-span-2">
                                 <div className="w-fit bg-[#9FE870] rounded-full p-2 flex gap-2 mb-12" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
                                     <button onClick={() => setSubscriptionTypeTwo('monthly')} className={`${subscriptionTypeTwo === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
@@ -287,7 +293,27 @@ const Pricing = () => {
                         </div>
 
                         {/* TODO: */}
-                        
+                        <div className="grid grid-cols-5 gap-5">
+                            <div className="space-y-8">
+                                {pricingData.map(item => <div key={item.id} onClick={() => setActiveFeature(item)} className={`w-fit pb-[18px] cursor-pointer ${activeFeature?.id === item.id ? 'font-semibold border-b-[3px] border-primary' : 'border-b-[0.5px] border-[#ffffff]/50'}`}>
+                                    {item.feature}
+                                </div>)}
+                            </div>
+                            <div className="col-span-4 space-y-[51px]">
+                                {activeFeature?.subFeatures?.map((subFeature) => <div key={subFeature?.id} className="grid grid-cols-4">
+                                    <p className="font-semibold">{subFeature?.name}</p>
+                                    <div className="px-12">
+                                        {subFeature?.standard ?  <img src={done} alt="" /> : '-'}
+                                    </div>
+                                    <div className="px-12">
+                                         {subFeature?.premium ? <img src={done} alt="" /> : '-'}
+                                    </div>
+                                    <div className="px-12">
+                                        {subFeature?.enterprise ?  <img src={done} alt="" /> : '-'}
+                                    </div>
+                                </div>)}
+                            </div>
+                        </div>
                     </div>
                 </MainContainer>
             </section>
