@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import Pos from './pages/Pos.jsx'
 import OnlineOrdering from './pages/OnlineOrdering.jsx'
 import Payments from './pages/Payments.jsx'
+import Pricing from './pages/Pricing.jsx'
 AOS.init({
   duration: 600,
   once: true,
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   { 
     path:"/payments",
     element: <Payments />
+  },
+  { 
+    path:"/pricing",
+    element: <Pricing />
   }
 ])
 
