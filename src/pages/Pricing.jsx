@@ -12,6 +12,10 @@ import Faq from "../components/Faq";
 import done from '../assets/images/pos/done.svg'
 import pricingData from "../Utilities/pricingData";
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 const Pricing = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [industry, setIndustry] = useState("Restaurant");
@@ -21,6 +25,18 @@ const Pricing = () => {
     const [subscriptionType, setSubscriptionType] = useState('monthly')
     const [subscriptionTypeTwo, setSubscriptionTypeTwo] = useState('monthly')
     const [activeFeature, setActiveFeature] = useState(null)
+    const [swiperInstance, setSwiperInstance] = useState(null)
+
+    const handlePrev = () => {
+        if (swiperInstance) {
+            swiperInstance.slidePrev();
+        }
+    };
+    const handleNext = () => {
+        if (swiperInstance) {
+            swiperInstance.slideNext();
+        }
+    };
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -266,10 +282,11 @@ const Pricing = () => {
 
                     <button className="mb-[40px] lg:mb-[100px] flex mx-auto text-primary items-center gap-x-3 tracking-[3px] animate-bounce">Compare Plans <FaArrowDown /></button>
 
-                    <div>
-                        <h3 className='text-left text-2xl md:text-3xl lg:text-5xl font-bold mb-12'>Want to know more? <span className="text-primary">Let&apos;s dig deeper</span></h3>
+                    <div className="mb-[40px] lg:mb-[100px]">
+                        <h3 className='text-center lg:text-left text-3xl lg:text-5xl font-bold mb-12'>Want to know more? <span className="text-primary">Let&apos;s dig deeper</span></h3>
 
-                        <div className="grid grid-cols-5 items-end pb-5 mb-10 border-b-[0.5px] border-primary">
+                        {/* large device */}
+                        <div className="hidden lg:grid grid-cols-5 items-end pb-5 mb-10 border-b-[0.5px] border-primary">
                             <div className="col-span-2">
                                 <div className="w-fit bg-[#9FE870] rounded-full p-2 flex gap-2 mb-12" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
                                     <button onClick={() => setSubscriptionTypeTwo('monthly')} className={`${subscriptionTypeTwo === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
@@ -285,15 +302,14 @@ const Pricing = () => {
                             <div>
                                 <h4 className="font-bold text-3xl leading-[60px]">Premium</h4>
                                 <p><span className="text-primary">{subscriptionTypeTwo === 'monthly' ? '£75.00' : '£750.00'}</span> / per {subscriptionTypeTwo === 'monthly' ? 'month' : 'year'}</p>
+                                <span className="bg-primary text-black inline-block mt-3 py-1.5 px-3">Most Popular</span>
                             </div>
                             <div>
                                 <h4 className="font-bold text-3xl leading-[60px]">Enterprise</h4>
                                 <p className="text-primary">Speak to sales</p>
                             </div>
                         </div>
-
-                        {/* TODO: */}
-                        <div className="grid grid-cols-5 gap-5">
+                        <div className="hidden lg:grid grid-cols-5 gap-5">
                             <div className="space-y-8">
                                 {pricingData.map(item => <div key={item.id} onClick={() => setActiveFeature(item)} className={`w-fit pb-[18px] cursor-pointer ${activeFeature?.id === item.id ? 'font-semibold border-b-[3px] border-primary' : 'border-b-[0.5px] border-[#ffffff]/50'}`}>
                                     {item.feature}
@@ -303,13 +319,75 @@ const Pricing = () => {
                                 {activeFeature?.subFeatures?.map((subFeature) => <div key={subFeature?.id} className="grid grid-cols-4">
                                     <p className="font-semibold">{subFeature?.name}</p>
                                     <div className="px-12">
-                                        {subFeature?.standard ?  <img src={done} alt="" /> : '-'}
+                                        {subFeature?.standard ? <img src={done} alt="" /> : '-'}
                                     </div>
                                     <div className="px-12">
-                                         {subFeature?.premium ? <img src={done} alt="" /> : '-'}
+                                        {subFeature?.premium ? <img src={done} alt="" /> : '-'}
                                     </div>
                                     <div className="px-12">
-                                        {subFeature?.enterprise ?  <img src={done} alt="" /> : '-'}
+                                        {subFeature?.enterprise ? <img src={done} alt="" /> : '-'}
+                                    </div>
+                                </div>)}
+                            </div>
+                        </div>
+
+                        {/* small device */}
+                        <div className="lg:hidden w-fit mx-auto bg-[#9FE870] rounded-full p-2 flex gap-2 mb-8" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
+                            <button onClick={() => setSubscriptionTypeTwo('monthly')} className={`${subscriptionTypeTwo === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
+                            <button onClick={() => setSubscriptionTypeTwo('yearly')} className={`${subscriptionTypeTwo === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-10 py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
+                        </div>
+
+                        <div className="flex lg:hidden gap-5 justify-between items-end pb-4 mb-8 border-b-[0.5px] border-primary">
+                            <p>Feature List</p>
+                            <div className="w-2/3 gap-7 flex items-end">
+                                <button onClick={handlePrev}><svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.18164 1L1.61134 9.32733C1.2646 9.70875 1.2646 10.2913 1.61134 10.6727L9.18164 19" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                                </button>
+                                <Swiper
+                                    slidesPerView="auto"
+                                    effect={'fade'}
+                                    onSwiper={(swiper) => setSwiperInstance(swiper)}
+                                    pagination={{ clickable: true }}
+                                >
+                                    <SwiperSlide>
+                                        <div className="mt-12">
+                                            <h4 className="font-bold text-3xl leading-[60px]">Standard</h4>
+                                            <p><span className="text-primary">{subscriptionTypeTwo === 'monthly' ? '£55.00' : '£550.00'}</span> / per {subscriptionTypeTwo === 'monthly' ? 'month' : 'year'}</p>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className="">
+                                            <h4 className="font-bold text-3xl leading-[60px]">Premium</h4>
+                                            <p><span className="text-primary">{subscriptionTypeTwo === 'monthly' ? '£75.00' : '£750.00'}</span> / per {subscriptionTypeTwo === 'monthly' ? 'month' : 'year'}</p>
+                                            <span className="bg-primary text-black inline-block mt-3 py-1.5 px-3">Most Popular</span>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className="mt-12">
+                                            <h4 className="font-bold text-3xl leading-[60px]">Enterprise</h4>
+                                            <p className="text-primary">Speak to sales</p>
+                                        </div>
+                                    </SwiperSlide>
+                                </Swiper>
+                                <button onClick={handleNext}><svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8.5703 9.32733C8.91704 9.70875 8.91704 10.2913 8.5703 10.6727L1 19" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="flex lg:hidden gap-5">
+                            <div className="w-[60%] space-y-8">
+                                {pricingData.map(item => <div key={item.id} onClick={() => setActiveFeature(item)} className={`w-fit pb-[18px] cursor-pointer ${activeFeature?.id === item.id ? 'font-semibold border-b-[3px] border-primary' : 'border-b-[0.5px] border-[#ffffff]/50'}`}>
+                                    {item.feature}
+                                </div>)}
+                            </div>
+                            <div className="w-[40%] space-y-[51px]">
+                                {activeFeature?.subFeatures?.map((subFeature) => <div key={subFeature?.id} className="grid grid-cols-4">
+                                    <p className="font-semibold">{subFeature?.name}</p>
+                                    <div className="px-12">
+                                        {subFeature?.standard ? <img src={done} alt="" /> : '-'}
                                     </div>
                                 </div>)}
                             </div>
