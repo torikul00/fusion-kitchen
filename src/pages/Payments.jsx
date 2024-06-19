@@ -165,7 +165,7 @@ const Payments = () => {
                             ))}
                         </div>
                         {
-                            activeTab == "In Person" && <div data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "In Person" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>In person</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -221,7 +221,7 @@ const Payments = () => {
                             </div>
                         }
                         {
-                            activeTab == "Online" && <div data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "Online" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>Online</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -277,7 +277,7 @@ const Payments = () => {
                             </div>
                         }
                         {
-                            activeTab == "Remote" && <div data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "Remote" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>Remote</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -333,7 +333,7 @@ const Payments = () => {
                             </div>
                         }
                         {
-                            activeTab == "Buy Now, Pay Later" && <div data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "Buy Now, Pay Later" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>Buy Now, Pay Later</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>

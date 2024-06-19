@@ -18,7 +18,7 @@ const pricingData = [
         id: 2,
         feature: "Menu & POS features",
         subFeatures: [
-            { id: 2.1, name: "Menu management", standard: true, premium: true, enterprise: true },
+            { id: 2.1, name: "Promotions & discounts", standard: true, premium: true, enterprise: true },
             { id: 2.2, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 2.3, name: "Meal deals", standard: true, premium: true, enterprise: true },
             { id: 2.4, name: "Promotions & discounts", standard: false, premium: true, enterprise: true },
@@ -31,7 +31,7 @@ const pricingData = [
         id: 3,
         feature: "Digital ordering",
         subFeatures: [
-            { id: 3.1, name: "Menu management", standard: true, premium: true, enterprise: true },
+            { id: 3.1, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 3.2, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 3.3, name: "Meal deals", standard: true, premium: true, enterprise: true },
             { id: 3.4, name: "Promotions & discounts", standard: false, premium: true, enterprise: true },
@@ -44,7 +44,7 @@ const pricingData = [
         id: 4,
         feature: "Stock management",
         subFeatures: [
-            { id: 4.1, name: "Menu management", standard: true, premium: true, enterprise: true },
+            { id: 4.1, name: "Powerful business reporting", standard: true, premium: true, enterprise: true },
             { id: 4.2, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 4.3, name: "Meal deals", standard: true, premium: true, enterprise: true },
             { id: 4.4, name: "Promotions & discounts", standard: false, premium: true, enterprise: true },
@@ -70,7 +70,7 @@ const pricingData = [
         id: 6,
         feature: "Staff management",
         subFeatures: [
-            { id: 6.1, name: "Menu management", standard: true, premium: true, enterprise: true },
+            { id: 6.1, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 6.2, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 6.3, name: "Meal deals", standard: true, premium: true, enterprise: true },
             { id: 6.4, name: "Promotions & discounts", standard: false, premium: true, enterprise: true },
@@ -84,7 +84,7 @@ const pricingData = [
         feature: "Integrations",
         subFeatures: [
             { id: 7.1, name: "Menu management", standard: true, premium: true, enterprise: true },
-            { id: 7.2, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
+            { id: 7.2, name: "Integrated kitchen printers", standard: true, premium: true, enterprise: true },
             { id: 7.3, name: "Meal deals", standard: true, premium: true, enterprise: true },
             { id: 7.4, name: "Promotions & discounts", standard: false, premium: true, enterprise: true },
             { id: 7.5, name: "Multi-user log on", standard: true, premium: true, enterprise: true },
@@ -96,7 +96,7 @@ const pricingData = [
         id: 8,
         feature: "Table management",
         subFeatures: [
-            { id: 8.1, name: "Menu management", standard: true, premium: true, enterprise: true },
+            { id: 8.1, name: "Powerful business reporting", standard: true, premium: true, enterprise: true },
             { id: 8.2, name: "Interactive menu builder", standard: true, premium: true, enterprise: true },
             { id: 8.3, name: "Meal deals", standard: true, premium: true, enterprise: true },
             { id: 8.4, name: "Promotions & discounts", standard: false, premium: true, enterprise: true },
