@@ -9,7 +9,6 @@ import bannerImg4 from "../assets/images/online ordering/banner4.png";
 import bannerImg5 from "../assets/images/online ordering/banner5.png";
 import bannerImg6 from "../assets/images/online ordering/banner6.png";
 import bannerImg7 from "../assets/images/online ordering/banner7.png";
-
 import image1 from "../assets/images/online ordering/image 200.png"
 import image2 from "../assets/images/online ordering/image 807.png"
 import electronicsImg1 from "../assets/images/online ordering/electronics-img-1 1.png"
@@ -33,12 +32,12 @@ import phoneTabletCom from "../assets/images/online ordering/phone-table-compute
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 import messageIcon from "../assets/images/online ordering/messageIcon.svg"
-import { TypeAnimation } from 'react-type-animation';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
+import { ReactTyped } from "react-typed";
 
 const OnlineOrdering = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -48,13 +47,12 @@ const OnlineOrdering = () => {
     const [submitMessage, setSubmitMessage] = useState('')
     const getAQuoteRef = useRef(null);
     const formRef = useRef(null);
-
+    const swiperRef = useRef(null);
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleScroll = () => {
@@ -84,7 +82,18 @@ const OnlineOrdering = () => {
         setSubmitMessage('Form submitted successfully!');
     }
 
-
+    const texts = [
+        'Restaurants',
+        'Coffee Shops',
+        'Food Truck',
+        'Bar and Breweries',
+        'Grocery and Convenience',
+        'Clothing and Accessories',
+        'All Beauty Solutions',
+    ];
+    const handleStringTyped = (index) => {
+        swiperRef.current.swiper.slideTo(index);
+    };
     return (
         <>
             <header className={`w-full z-50 bg-[#141817] relative overflow-hidden mb-0 h-fit lg:h-[911px]`}>
@@ -92,30 +101,18 @@ const OnlineOrdering = () => {
                     <Navbar />
                     <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center overflow-hidden`}>
                         <div className="w-full lg:w-[45%] flex flex-col-reverse">
-                            <div className="my-20 lg:my-0">
+                            <div className="my-10 lg:my-0">
                                 <h1 className="w-[90%] sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">
                                     The all in one <br /> platform built for <br />
-                                    <TypeAnimation
-                                        sequence={[
-                                            // Same substring at the start will only be typed once, initially
-                                            ' Restaurants',
-                                            3000,
-                                            ' Coffee Shops',
-                                            3000,
-                                            ' Food Truck',
-                                            3000,
-                                            ' Bar and Breweries',
-                                            3000,
-                                            ' Grocery and Convenience',
-                                            3000,
-                                            ' Clothing and Accessories',
-                                            3000,
-                                            ' All Beauty Solutions',
-                                            3000,
-                                        ]}
-                                        speed={50}
-                                        repeat={Infinity}
-                                        className="text-primary w-[90%] sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold"
+                                    <ReactTyped
+                                        strings={texts}
+                                        typeSpeed={50}
+                                        backSpeed={50}
+                                        loop
+                                        backDelay={3000}
+                                        startDelay={0}
+                                        onStringTyped={handleStringTyped}
+                                        className="text-primary"
                                     />
                                 </h1>
                                 <p className="w-5/6 mb-6 md:mb-8 mt-3 text-[#CCCCCC] text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Cut the commission and generate direct orders for yourself</p>
@@ -124,55 +121,14 @@ const OnlineOrdering = () => {
                                     <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
                             </div>
-                            <div className="lg:hidden w-full mt-6 flex justify-center items-center">
-                                <div className="w-full md:w-[800px]">
-                                    <Swiper
-                                        effect={'fade'}
-                                        autoplay={{
-                                            delay: 3000,
-                                        }}
-                                        modules={[Autoplay]}
-                                        loop={true}
-                                    >
-                                        <SwiperSlide>
-                                            <img src={bannerImg} alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={bannerImg2} alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={bannerImg3} alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={bannerImg4} alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={bannerImg5} alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={bannerImg6} alt="" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src={bannerImg7} alt="" />
-                                        </SwiperSlide>
-                                    </Swiper>
-                                </div>
-                            </div>
                         </div>
-                        <div className="hidden select-none h-full lg:w-[50%] lg:flex justify-end items-center -z-10">
+                        <div className="select-none h-full mt-10 lg:mt-0 lg:w-[50%] lg:flex justify-end items-center -z-10">
                             <Swiper
-                                effect={'fade'}
-                                autoplay={{
-                                    delay: 3000,
-                                }}
-                                modules={[Autoplay]}
                                 loop={true}
+                                ref={swiperRef}
                             >
                                 <SwiperSlide>
                                     <img src={bannerImg} alt="" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src={bannerImg2} alt="" />
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <img src={bannerImg3} alt="" />
@@ -185,6 +141,9 @@ const OnlineOrdering = () => {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <img src={bannerImg6} alt="" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img src={bannerImg2} alt="" />
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <img src={bannerImg7} alt="" />
