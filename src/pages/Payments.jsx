@@ -2,10 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import HeaderContainer from '../components/HeaderContainer';
 import Navbar from '../components/Navbar';
 import banner from '../assets/images/payments/banner.png'
+import banner1 from '../assets/images/payments/banner1.png'
+import banner2 from '../assets/images/payments/banner2.png'
+import banner3 from '../assets/images/payments/banner3.png'
 import burgerMobile from '../assets/images/payments/burgerMobile.png'
 import image1 from '../assets/images/payments/image 190.png'
 import image2 from '../assets/images/payments/image 191.png'
-import image3 from '../assets/images/payments/image3.svg'
+import image3 from '../assets/images/payments/image3.png'
 import GetAQuote from '../components/GetAQuote';
 import MainContainer from '../components/MainContainer';
 import CustomerReviews from '../components/CustomerReviews';
@@ -14,7 +17,7 @@ import Footer from '../components/Footer';
 import send from '../assets/images/pos/send.svg'
 import { FaAngleDown, FaArrowDown, FaArrowRight } from 'react-icons/fa6';
 import messageIcon from "../assets/images/online ordering/messageIcon.svg"
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -73,8 +76,6 @@ const Payments = () => {
             </div>
         );
     }
-
-
     const handleNext = () => {
         swiperRef.current.swiper.slideNext()
     }
@@ -100,8 +101,30 @@ const Payments = () => {
                                 </div>
                             </div>
 
-                            <div className="w-full md:w-[90%] lg:w-[45%] mt-6">
-                                <img src={banner} alt="header" />
+                            <div className="w-full md:w-[90%] lg:w-[50%] mt-6">
+                                <Swiper
+                                    modules={[Autoplay]}
+                                    autoplay={{
+                                        "delay": 3000,
+                                        "disableOnInteraction": false
+                                    }}
+                                    className='payment'
+                                >
+                                    <SwiperSlide>
+                                        <img src={banner} alt="header" />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img src={banner1} alt="header" />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img src={banner2} alt="header" />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img src={banner3} alt="header" />
+                                    </SwiperSlide>
+
+                                </Swiper>
+
                             </div>
                         </div>
 
@@ -152,7 +175,7 @@ const Payments = () => {
                 </header>
 
                 <CustomContainar>
-                    <section className="my-[100px] lg:my-[120px]">
+                    <section className="my-[60px] md:my-[100px] lg:my-[120px]">
                         <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Accept payments anywhere <br /> customers are.</h1>
                         <div className='hide-scrollbar flex justify-between text-white border-b-[0.5px] border-[#DADADA] mt-[100px] overflow-x-scroll md:overflow-auto'>
                             {['In Person', 'Online', 'Remote', 'Buy Now, Pay Later'].map((tab) => (
@@ -165,7 +188,7 @@ const Payments = () => {
                             ))}
                         </div>
                         {
-                            activeTab == "In Person" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "In Person" && <div data-aos='fade-up' data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>In person</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -221,7 +244,7 @@ const Payments = () => {
                             </div>
                         }
                         {
-                            activeTab == "Online" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "Online" && <div data-aos='fade-up' data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>Online</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -277,7 +300,7 @@ const Payments = () => {
                             </div>
                         }
                         {
-                            activeTab == "Remote" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "Remote" && <div data-aos='fade-up' data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>Remote</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -333,7 +356,7 @@ const Payments = () => {
                             </div>
                         }
                         {
-                            activeTab == "Buy Now, Pay Later" && <div data-aos='fade-up'  data-aos-duration="300"  className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
+                            activeTab == "Buy Now, Pay Later" && <div data-aos='fade-up' data-aos-duration="300" className='mt-10 flex flex-col gap-10 lg:flex-row justify-between'>
                                 <div className='text-white md:w-[60%] lg:w-[30%]'>
                                     <h2 className='text-[24px]'>Buy Now, Pay Later</h2>
                                     <p className='text-lg leading-[30px] my-4'>Accept payments at your counter or on the go. It&apos;s easy to get started. Try the Square POS app on your phone or pick from a range of hardworking hardware.</p>
@@ -393,23 +416,21 @@ const Payments = () => {
                 </CustomContainar>
 
                 <CustomContainar>
-                    <section>
-                        <div className="">
-                            <div className="flex flex-col lg:flex-row items-center justify-between">
-                                <img src={burgerMobile} alt="burgerMobile" className="w-[80%] lg:w-[30%] scale-75" />
-                                <div className="lg:w-[58%]">
-                                    <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
-                                    <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Connect with your customers directly, build relationships, create loyal customers and generate more repeat orders</p>
-                                    <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
-                                        <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
-                                        <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
-                                    </div>
+                    <div className='relative'>
+                        <div className="greenCustomAnimationPayment"></div>
+                        <div className="flex flex-col lg:flex-row items-center justify-between">
+                            <img src={burgerMobile} alt="burgerMobile" className="w-[90%] lg:w-[30%] scale-75" />
+                            <div className="lg:w-[58%]">
+                                <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
+                                <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Connect with your customers directly, build relationships, create loyal customers and generate more repeat orders</p>
+                                <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
+                                    <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
+                                    <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                                 </div>
-
                             </div>
                         </div>
-                    </section>
-                    <section className='my-[200px]'>
+                    </div>
+                    <section className='my-[60px] md:my-[100px] lg:my-[200px]'>
                         <h1 className='w-[90%] text-white sm:w-4/5 lg:w-[70%] text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold'>Accept any payment methods to ensure secure and stable payment processing.</h1>
                         <div className='text-white flex justify-between items-center mt-20'>
                             <div className='w-[30%]'>
@@ -431,14 +452,14 @@ const Payments = () => {
                                 </div>
                             </div>
                             <div className='w-[60%]'>
-                                {activeMethod == 'Contactless' && <img src={image1} alt="" />}
+                                {activeMethod == 'Contactless' && <img src={image3} alt="" />}
                                 {activeMethod == 'Chip & PIN' && <img src={image2} alt="" />}
                                 {activeMethod == 'QR Code Payment' && <img src={image1} alt="" />}
                                 {activeMethod == 'Mobile Payment' && <img src={image2} alt="" />}
                             </div>
                         </div>
                     </section>
-                    <section className='mt-[100px]'>
+                    <section>
                         <h1 className="w-[90%] text-white sm:w-4/5 lg:w-[80%] text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Take contactless payments with just your iPhone or Android phone.</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
                             <div>
@@ -454,14 +475,14 @@ const Payments = () => {
                 </CustomContainar>
             </div>
 
-            <div ref={getAQuoteRef} className='mt-[100px] lg:mt-[150px]'>
+            <div ref={getAQuoteRef} className='mt-[60px] lg:mt-[150px]'>
                 <GetAQuote />
             </div>
             <div>
                 <CustomerReviews />
             </div>
 
-            <section className="my-[100px] lg:my-[150px]">
+            <section className="my-[60px] lg:my-[150px]">
                 <MainContainer>
                     <PaymentGridCard />
                     <form ref={formRef} onSubmit={handleFormSubmit}>

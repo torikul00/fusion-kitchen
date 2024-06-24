@@ -1,7 +1,7 @@
 import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
 import Navbar from "../components/Navbar";
 import HeaderContainer from "../components/HeaderContainer";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import messageIcon from "../assets/images/online ordering/messageIcon.svg"
 import headerImg from "../assets/images/pricing/header-img.png"
 import Footer from "../components/Footer";
@@ -14,6 +14,7 @@ import pricingData from "../Utilities/pricingData";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules'
 
 const Pricing = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -29,15 +30,15 @@ const Pricing = () => {
     const handlePrev = () => {
         if (swiperInstance) {
             swiperInstance.slidePrev();
-            if(activePlan === 'enterprise') setActivePlan('premium')
-            else if(activePlan === 'premium') setActivePlan('standard')
+            if (activePlan === 'enterprise') setActivePlan('premium')
+            else if (activePlan === 'premium') setActivePlan('standard')
         }
     };
     const handleNext = () => {
         if (swiperInstance) {
             swiperInstance.slideNext();
-            if(activePlan === 'standard') setActivePlan('premium')
-            else if(activePlan === 'premium') setActivePlan('enterprise')
+            if (activePlan === 'standard') setActivePlan('premium')
+            else if (activePlan === 'premium') setActivePlan('enterprise')
         }
     };
 
@@ -152,11 +153,11 @@ const Pricing = () => {
             <section className="w-full bg-[#141817] text-white py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
                 <MainContainer>
                     <div className="w-fit mx-auto bg-[#9FE870] rounded-full p-2 flex gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
-                        <button onClick={() => setSubscriptionType('monthly')} className={`${subscriptionType === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
-                        <button onClick={() => setSubscriptionType('yearly')} className={`${subscriptionType === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
+                        <button onClick={() => setSubscriptionType('monthly')} className={`${subscriptionType === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 py-2 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>
+                        <button onClick={() => setSubscriptionType('yearly')} className={`${subscriptionType === 'yearly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 py-2 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Yearly</button>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-8 my-[40px] lg:my-[100px]">
+                    <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-8 my-[40px] lg:my-[100px]">
                         <div className=" bg-black/10 hover:border-[2px] support-shadow transition-all border-primary hover:lg:scale-110 rounded-[32px] overflow-hidden px-8 py-12">
                             <h1 className="text-[32px] font-bold">Free</h1>
                             <h3 className="text-[20px]">Unlimited orders</h3>
@@ -290,7 +291,154 @@ const Pricing = () => {
                             <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
                         </div>
                     </div>
-
+                    <div className="mb-[50px] block md:hidden">
+                        <Swiper
+                            pagination={{ clickable: true }}
+                            slidesPerView={1}
+                            spaceBetween={10}
+                            modules={[Pagination]}
+                            className="pricingSwiper"
+                        >
+                            <SwiperSlide>
+                                <div className=" bg-black/10 border-[2px] support-shadow transition-all border-primary rounded-[32px] overflow-hidden px-8 py-12 pb-16">
+                                    <h1 className="text-[32px] font-bold">Free</h1>
+                                    <h3 className="text-[20px]">Unlimited orders</h3>
+                                    <h3 className="text-[32px] my-5"><span className="text-primary">{subscriptionType === 'monthly' ? '£55.00' : '£550.00'}</span> / per {subscriptionType === 'monthly' ? 'month' : 'year'}</h3>
+                                    <div className="space-y-3 mb-7">
+                                        <p className="font-bold">Order processing:</p>
+                                        <p className="text-primary">Unlimited forever</p>
+                                        <p>In-store, online, mobile and telephone ordering</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Features:</p>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Stock management</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Item & ingredient stock tracking</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Delivery management</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Live driver tracking</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Staff management</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Staff Rotas</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">3rd party integrations</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Unlimited 24/7 support</p>
+                                        </div>
+                                    </div>
+                                    <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="bg-black/10 border-[2px] support-shadow transition-all border-primary rounded-[32px] overflow-hidden px-8 py-12  pb-16">
+                                    <h1 className="text-[32px] font-bold">Premium</h1>
+                                    <h3 className="text-[20px]">Unlimited orders</h3>
+                                    <h3 className="text-[32px] my-5"><span className="text-primary">{subscriptionType === 'monthly' ? '£75.00' : '£750.00'}</span> / per {subscriptionType === 'monthly' ? 'month' : 'year'}</h3>
+                                    <div className="space-y-3 mb-7">
+                                        <p className="font-bold">Order processing:</p>
+                                        <p className="text-primary">Unlimited forever</p>
+                                        <p>In-store, online, mobile and telephone ordering</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Features:</p>
+                                        <p className="mt-6 leading-[36px]">Everything in  Standard, plus:</p>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Table management</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Online table reservations</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Digital waiter pads</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Customer loyalty management</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Gift vouchers</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Customer marketing suite</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Unlimited 24/7 support</p>
+                                        </div>
+                                    </div>
+                                    <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="bg-black/10 border-[2px] support-shadow transition-all border-primary rounded-[32px] overflow-hidden px-8 py-12 pb-14">
+                                    <h1 className="text-[32px] font-bold">Enterprise</h1>
+                                    <h3 className="text-[20px]">Multi-location + Franchise</h3>
+                                    <h3 className="text-[32px] my-5 text-primary">Speak to sales</h3>
+                                    <p className="mb-7">A complete POS and hospitality management system created for multi-location and franchise businesses</p>
+                                    <div>
+                                        <p className="font-bold">Features:</p>
+                                        <p className="mt-6 leading-[34px]">Everything in  Premium, plus:</p>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">HQ dashboards</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Advanced location reporting</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Location grouping</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Multi-location menu control</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Multi-location reporting suite</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Central data sharing</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Cross location vouchers</p>
+                                        </div>
+                                        <div className="flex items-start gap-x-3 mt-6">
+                                            <img className="mt-1" src={done} alt="" />
+                                            <p className="leading-[34px]">Franchisee management</p>
+                                        </div>
+                                    </div>
+                                    <button className="mt-6 text-[22px] text-primary flex items-center gap-x-3">Sign up now <FaArrowRight /></button>
+                                </div>
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>
                     <button className="mb-[40px] lg:mb-[100px] flex mx-auto text-primary items-center gap-x-3 tracking-[3px] animate-bounce">Compare Plans <FaArrowDown /></button>
 
                     <div id="deeper-pricing-section" className="mb-[40px] lg:mb-[100px]">
@@ -407,12 +555,10 @@ const Pricing = () => {
                     </div>
                 </MainContainer>
             </section>
-
             <Faq />
-
             <CustomerReviews heading="Customers love our products" />
 
-            <section id="contact-section" className="my-[100px] lg:my-[180px]">
+            <section id="contact-section" className="my-[60px] md:my-[100px] lg:my-[150px]">
                 <MainContainer>
                     <form onSubmit={handleFormSubmit}>
                         <div className="mt-[60px] lg:mt-[200px]">

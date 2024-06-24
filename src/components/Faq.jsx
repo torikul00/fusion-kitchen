@@ -45,7 +45,7 @@ const Faq = () => {
         }
     ];
     return (
-        <section className="mt-[120px]">
+        <section className="md:mt-[120px]">
             <MainContainer>
                 <h1 className='text-[25px] mb-10 sm:text-[30px] md:text-[45px] lg:text-5xl font-bold'>FAQ</h1>
                 <div className="flex flex-col md:flex-row">
