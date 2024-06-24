@@ -23,6 +23,16 @@ import shape1 from '../assets/images/pos/Shape.png'
 import shape2 from '../assets/images/pos/Shape (1).png'
 import shape3 from '../assets/images/pos/Shape (2).png'
 import shape4 from '../assets/images/pos/Shape (3).png'
+import delivery from '../assets/images/pos/delivery.png'
+import parcel from '../assets/images/pos/parcel.png'
+import dine from '../assets/images/pos/dine.png'
+import pick from '../assets/images/pos/pick.png'
+import fusion from '../assets/images/pos/fusion.png'
+import deliveroo from '../assets/images/pos/deliveroo.png'
+import eat from '../assets/images/pos/eat.png'
+import uber from '../assets/images/pos/uber.png'
+import addOrEdit from '../assets/images/pos/addOrEdit.png'
+
 import doublePhone from '../assets/images/pos/doublePhone.png'
 import map from '../assets/images/pos/map.png'
 import kitchen from '../assets/images/pos/kitchen.png'
@@ -233,13 +243,12 @@ const Pos = () => {
                                     </div>
                                 </SwiperSlide>
 
-
                                 <SwiperSlide
                                     className='w-[33.33%] p-4 lg:p-4 mb-14'>
                                     <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px]'>
                                         <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Powerful promotions & marketing tools</h3>
                                         <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Happy hour, discounts, vouchers and loyalty all built in. Marketing tools designed to drive revenue</h3>
-                                        <img src={pos1} alt="" className='h-[350px] w-auto object-cover  absolute bottom-[-5%] left-[4%] scale-[0.8]' />
+                                        <img src={pos1} alt="" className='h-[350px] w-auto object-cover  absolute bottom-[-5%] left-[1%] scale-[0.8]' />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide
@@ -347,10 +356,22 @@ const Pos = () => {
             <section className="py-[100px] lg:py-[150px]">
                 <div className="flex justify-between flex-col lg:flex-row items-center max-w-[1400px] px-5 mx-auto">
 
-                    <div className="w-[100%] lg:w-[48%] relative">
-                        <img data-aos='fade-right' src={image4} alt="" />
+                    <div className="w-[100%] lg:w-[40%]">
+                        <img data-aos="fade-up" data-aos-delay="400" data-aos-once="true" src={addOrEdit} alt="" className="block lg:hidden"/>
+                        <div className="relative lg:block hidden">
+                            <img src={image4} alt="" />
+                            <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className="absolute top-[30px] -left-[100px] w-[120px]" src={delivery} alt="" />
+                            <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className="absolute bottom-[30px] -left-[100px] w-[120px]" src={parcel} alt="" />
+                            <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className="absolute top-[30px] -right-[100px] w-[120px]" src={dine} alt="" />
+                            <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className="absolute bottom-[30px] -right-[100px] w-[120px]" src={pick} alt="" />
+
+                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[20px] -bottom-[110px]  w-[100px]" src={fusion} alt="" />
+                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[155px] -bottom-[110px] w-[100px]" src={deliveroo} alt="" />
+                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[285px] -bottom-[110px] w-[100px]" src={eat} alt="" />
+                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute right-[20px] -bottom-[110px] w-[100px]" src={uber} alt="" />
+                        </div>
                     </div>
-                    <div data-aos="fade-left" className="w-[100%] lg:w-[48%] mt-10 lg:mt-0">
+                    <div data-aos="fade-up" className="w-[100%] lg:w-[40%] mt-10 lg:mt-0">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Build an intelligent menu
                             in seconds</h1>
                         <p className="text-[17px] lg:text-[22px] tracking-[2px] mt-5">Our interactive menu builder allows you to add new items and customize your menu in seconds, while our powerful promotional tools make sure you’re always maximizing revenue</p>

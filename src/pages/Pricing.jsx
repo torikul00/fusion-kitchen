@@ -99,7 +99,7 @@ const Pricing = () => {
                             </div>
                         </div>
 
-                        <div className="w-full lg:absolute lg:right-0 lg:w-[45%] mt-6">
+                        <div className="w-full lg:absolute lg:right-0 lg:w-[55%] mt-6">
                             <img className="scale-[1.1] md:scale-100" src={headerImg} alt="header" />
                         </div>
                     </div>
