@@ -19,6 +19,11 @@ import GetAQuote from '../components/GetAQuote';
 import MainContainer from '../components/MainContainer';
 import CustomerReviews from '../components/CustomerReviews';
 import PaymentGridCard from '../components/PaymentGridCard';
+import visa from '../assets/images/animation phone/visa.svg'
+import mastercard from '../assets/images/animation phone/master.svg'
+import applePay from '../assets/images/animation phone/applePay.svg'
+import googlePay from '../assets/images/animation phone/pay.svg'
+
 import Footer from '../components/Footer';
 import send from '../assets/images/pos/send.svg'
 import { FaAngleDown, FaArrowDown, FaArrowRight } from 'react-icons/fa6';
@@ -109,16 +114,15 @@ const Payments = () => {
                                         "disableOnInteraction": false
                                     }}
                                     className='payment'
-                                    int
                                 >
                                     <SwiperSlide>
-                                        <img src={banner} alt="header" />
+                                        <img className='h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner} alt="header" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <img src={banner1} alt="header" />
+                                        <img className='h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner1} alt="header" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <img src={banner2} alt="header" />
+                                        <img className='h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner2} alt="header" />
                                     </SwiperSlide>
 
                                 </Swiper>
@@ -200,9 +204,9 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                    
+
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                        <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -213,7 +217,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                     </div>
                                 </div>
 
@@ -234,9 +238,9 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                      
+
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                        <img src={online} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={online} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -247,7 +251,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                     </div>
                                 </div>
 
@@ -268,10 +272,10 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                       
+
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                        <img src={remote} alt="" className='w-full  rounded-[32px] h-[250px] md:h-[400px] ' />
+                                            <img src={remote} alt="" className='w-full  rounded-[32px] h-[250px] md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -282,7 +286,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                   
+
                                     </div>
                                 </div>
 
@@ -303,9 +307,9 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                              
+
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                        <img src={buy} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={buy} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -316,7 +320,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                     
+
                                     </div>
                                 </div>
 
@@ -330,10 +334,19 @@ const Payments = () => {
                     <div className='relative'>
                         <div className="greenCustomAnimationPayment"></div>
                         <div className="flex flex-col lg:flex-row items-center justify-between">
-                            <img src={burgerMobile} alt="burgerMobile" className="w-[90%] lg:w-[30%] scale-75" />
-                            <div className="lg:w-[58%]">
-                                <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Marketing<span className="text-primary"> tools</span> built in</h1>
-                                <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Connect with your customers directly, build relationships, create loyal customers and generate more repeat orders</p>
+                            <div className='w-[90%] lg:w-[30%]'>
+                                <div className='w-[50%] mx-auto relative'>
+                                    <img src={burgerMobile} alt="burgerMobile" className="" />
+                                    <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute top-[80px] -left-[60px]' src={mastercard} alt="" />
+                                    <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute top-[140px] -right-[90px]' src={googlePay} alt="" />
+                                    <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute bottom-[100px] -left-[60px]' src={applePay} alt="" />
+                                    <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute bottom-[80px] -right-[90px]' src={visa} alt="" />
+                                </div>
+
+                            </div>
+                            <div className="lg:w-[60%] mt-10 lg:mt-0">
+                                <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Fully integrated card payments</h1>
+                                <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Accept online food orders for <br /> collection or delivery.</p>
                                 <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                     <button className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Sign up for now</button>
                                     <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
