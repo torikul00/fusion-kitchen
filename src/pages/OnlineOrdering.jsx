@@ -10,10 +10,30 @@ import bannerImg5 from "../assets/images/online ordering/banner5.png";
 import bannerImg6 from "../assets/images/online ordering/banner6.png";
 import bannerImg7 from "../assets/images/online ordering/banner7.png";
 import image1 from "../assets/images/online ordering/image 200.png"
-import image2 from "../assets/images/online ordering/image 807.png"
-import electronicsImg1 from "../assets/images/online ordering/electronics-img-1 1.png"
-import electronicsImg2 from "../assets/images/online ordering/electronics-img-2 1.png"
-import electronicsImg3 from "../assets/images/online ordering/electronics-img-3 1.png"
+import mobile1 from "../assets/images/online ordering/mobile1.png"
+import mobile2 from "../assets/images/online ordering/mobile2.png"
+import mobile3 from "../assets/images/online ordering/mobile3.png"
+import restaurants1 from "../assets/images/online ordering/restaurants1.png"
+import restaurants2 from "../assets/images/online ordering/restaurants2.png"
+import restaurants3 from "../assets/images/online ordering/restaurants3.png"
+import coffeeShop1 from "../assets/images/online ordering/coffee-shops1.png"
+import coffeeShop2 from "../assets/images/online ordering/coffee-shops2.png"
+import coffeeShop3 from "../assets/images/online ordering/coffee-shops3.png"
+import foodTruck1 from "../assets/images/online ordering/food-truck1.png"
+import foodTruck2 from "../assets/images/online ordering/food-truck2.png"
+import foodTruck3 from "../assets/images/online ordering/food-truck3.png"
+import bar1 from "../assets/images/online ordering/bar1.png"
+import bar2 from "../assets/images/online ordering/bar2.png"
+import bar3 from "../assets/images/online ordering/bar3.png"
+import grocery1 from "../assets/images/online ordering/grocery1.png"
+import grocery2 from "../assets/images/online ordering/grocery2.png"
+import grocery3 from "../assets/images/online ordering/grocery3.png"
+import clothing1 from "../assets/images/online ordering/clothing-accessories1.png"
+import clothing2 from "../assets/images/online ordering/clothing-accessories2.png"
+import clothing3 from "../assets/images/online ordering/clothing-accessories3.png"
+import beauty1 from "../assets/images/online ordering/beauty1.png"
+import beauty2 from "../assets/images/online ordering/beauty2.png"
+import beauty3 from "../assets/images/online ordering/beauty3.png"
 import branded from "../assets/images/online ordering/branded.svg"
 import delivery from "../assets/images/online ordering/delivery.svg"
 import timeSlot from "../assets/images/online ordering/time-slot.svg"
@@ -41,7 +61,7 @@ import { ReactTyped } from "react-typed";
 
 const OnlineOrdering = () => {
     const [isSticky, setIsSticky] = useState(false);
-    const [categoryTab, setCategoryTab] = useState("Fasion & Beauty");
+    const [categoryTab, setCategoryTab] = useState("Restaurants");
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [industry, setIndustry] = useState("Restaurant")
     const [submitMessage, setSubmitMessage] = useState('')
@@ -199,73 +219,51 @@ const OnlineOrdering = () => {
             </header>
 
             <section className="tab-section-gradient w-full py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
-                <div className="max-w-[1300px] mx-auto md:px-5">
-                    <div className="bg-[#9FE870] hide-scrollbar md:rounded-full p-2 overflow-scroll flex lg:grid lg:grid-cols-7 gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
-                        <button onClick={() => setCategoryTab('Fasion & Beauty')} className={`${categoryTab === 'Fasion & Beauty' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Fashion & Beauty</button>
-                        <button onClick={() => setCategoryTab('Electronics')} className={`${categoryTab === 'Electronics' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Electronics</button>
-                        <button onClick={() => setCategoryTab('Arts & Crafts')} className={`${categoryTab === 'Arts & Crafts' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Arts & Crafts</button>
-                        <button onClick={() => setCategoryTab('Home & Kitchen')} className={`${categoryTab === 'Home & Kitchen' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Home & Kitchen</button>
-                        <button onClick={() => setCategoryTab('Jewelry')} className={`${categoryTab === 'Jewelry' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Jewelry</button>
-                        <button onClick={() => setCategoryTab('Supermarket')} className={`${categoryTab === 'Supermarket' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Supermarket</button>
-                        <button onClick={() => setCategoryTab('Restaurants')} className={`${categoryTab === 'Restaurants' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-0 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Restaurants</button>
+                <div className="max-w-[1550px] mx-auto md:px-5">
+                    <div className="bg-[#9FE870] hide-scrollbar md:rounded-full p-2 overflow-scroll flex lg:justify-between gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
+                        <button onClick={() => setCategoryTab('Restaurants')} className={`${categoryTab === 'Restaurants' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Restaurants</button>
+                        <button onClick={() => setCategoryTab('Coffee Shops')} className={`${categoryTab === 'Coffee Shops' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Coffee Shops</button>
+                        <button onClick={() => setCategoryTab('Food Truck')} className={`${categoryTab === 'Food Truck' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Food Truck</button>
+                        <button onClick={() => setCategoryTab('Bar and Breweries')} className={`${categoryTab === 'Bar and Breweries' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Bar and Breweries</button>
+                        <button onClick={() => setCategoryTab('Grocery and Convenience')} className={`${categoryTab === 'Grocery and Convenience' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Grocery and Convenience</button>
+                        <button onClick={() => setCategoryTab('Clothing and Accessories')} className={`${categoryTab === 'Clothing and Accessories' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Clothing and Accessories</button>
+                        <button onClick={() => setCategoryTab('All Beauty Solutions')} className={`${categoryTab === 'All Beauty Solutions' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>All Beauty Solutions</button>
                     </div>
                 </div>
                 <div key={categoryTab} data-aos="fade-up" data-aos-duration="500" className="px-5">
                     <div className="lg:grid grid-cols-3 hidden justify-center gap-10">
                         <div>
-                            <img className="ml-[20%]" src={electronicsImg1} alt="" />
+                            <img className="ml-[20%]" src={categoryTab === 'Restaurants' ? restaurants1 : categoryTab === 'Coffee Shops' ? coffeeShop1 : categoryTab === 'Food Truck' ? foodTruck1 : categoryTab === 'Bar and Breweries' ? bar1 : categoryTab === 'Grocery and Convenience' ? grocery1 : categoryTab === 'Clothing and Accessories' ? clothing1 : beauty1} alt="" />
                         </div>
                         <div>
-                            <img className="ml-[20%]" src={electronicsImg2} alt="" />
+                            <img className="ml-[20%]" src={categoryTab === 'Restaurants' ? restaurants2 : categoryTab === 'Coffee Shops' ? coffeeShop2 : categoryTab === 'Food Truck' ? foodTruck2 : categoryTab === 'Bar and Breweries' ? bar2 : categoryTab === 'Grocery and Convenience' ? grocery2 : categoryTab === 'Clothing and Accessories' ? clothing2 : beauty2} alt="" />
                         </div>
                         <div>
-                            <img className="mx-auto w-[50%]" src={electronicsImg3} alt="" />
+                            <img className="mx-auto w-[50%]" src={categoryTab === 'Restaurants' ? restaurants3 : categoryTab === 'Coffee Shops' ? coffeeShop3 : categoryTab === 'Food Truck' ? foodTruck3 : categoryTab === 'Bar and Breweries' ? bar3 : categoryTab === 'Grocery and Convenience' ? grocery3 : categoryTab === 'Clothing and Accessories' ? clothing3 : beauty3} alt="" />
                         </div>
                     </div>
-                    {categoryTab === 'Fasion & Beauty' && <div className="lg:hidden block px-3">
+
+                    {/* small devices */}
+                    <div className="lg:hidden block px-3">
                         <Swiper
                             slidesPerView="auto"
                             modules={[Autoplay]}
                         >
                             <SwiperSlide>
                                 <div>
-                                    <img className="mx-auto px-2" src={electronicsImg1} alt="" />
+                                    <img className="mx-auto px-2" src={categoryTab === 'Restaurants' ? restaurants1 : categoryTab === 'Coffee Shops' ? coffeeShop1 : categoryTab === 'Food Truck' ? foodTruck1 : categoryTab === 'Bar and Breweries' ? bar1 : categoryTab === 'Grocery and Convenience' ? grocery1 : categoryTab === 'Clothing and Accessories' ? clothing1 : beauty1} alt="" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img className="mx-auto px-2" src={electronicsImg2} alt="" />
+                                <img className="mx-auto px-2" src={categoryTab === 'Restaurants' ? restaurants2 : categoryTab === 'Coffee Shops' ? coffeeShop2 : categoryTab === 'Food Truck' ? foodTruck2 : categoryTab === 'Bar and Breweries' ? bar2 : categoryTab === 'Grocery and Convenience' ? grocery2 : categoryTab === 'Clothing and Accessories' ? clothing2 : beauty2} alt="" />
 
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img className="mx-auto px-2 w-[50%]" src={electronicsImg3} alt="" />
-                            </SwiperSlide>
-
-                        </Swiper>
-                    </div>}
-                    {categoryTab !== 'Fasion & Beauty' && <div className="lg:hidden block px-3">
-                        <Swiper
-                            slidesPerView="auto"
-                            modules={[Autoplay]}
-                        >
-                            <SwiperSlide>
-                                <div>
-                                    <img className="mx-auto px-2" src={electronicsImg2} alt="" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div>
-                                    <img className="mx-auto px-2" src={electronicsImg1} alt="" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div>
-                                    <img className="mx-auto px-2 w-[50%]" src={electronicsImg3} alt="" />
-                                </div>
+                                <img className="mx-auto px-2 w-[50%]" src={categoryTab === 'Restaurants' ? restaurants3 : categoryTab === 'Coffee Shops' ? coffeeShop3 : categoryTab === 'Food Truck' ? foodTruck3 : categoryTab === 'Bar and Breweries' ? bar3 : categoryTab === 'Grocery and Convenience' ? grocery3 : categoryTab === 'Clothing and Accessories' ? clothing3 : beauty3} alt="" />
                             </SwiperSlide>
 
                         </Swiper>
-                    </div>}
+                    </div>
                 </div>
             </section>
 
@@ -295,12 +293,17 @@ const OnlineOrdering = () => {
                 </div>
             </section >
 
+            {/* TODO: */}
             <section className="bg-[#141817] py-[135px] relative overflow-hidden">
                 <div className="greenCustomAnimationPOS"></div>
                 <div className="max-w-[1300px] px-5 mx-auto mb-[130px] lg:mb-[180px]">
                     <div className="flex flex-col lg:flex-row gap-20 items-center">
-                        <img src={image2} alt="" className="w-full lg:w-[42%]" />
-                        <div className=" lg:w-[58%]">
+                        <div className="w-full lg:w-[45%] min-h-[400px] lg:min-h-[600px] relative">
+                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="0" src={mobile1} alt="" className="w-[80%] absolute top-36 -left-40 z-10" />
+                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="300" src={mobile2} alt="" className="w-[80%] absolute top-16 -left-8 z-20" />
+                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="600" src={mobile3} alt="" className="w-[80%] absolute -top-6 left-28 z-30" />
+                        </div>
+                        <div className=" lg:w-[55%]">
                             <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Create your <span className="text-primary">Free</span> online ordering page today</h1>
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Accept online food orders for collection or delivery.</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
