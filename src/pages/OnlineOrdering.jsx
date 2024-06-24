@@ -296,12 +296,12 @@ const OnlineOrdering = () => {
             {/* TODO: */}
             <section className="bg-[#141817] py-[135px] relative overflow-hidden">
                 <div className="greenCustomAnimationPOS"></div>
-                <div className="max-w-[1300px] px-5 mx-auto mb-[130px] lg:mb-[180px]">
-                    <div className="flex flex-col lg:flex-row gap-20 items-center">
+                <div className="max-w-[1300px] px-5 mx-auto mb-[60px] md:mb-[100px] lg:mb-[150px]">
+                    <div className="flex flex-col lg:flex-row md:gap-20 items-center">
                         <div className="w-full lg:w-[45%] min-h-[400px] lg:min-h-[600px] relative">
-                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="0" src={mobile1} alt="" className="w-[80%] absolute top-36 -left-40 z-10" />
-                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="300" src={mobile2} alt="" className="w-[80%] absolute top-16 -left-8 z-20" />
-                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="600" src={mobile3} alt="" className="w-[80%] absolute -top-6 left-28 z-30" />
+                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="0" src={mobile1} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute top-[50px] left-[-20px] lg:top-36 lg:-left-40 z-10" />
+                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="300" src={mobile2} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute left-[50px] lg:top-16 lg:-left-8 z-20" />
+                            <img data-aos="fade-down" data-aos-duration="400" data-aos-delay="600" src={mobile3} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute -top-10 left-36 lg:-top-6 lg:left-28 z-30" />
                         </div>
                         <div className=" lg:w-[55%]">
                             <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Create your <span className="text-primary">Free</span> online ordering page today</h1>
