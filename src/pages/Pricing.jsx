@@ -89,18 +89,18 @@ const Pricing = () => {
             <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
                 <HeaderContainer>
                     <Navbar />
-                    <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col gap-y-10 lg:gap-y-0 lg:flex-row lg:justify-between lg:items-center`}>
-                        <div className="w-full lg:w-2/5 flex flex-col mt-10 lg:mt-0">
+                    <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse md:gap-y-10 lg:gap-y-0 lg:flex-row lg:justify-between lg:items-center`}>
+                        <div className="w-full lg:w-[45%] flex flex-col mt-10 lg:mt-0">
                             <h1 className="w-[90%] md:w-4/5 text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Simple and transparent <span className="text-[#9FE870]">POS pricing</span></h1>
-                            <p className="mb-6 md:mb-8 mt-4 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Power your business with award-winning, purpose built technology</p>
+                            <p className="mb-6 md:mb-8 mt-4 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Power your business with award-winning, <br /> purpose built technology</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button onClick={() => handleScrollToSection('deeper-pricing-section')} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
                                 <button onClick={() => handleScrollToSection('contact-section')} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
 
-                        <div className="w-full lg:absolute lg:right-0 lg:w-[55%] mt-6">
-                            <img className="scale-[1.1] md:scale-100" src={headerImg} alt="header" />
+                        <div className="w-full lg:w-[55%] mt-6">
+                            <img className="w-full  scale-x-[1.2] lg:w-[100%] md:scale-100" src={headerImg} alt="header" />
                         </div>
                     </div>
 

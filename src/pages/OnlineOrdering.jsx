@@ -41,7 +41,14 @@ import clickCollect from "../assets/images/online ordering/click-collect.svg"
 import preOrder from "../assets/images/online ordering/pre-order.svg"
 import timeBased from "../assets/images/online ordering/time-slot.svg"
 import marketingTools from "../assets/images/online ordering/marketing-tools.png"
-import mobileApp from "../assets/images/online ordering/mobile-app.svg"
+import mShape1 from "../assets/images/online ordering/mshape1.png"
+import mShape2 from "../assets/images/online ordering/mshape2.png"
+import mShape3 from "../assets/images/online ordering/mshape3.png"
+import maShape1 from "../assets/images/online ordering/mashape1.png"
+import maShape2 from "../assets/images/online ordering/mashape2.png"
+import maShape3 from "../assets/images/online ordering/mashape3.png"
+import maShape4 from "../assets/images/online ordering/mashape4.png"
+import mobileApp from "../assets/images/online ordering/mobile-app.png"
 import CustomerReviews from "../components/CustomerReviews";
 import Footer from "../components/Footer";
 import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
@@ -291,13 +298,12 @@ const OnlineOrdering = () => {
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
-            {/* TODO: */}
             <section className="bg-[#141817] py-[135px] relative overflow-hidden">
                 <div className="greenCustomAnimationPOS"></div>
-                <div className="max-w-[1300px] px-5 mx-auto mb-[60px] md:mb-[100px] lg:mb-[150px]">
-                    <div className="flex flex-col lg:flex-row md:gap-20 items-center">
+                <div className="max-w-[1300px] px-5 mx-auto mb-[130px] lg:mb-[180px]">
+                    <div className="flex flex-col lg:flex-row gap-20 items-center">
                         <div className="w-full lg:w-[45%] min-h-[400px] lg:min-h-[600px] relative">
                             <img data-aos="fade-down" data-aos-duration="400" data-aos-offset={600} data-aos-delay="0" src={mobile1} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute top-[50px] left-[-20px] lg:top-36 lg:-left-40 z-10" />
                             <img data-aos="fade-down" data-aos-duration="400" data-aos-offset={600} data-aos-delay="300" src={mobile2} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute left-[50px] lg:top-16 lg:-left-8 z-20" />
@@ -352,6 +358,7 @@ const OnlineOrdering = () => {
                     </div>
                 </MainContainer>
 
+                {/* TODO: */}
                 <div className="max-w-[1300px] px-5 mx-auto mb-[100px] lg:mb-[180px]">
                     <div className="flex flex-col-reverse lg:flex-row gap-20 items-center">
                         <div className="lg:w-[58%]">
@@ -362,13 +369,26 @@ const OnlineOrdering = () => {
                                 <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
                             </div>
                         </div>
-                        <img src={marketingTools} alt="" className="w-[80%] lg:w-[42%]" />
+                        <div className="w-fit relative flex justify-center">
+                            <img src={marketingTools} alt="" className="w-[50%] md:w-[80%] mr-20 md:mr-0" />
+
+                            <img data-aos="fade-up" data-aos-duration="400" data-aos-delay="0" src={mShape1} alt="" className="w-[30%] md:w-[45%] absolute top-[20%] md:top-[25%] right-12  md:-right-[100px]" />
+                            <img data-aos="fade-up" data-aos-duration="400" data-aos-delay="300" src={mShape2} alt="" className="w-[30%] md:w-[45%] absolute top-[42%] md:top-[46%] right-12  md:-right-[100px]" />
+                            <img data-aos="fade-up" data-aos-duration="400" data-aos-delay="600" src={mShape3} alt="" className="w-[30%] md:w-[45%] absolute top-[64%] md:top-[67%] right-12  md:-right-[100px]" />
+                        </div>
                     </div>
                 </div>
 
                 <div className="max-w-[1300px] px-5 mx-auto">
                     <div className="flex flex-col lg:flex-row gap-20 items-center">
-                        <img src={mobileApp} alt="" className="lg:w-[42%]" />
+                        <div className='w-full md:w-[50%] mx-auto relative'>
+                            <img src={mobileApp} alt="burgerMobile" className="w-[90%] mx-auto" />
+                            <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='w-[120px] md:w-auto absolute top-24 -left-2  md:top-[160px] md:-left-[60px]' src={maShape1} alt="" />
+                            <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='w-[120px] md:w-auto absolute top-16 right-3 md:top-[100px] md:right-[40px]' src={maShape2} alt="" />
+                            <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='w-[120px] md:w-auto absolute bottom-[75px] left-3 md:bottom-[140px] md:left-[0px]' src={maShape3} alt="" />
+                            <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className='w-[120px] md:w-auto absolute bottom-[120px] right-3 md:bottom-[200px] md:-right-[20px]' src={maShape4} alt="" />
+                        </div>
+
                         <div className="lg:w-[58%]">
                             <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl  lg:leading-[65px] xl:leading-[86px] font-bold">Launch a fully branded mobile app for <span className="text-primary">free</span></h1>
                             <p className="w-5/6 mb-6 md:mb-8 mt-3 text-white text-sm sm:text-base md:text-lg xl:text-[22px] tracking-widest">Take your business to the next level with a fully branded mobile app. Let your customers place orders, track delivery status and collect loyalty points directly from their phone.</p>

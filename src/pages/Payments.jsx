@@ -93,8 +93,6 @@ const Payments = () => {
                 <header className='w-full mb-0 h-fit lg:h-[911px]'>
                     <HeaderContainer>
                         <Navbar />
-                    </HeaderContainer>
-                    <CustomContainar>
                         <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center`}>
                             <div className="w-full lg:w-2/5 flex flex-col mt-10 lg:mt-0">
                                 <h1 className="w-[90%] md:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">Payment </span>Processing</h1>
@@ -116,20 +114,21 @@ const Payments = () => {
                                     className='payment'
                                 >
                                     <SwiperSlide>
-                                        <img className='h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner} alt="header" />
+                                        <img className='w-full h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner} alt="header" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <img className='h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner1} alt="header" />
+                                        <img className='w-full h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner1} alt="header" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <img className='h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner2} alt="header" />
+                                        <img className='w-full h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner2} alt="header" />
                                     </SwiperSlide>
 
                                 </Swiper>
 
                             </div>
                         </div>
-
+                        </HeaderContainer>
+                        <CustomContainar>
                         {/* large device sticky */}
                         <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
                             <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
@@ -206,7 +205,7 @@ const Payments = () => {
                                     <div className='flex gap-8 justify-between'>
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-auto ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
