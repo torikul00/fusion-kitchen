@@ -4,11 +4,17 @@ import Navbar from '../components/Navbar';
 import banner from '../assets/images/payments/banner.png'
 import banner1 from '../assets/images/payments/banner1.png'
 import banner2 from '../assets/images/payments/banner2.png'
-import banner3 from '../assets/images/payments/banner3.png'
 import burgerMobile from '../assets/images/payments/burgerMobile.png'
-import image1 from '../assets/images/payments/image 190.png'
-import image2 from '../assets/images/payments/image 191.png'
-import image3 from '../assets/images/payments/image3.png'
+import image1 from '../assets/images/payments/image1.png'
+import image2 from '../assets/images/payments/image2.png'
+import contactless from '../assets/images/payments/contactless.png'
+import chip from '../assets/images/payments/chip.png'
+import qr from '../assets/images/payments/qr.png'
+import person from '../assets/images/payments/person.png'
+import online from '../assets/images/payments/online.png'
+import remote from '../assets/images/payments/remote.png'
+import buy from '../assets/images/payments/buy.png'
+import mobile from '../assets/images/payments/mobile.png'
 import GetAQuote from '../components/GetAQuote';
 import MainContainer from '../components/MainContainer';
 import CustomerReviews from '../components/CustomerReviews';
@@ -17,12 +23,12 @@ import Footer from '../components/Footer';
 import send from '../assets/images/pos/send.svg'
 import { FaAngleDown, FaArrowDown, FaArrowRight } from 'react-icons/fa6';
 import messageIcon from "../assets/images/online ordering/messageIcon.svg"
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
+
 
 const Payments = () => {
     const getAQuoteRef = useRef(null)
@@ -32,7 +38,6 @@ const Payments = () => {
     const [isSticky, setIsSticky] = useState(false)
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [activeTab, setActiveTab] = useState('In Person')
-    const swiperRef = useRef(null)
     const [activeMethod, setActiveMethod] = useState('Contactless')
 
     const navigateToGetAQuote = () => {
@@ -76,12 +81,7 @@ const Payments = () => {
             </div>
         );
     }
-    const handleNext = () => {
-        swiperRef.current.swiper.slideNext()
-    }
-    const handlePrev = () => {
-        swiperRef.current.swiper.slidePrev()
-    }
+
     return (
         <div className='overflow-hidden'>
             <div className='bg-[#141817] pb-[100px] lg:pb-[200px]'>
@@ -109,6 +109,7 @@ const Payments = () => {
                                         "disableOnInteraction": false
                                     }}
                                     className='payment'
+                                    int
                                 >
                                     <SwiperSlide>
                                         <img src={banner} alt="header" />
@@ -118,9 +119,6 @@ const Payments = () => {
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <img src={banner2} alt="header" />
-                                    </SwiperSlide>
-                                    <SwiperSlide>
-                                        <img src={banner3} alt="header" />
                                     </SwiperSlide>
 
                                 </Swiper>
@@ -202,29 +200,9 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                        <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] h-fit bg-white border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
-                                            <HiOutlineArrowLeft size={30} />
-                                        </button>
-
+                                    
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <Swiper
-                                                modules={[Pagination]}
-                                                pagination={{ clickable: true }}
-                                                autoplay={{
-                                                    "delay": 2500,
-                                                    "disableOnInteraction": false
-                                                }}
-                                                ref={swiperRef}
-                                                className='payment'
-                                            >
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image1} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
-                                                </SwiperSlide>
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image2} alt="" className='w-full object-cover rounded-[32px] h-[250px] md:h-[400px]' />
-                                                </SwiperSlide>
-
-                                            </Swiper>
+                                        <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -235,9 +213,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button style={{ boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] border bg-white border-[#9FE870] text-black bg-light-gray transition-all h-fit duration-200' onClick={handleNext}>
-                                            <HiOutlineArrowRight size={30} />
-                                        </button>
+                                      
                                     </div>
                                 </div>
 
@@ -258,29 +234,9 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                        <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] h-fit bg-white border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
-                                            <HiOutlineArrowLeft size={30} />
-                                        </button>
-
+                                      
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <Swiper
-                                                modules={[Pagination]}
-                                                pagination={{ clickable: true }}
-                                                autoplay={{
-                                                    "delay": 2500,
-                                                    "disableOnInteraction": false
-                                                }}
-                                                ref={swiperRef}
-                                                className='payment'
-                                            >
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image2} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
-                                                </SwiperSlide>
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image1} alt="" className='w-full object-cover rounded-[32px] h-[250px] md:h-[400px]' />
-                                                </SwiperSlide>
-
-                                            </Swiper>
+                                        <img src={online} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -291,9 +247,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button style={{ boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] border bg-white border-[#9FE870] text-black bg-light-gray transition-all h-fit duration-200' onClick={handleNext}>
-                                            <HiOutlineArrowRight size={30} />
-                                        </button>
+                                      
                                     </div>
                                 </div>
 
@@ -314,29 +268,10 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                        <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] h-fit bg-white border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
-                                            <HiOutlineArrowLeft size={30} />
-                                        </button>
+                                       
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <Swiper
-                                                modules={[Pagination]}
-                                                pagination={{ clickable: true }}
-                                                autoplay={{
-                                                    "delay": 2500,
-                                                    "disableOnInteraction": false
-                                                }}
-                                                ref={swiperRef}
-                                                className='payment'
-                                            >
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image1} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
-                                                </SwiperSlide>
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image2} alt="" className='w-full object-cover rounded-[32px] h-[250px] md:h-[400px]' />
-                                                </SwiperSlide>
-
-                                            </Swiper>
+                                        <img src={remote} alt="" className='w-full  rounded-[32px] h-[250px] md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -347,9 +282,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button style={{ boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] border bg-white border-[#9FE870] text-black bg-light-gray transition-all h-fit duration-200' onClick={handleNext}>
-                                            <HiOutlineArrowRight size={30} />
-                                        </button>
+                                   
                                     </div>
                                 </div>
 
@@ -370,29 +303,9 @@ const Payments = () => {
                                 </div>
                                 <div className='lg:w-[60%]'>
                                     <div className='flex gap-8 justify-between'>
-                                        <button style={{ boxShadow: '4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] h-fit bg-white border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}>
-                                            <HiOutlineArrowLeft size={30} />
-                                        </button>
-
+                              
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <Swiper
-                                                modules={[Pagination]}
-                                                pagination={{ clickable: true }}
-                                                autoplay={{
-                                                    "delay": 2500,
-                                                    "disableOnInteraction": false
-                                                }}
-                                                ref={swiperRef}
-                                                className='payment'
-                                            >
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image1} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
-                                                </SwiperSlide>
-                                                <SwiperSlide className='px-1'>
-                                                    <img src={image2} alt="" className='w-full object-cover rounded-[32px] h-[250px] md:h-[400px]' />
-                                                </SwiperSlide>
-
-                                            </Swiper>
+                                        <img src={buy} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -403,9 +316,7 @@ const Payments = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button style={{ boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-5 hidden xl:block rounded-full mt-[180px] border bg-white border-[#9FE870] text-black bg-light-gray transition-all h-fit duration-200' onClick={handleNext}>
-                                            <HiOutlineArrowRight size={30} />
-                                        </button>
+                                     
                                     </div>
                                 </div>
 
@@ -432,7 +343,7 @@ const Payments = () => {
                     </div>
                     <section className='my-[60px] md:my-[100px] lg:my-[200px]'>
                         <h1 className='w-[90%] text-white sm:w-4/5 lg:w-[70%] text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold'>Accept any payment methods to ensure secure and stable payment processing.</h1>
-                        <div className='text-white flex justify-between items-center mt-20'>
+                        <div className='text-white flex h-[500px] overflow-hidden items-center mt-20'>
                             <div className='w-[30%]'>
                                 <div onClick={() => setActiveMethod('Contactless')} className='cursor-pointer'>
                                     <p className={`mb-5 text-sm md:text-base cursor-pointer ${activeMethod == 'Contactless' ? 'font-bold' : ''}`}>Contactless</p>
@@ -451,11 +362,11 @@ const Payments = () => {
                                     <div className={` mb-10 ${activeMethod == 'Mobile Payment' ? 'w-[100px] md:w-[200px] h-[4px] bg-primary' : 'w-[90px] md:w-[135px] h-[0.5px] bg-white'}`}></div>
                                 </div>
                             </div>
-                            <div className='w-[60%]'>
-                                {activeMethod == 'Contactless' && <img src={image3} alt="" />}
-                                {activeMethod == 'Chip & PIN' && <img src={image2} alt="" />}
-                                {activeMethod == 'QR Code Payment' && <img src={image1} alt="" />}
-                                {activeMethod == 'Mobile Payment' && <img src={image2} alt="" />}
+                            <div className='w-[70%] md:w-[50%] lg:w-[40%] overflow-hidden'>
+                                {activeMethod == 'Contactless' && <img className='w-full' src={contactless} alt="" />}
+                                {activeMethod == 'Chip & PIN' && <img className='w-full' src={chip} alt="" />}
+                                {activeMethod == 'QR Code Payment' && <img className='w-full' src={qr} alt="" />}
+                                {activeMethod == 'Mobile Payment' && <img className='w-full' src={mobile} alt="" />}
                             </div>
                         </div>
                     </section>

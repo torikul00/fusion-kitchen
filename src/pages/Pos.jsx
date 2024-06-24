@@ -18,8 +18,16 @@ import image2 from '../assets/images/pos/image2.png'
 import image3 from '../assets/images/pos/image3.png'
 import image4 from '../assets/images/pos/image4.png'
 import image5 from '../assets/images/pos/image5.png'
-import image6 from '../assets/images/pos/image6.svg'
-import image8 from '../assets/images/pos/image8.png'
+import image6 from '../assets/images/pos/image6.png'
+import shape1 from '../assets/images/pos/Shape.png'
+import shape2 from '../assets/images/pos/Shape (1).png'
+import shape3 from '../assets/images/pos/Shape (2).png'
+import shape4 from '../assets/images/pos/Shape (3).png'
+import doublePhone from '../assets/images/pos/doublePhone.png'
+import map from '../assets/images/pos/map.png'
+import kitchen from '../assets/images/pos/kitchen.png'
+import order from '../assets/images/pos/order.png'
+import table from '../assets/images/pos/table.png'
 import done from '../assets/images/pos/done.svg'
 import circle from '../assets/images/pos/circle.svg'
 import send from '../assets/images/pos/send.svg'
@@ -93,7 +101,7 @@ const Pos = () => {
         })
     }
     return (
-        <>
+        <div className="overflow-hidden">
             <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
                 <HeaderContainer>
                     <Navbar />
@@ -209,7 +217,7 @@ const Pos = () => {
                                 }}
                             >
                                 <SwiperSlide
-                                    className='w-[33.33%] p-4 lg:p-5 mb-14'>
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
                                     <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
                                         <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Interactive menu builder</h3>
                                         <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Add new menu items in seconds with our interactive builder</h3>
@@ -217,7 +225,7 @@ const Pos = () => {
                                     </div>
                                 </SwiperSlide>
 
-                                <SwiperSlide className='w-[33.33%] p-4 lg:p-5 mb-14 '>
+                                <SwiperSlide className='w-[33.33%] p-4 lg:p-4 mb-14 '>
                                     <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative overflow-hidden'>
                                         <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Multiple service types</h3>
                                         <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Eat-in, takeaway, delivery, collection, drive through. Manage all your orders in one place</h3>
@@ -227,7 +235,7 @@ const Pos = () => {
 
 
                                 <SwiperSlide
-                                    className='w-[33.33%] p-4 lg:p-5 mb-14'>
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
                                     <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px]'>
                                         <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Powerful promotions & marketing tools</h3>
                                         <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Happy hour, discounts, vouchers and loyalty all built in. Marketing tools designed to drive revenue</h3>
@@ -235,17 +243,57 @@ const Pos = () => {
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide
-                                    className='w-[33.33%] p-4 lg:p-5 mb-14'>
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
                                     <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
-                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Interactive menu builder</h3>
-                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Add new menu items in seconds with our interactive builder</h3>
-                                        <img src={ipadMini} alt="" className='w-[240px] block absolute bottom-[10%] right-[10%] md:right-[12%] xl:right-[15.6%]' />
+                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Table management & booking</h3>
+                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Stay on top of your table bookings and let customers book online </h3>
+                                        <img src={table} alt="" className='w-[240px] block absolute bottom-[7%] right-[10%] md:right-[12%] xl:right-[15.6%]' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
+                                    <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
+                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Stock control & supplier management</h3>
+                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Item & ingredient level tracking. out-of-stock notifications. supplier management and automatic item reordering</h3>
+                                        <img src={doublePhone} alt="" className='w-[240px] block absolute bottom-[7%] right-[10%] md:right-[12%] xl:right-[15.6%]' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
+                                    <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
+                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Delivery management & live driver tracking</h3>
+                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Manage all of your deliveries. assign orders to drivers. send customer updates and track drivers in real time</h3>
+                                        <img src={map} alt="" className='w-[240px] block absolute bottom-[10%] scale-110 right-[10%] md:right-[12%] xl:right-[15.6%]' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
+                                    <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
+                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Kitchen management</h3>
+                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Instantly send orders to the kitchen from FOR split orders by prep area and organize orders by courses</h3>
+                                        <img src={kitchen} alt="" className='w-[240px] block absolute bottom-[10%] scale-110 right-[10%] md:right-[12%] xl:right-[15%]' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
+                                    <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
+                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Staff management & rotas</h3>
+                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Create staff rotes. track payroll costs. stay on top of training, assign permissions and track productivity</h3>
+                                        <img src={pos1} alt="" className='w-[240px] block absolute bottom-[7%] lg:bottom-[7%] md:bottom-0 lg:scale-110 right-[13%] md:right-[12%] xl:right-[15%]' />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide
+                                    className='w-[33.33%] p-4 lg:p-4 mb-14'>
+                                    <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
+                                        <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Online order sync</h3>
+                                        <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Manage all your orders in one place. Sync your own website orders as well as Deliveroo & JustEat + others to your POS </h3>
+                                        <img src={order} alt="" className='w-[240px] block absolute bottom-[7%] scale-125 right-[13%] md:right-[12%] xl:right-[15%]' />
                                     </div>
                                 </SwiperSlide>
 
                             </Swiper>
                         </div>
-
+                        {/* TODO: */}
                         <button style={{ boxShadow: '-4px 1px 4px 0px rgba(159, 232, 112, 1)' }} className='p-7 hidden xl:block rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}>
                             <HiOutlineArrowRight size={30} />
                         </button>
@@ -298,8 +346,9 @@ const Pos = () => {
 
             <section className="py-[100px] lg:py-[150px]">
                 <div className="flex justify-between flex-col lg:flex-row items-center max-w-[1400px] px-5 mx-auto">
-                    <div data-aos="fade-right" className="w-[100%] lg:w-[48%]">
-                        <img src={image4} alt="" />
+
+                    <div className="w-[100%] lg:w-[48%] relative">
+                        <img data-aos='fade-right' src={image4} alt="" />
                     </div>
                     <div data-aos="fade-left" className="w-[100%] lg:w-[48%] mt-10 lg:mt-0">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Build an intelligent menu
@@ -352,22 +401,36 @@ const Pos = () => {
                 <GetAQuote />
             </div>
 
-            <section className="w-full radial-gradient text-white py-[100px] lg:py-[150px]">
+            <section className="w-full radial-gradient text-white py-[60px] md:py-[100px] lg:py-[150px] overflow-hidden">
                 <MainContainer>
                     <div className="flex flex-col-reverse lg:flex-col">
                         <div>
-                            <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Process more orders,<br />faster than ever before</h1>
+
+                            <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px] mt-6 md:mt-0">Process more orders,<br />faster than ever before</h1>
                             <p className="mb-6 md:mb-8 my-6 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Allow staff to focus on preparing orders and <br /> delivering a better service</p>
                             <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
                                 <button onClick={navigateToPricing} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Buy now</button>
                                 <button onClick={navigateToForm} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Speak to an expert</button>
                             </div>
                         </div>
-                        <img data-aos="fade-up" className="mt-10 lg:block hidden" src={image6} alt="image6" />
-                        <img data-aos="fade-up" className="mt-10 lg:hidden block" src={image8} alt="image6" />
+                        <div className="relative pt-[100px] mt-20 hidden lg:block">
+                            <img className="mt-10 lg:block hidden" src={image6} alt="image6" />
+                            <img data-aos="fade-up" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-0" src={shape1} alt="" />
+                            <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-[150px]" src={shape2} alt="" />
+                            <img data-aos="fade-right" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-[300px]" src={shape3} alt="" />
+                            <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-[450px]" src={shape4} alt="" />
+                        </div>
+                        <div className="lg:hidden block relative">
+                            <img className="mt-10 " src={image6} alt="image6" />
+                            <img className="mt-10 lg:block hidden" src={image6} alt="image6" />
+                            <img data-aos="fade-up" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] left-0 absolute top-0" src={shape1} alt="" />
+                            <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] left-0 absolute top-[80px] md:top-[120px]" src={shape2} alt="" />
+                            <img data-aos="fade-right" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] -right-3 absolute top-0" src={shape3} alt="" />
+                            <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] -right-3 absolute top-[80px] md:top-[120px]" src={shape4} alt="" />
+                        </div>
                     </div>
 
-                    <div ref={pricingRef} className="mt-[150px] lg:mt-[200px]">
+                    <div ref={pricingRef} className="mt-[70px] md:mt[100px] lg:mt-[150px]">
                         <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[70px]">Choose a plan that&apos;s <span className="text-primary">right</span> for you</h1>
                         <p className="w-[90%] lg:w-[55%] mb-6 md:mb-8 my-6 text-[#CCCCCC] sm:text-base md:text-lg xl:text-[22px] tracking-widest">All of our packages are totally flexible, so you can upgrade, downgrade or pause your subscription anytime!</p>
 
@@ -465,7 +528,7 @@ const Pos = () => {
 
             <Footer />
 
-        </>
+        </div>
     );
 };
 
