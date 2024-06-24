@@ -478,7 +478,7 @@ const Pos = () => {
                 </MainContainer>
             </section>
 
-            <section className="my-[100px] lg:my-[180px]">
+            <section className="my-[60px] lg:my-[150px]">
                 <MainContainer>
                     <PaymentGridCard />
                     <form ref={formRef} onSubmit={handleFormSubmit}>
