@@ -360,15 +360,15 @@ const Pos = () => {
                         <img data-aos="fade-up" data-aos-delay="400" data-aos-once="true" src={addOrEdit} alt="" className="block lg:hidden"/>
                         <div className="relative lg:block hidden">
                             <img src={image4} alt="" />
-                            <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className="absolute top-[30px] -left-[100px] w-[120px]" src={delivery} alt="" />
-                            <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className="absolute bottom-[30px] -left-[100px] w-[120px]" src={parcel} alt="" />
-                            <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className="absolute top-[30px] -right-[100px] w-[120px]" src={dine} alt="" />
-                            <img data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className="absolute bottom-[30px] -right-[100px] w-[120px]" src={pick} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className="absolute top-[30px] -left-[100px] w-[120px]" src={delivery} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className="absolute bottom-[30px] -left-[100px] w-[120px]" src={parcel} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className="absolute top-[30px] -right-[100px] w-[120px]" src={dine} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-down-right" data-aos-delay="400" data-aos-once="true" className="absolute bottom-[30px] -right-[100px] w-[120px]" src={pick} alt="" />
 
-                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[20px] -bottom-[110px]  w-[100px]" src={fusion} alt="" />
-                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[155px] -bottom-[110px] w-[100px]" src={deliveroo} alt="" />
-                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[285px] -bottom-[110px] w-[100px]" src={eat} alt="" />
-                            <img data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute right-[20px] -bottom-[110px] w-[100px]" src={uber} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[20px] -bottom-[110px]  w-[100px]" src={fusion} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[155px] -bottom-[110px] w-[100px]" src={deliveroo} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute left-[285px] -bottom-[110px] w-[100px]" src={eat} alt="" />
+                            <img data-aos-offset={600} data-aos="fade-down" data-aos-delay="400" data-aos-once="true" className="absolute right-[20px] -bottom-[110px] w-[100px]" src={uber} alt="" />
                         </div>
                     </div>
                     <div data-aos="fade-up" className="w-[100%] lg:w-[40%] mt-10 lg:mt-0">

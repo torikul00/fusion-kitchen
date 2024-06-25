@@ -65,6 +65,15 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import { ReactTyped } from "react-typed";
+import AOS from 'aos';
+
+AOS.init({
+    duration: 600,
+    once: true,
+    offset: 200,
+    easing: 'ease-in-out',
+    delay: 100,
+});
 
 const OnlineOrdering = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -371,7 +380,6 @@ const OnlineOrdering = () => {
                         </div>
                         <div className="w-fit relative flex justify-center">
                             <img src={marketingTools} alt="" className="w-[50%] md:w-[80%] mr-20 md:mr-0" />
-
                             <img data-aos="fade-up" data-aos-duration="400" data-aos-delay="0" src={mShape1} alt="" className="w-[30%] md:w-[45%] absolute top-[20%] md:top-[25%] right-12  md:-right-[100px]" />
                             <img data-aos="fade-up" data-aos-duration="400" data-aos-delay="300" src={mShape2} alt="" className="w-[30%] md:w-[45%] absolute top-[42%] md:top-[46%] right-12  md:-right-[100px]" />
                             <img data-aos="fade-up" data-aos-duration="400" data-aos-delay="600" src={mShape3} alt="" className="w-[30%] md:w-[45%] absolute top-[64%] md:top-[67%] right-12  md:-right-[100px]" />
