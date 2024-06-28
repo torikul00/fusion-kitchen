@@ -84,6 +84,8 @@ const OnlineOrdering = () => {
     const getAQuoteRef = useRef(null);
     const formRef = useRef(null);
     const swiperRef = useRef(null);
+    const tabContainer = useRef(null);
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -130,6 +132,37 @@ const OnlineOrdering = () => {
     const handleStringTyped = (index) => {
         swiperRef.current.swiper.slideTo(index);
     };
+    const handleCategoryTab = (category) => {
+        setCategoryTab(category)
+        setTimeout(() => {
+            let scrollPosition = 0;
+            if (category === 'Restaurants') {
+                scrollPosition = 0
+            }
+            if (category === 'Coffee Shops') {
+                scrollPosition = 0;
+            }
+            if (category === 'Food Truck') {
+                scrollPosition = 120;
+            }
+            if (category === 'Bar and Breweries') {
+                scrollPosition = 260;
+            }
+            if (category === 'Grocery and Convenience') {
+                scrollPosition = 475;
+            }
+            if (category === 'Clothing and Accessories') {
+                scrollPosition = 720;
+            }
+            if (category === 'All Beauty Solutions') {
+                scrollPosition = 900;
+            }
+            tabContainer.current.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        });
+    }
     return (
         <>
             <header className={`w-full z-50 bg-[#141817] relative overflow-hidden mb-0 h-fit lg:h-[911px]`}>
@@ -234,33 +267,34 @@ const OnlineOrdering = () => {
                 </HeaderContainer>
             </header>
 
-            <section className="tab-section-gradient w-full py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
+            <section className="tab-section-gradient w-full py-12 md:mb-[100px] lg:mb-[180px]">
                 <div className="max-w-[1550px] mx-auto md:px-5">
-                    <div className="bg-[#9FE870] hide-scrollbar md:rounded-full p-2 overflow-scroll flex lg:justify-between gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
-                        <button onClick={() => setCategoryTab('Restaurants')} className={`${categoryTab === 'Restaurants' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Restaurants</button>
-                        <button onClick={() => setCategoryTab('Coffee Shops')} className={`${categoryTab === 'Coffee Shops' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Coffee Shops</button>
-                        <button onClick={() => setCategoryTab('Food Truck')} className={`${categoryTab === 'Food Truck' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Food Truck</button>
-                        <button onClick={() => setCategoryTab('Bar and Breweries')} className={`${categoryTab === 'Bar and Breweries' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Bar and Breweries</button>
-                        <button onClick={() => setCategoryTab('Grocery and Convenience')} className={`${categoryTab === 'Grocery and Convenience' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Grocery and Convenience</button>
-                        <button onClick={() => setCategoryTab('Clothing and Accessories')} className={`${categoryTab === 'Clothing and Accessories' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Clothing and Accessories</button>
-                        <button onClick={() => setCategoryTab('All Beauty Solutions')} className={`${categoryTab === 'All Beauty Solutions' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>All Beauty Solutions</button>
+                    {/* TODO: */}
+                    <div ref={tabContainer} className="bg-[#9FE870] hide-scrollbar md:rounded-full p-2 overflow-scroll flex lg:justify-between gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
+                        <button onClick={() => handleCategoryTab('Restaurants')} className={`${categoryTab === 'Restaurants' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Restaurants</button>
+                        <button onClick={() => handleCategoryTab('Coffee Shops')} className={`${categoryTab === 'Coffee Shops' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Coffee Shops</button>
+                        <button onClick={() => handleCategoryTab('Food Truck')} className={`${categoryTab === 'Food Truck' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Food Truck</button>
+                        <button onClick={() => handleCategoryTab('Bar and Breweries')} className={`${categoryTab === 'Bar and Breweries' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Bar and Breweries</button>
+                        <button onClick={() => handleCategoryTab('Grocery and Convenience')} className={`${categoryTab === 'Grocery and Convenience' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Grocery and Convenience</button>
+                        <button onClick={() => handleCategoryTab('Clothing and Accessories')} className={`${categoryTab === 'Clothing and Accessories' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Clothing and Accessories</button>
+                        <button onClick={() => handleCategoryTab('All Beauty Solutions')} className={`${categoryTab === 'All Beauty Solutions' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-4 lg:px-8 py-3 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>All Beauty Solutions</button>
                     </div>
                 </div>
-                <div key={categoryTab} data-aos="fade-up" data-aos-duration="500" className="px-5">
-                    <div className="lg:grid grid-cols-3 hidden justify-center gap-10">
+                <div key={categoryTab} data-aos="fade-up" data-aos-duration="500" className="max-w-[1620px] mx-auto px-5">
+                    <div className="lg:flex hidden justify-between gap-5">
                         <div>
-                            <img className="ml-[20%]" src={categoryTab === 'Restaurants' ? restaurants1 : categoryTab === 'Coffee Shops' ? coffeeShop1 : categoryTab === 'Food Truck' ? foodTruck1 : categoryTab === 'Bar and Breweries' ? bar1 : categoryTab === 'Grocery and Convenience' ? grocery1 : categoryTab === 'Clothing and Accessories' ? clothing1 : beauty1} alt="" />
+                            <img className="w-[620px]" src={categoryTab === 'Restaurants' ? restaurants1 : categoryTab === 'Coffee Shops' ? coffeeShop1 : categoryTab === 'Food Truck' ? foodTruck1 : categoryTab === 'Bar and Breweries' ? bar1 : categoryTab === 'Grocery and Convenience' ? grocery1 : categoryTab === 'Clothing and Accessories' ? clothing1 : beauty1} alt="" />
                         </div>
                         <div>
-                            <img className="ml-[20%]" src={categoryTab === 'Restaurants' ? restaurants2 : categoryTab === 'Coffee Shops' ? coffeeShop2 : categoryTab === 'Food Truck' ? foodTruck2 : categoryTab === 'Bar and Breweries' ? bar2 : categoryTab === 'Grocery and Convenience' ? grocery2 : categoryTab === 'Clothing and Accessories' ? clothing2 : beauty2} alt="" />
+                            <img className="w-[620px]" src={categoryTab === 'Restaurants' ? restaurants2 : categoryTab === 'Coffee Shops' ? coffeeShop2 : categoryTab === 'Food Truck' ? foodTruck2 : categoryTab === 'Bar and Breweries' ? bar2 : categoryTab === 'Grocery and Convenience' ? grocery2 : categoryTab === 'Clothing and Accessories' ? clothing2 : beauty2} alt="" />
                         </div>
                         <div>
-                            <img className="mx-auto w-[50%]" src={categoryTab === 'Restaurants' ? restaurants3 : categoryTab === 'Coffee Shops' ? coffeeShop3 : categoryTab === 'Food Truck' ? foodTruck3 : categoryTab === 'Bar and Breweries' ? bar3 : categoryTab === 'Grocery and Convenience' ? grocery3 : categoryTab === 'Clothing and Accessories' ? clothing3 : beauty3} alt="" />
+                            <img className="" src={categoryTab === 'Restaurants' ? restaurants3 : categoryTab === 'Coffee Shops' ? coffeeShop3 : categoryTab === 'Food Truck' ? foodTruck3 : categoryTab === 'Bar and Breweries' ? bar3 : categoryTab === 'Grocery and Convenience' ? grocery3 : categoryTab === 'Clothing and Accessories' ? clothing3 : beauty3} alt="" />
                         </div>
                     </div>
 
                     {/* small devices */}
-                    <div className="lg:hidden block px-3">
+                    <div className="lg:hidden block">
                         <Swiper
                             slidesPerView="auto"
                             modules={[Autoplay]}
@@ -312,7 +346,7 @@ const OnlineOrdering = () => {
             <section className="bg-[#141817] py-[135px] relative overflow-hidden">
                 <div className="greenCustomAnimationPOS"></div>
                 <div className="max-w-[1300px] px-5 mx-auto mb-[130px] lg:mb-[180px]">
-                    <div className="flex flex-col lg:flex-row gap-20 items-center">
+                    <div className="flex flex-col lg:flex-row md:gap-20 items-center">
                         <div className="w-full lg:w-[45%] min-h-[400px] lg:min-h-[600px] relative">
                             <img data-aos="fade-down" data-aos-duration="400" data-aos-offset={600} data-aos-delay="0" src={mobile1} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute top-[50px] left-[-20px] lg:top-36 lg:-left-40 z-10" />
                             <img data-aos="fade-down" data-aos-duration="400" data-aos-offset={600} data-aos-delay="300" src={mobile2} alt="" className="w-[70%] md:w-[50%] lg:w-[80%] absolute left-[50px] lg:top-16 lg:-left-8 z-20" />
@@ -367,7 +401,6 @@ const OnlineOrdering = () => {
                     </div>
                 </MainContainer>
 
-                {/* TODO: */}
                 <div className="max-w-[1300px] px-5 mx-auto mb-[100px] lg:mb-[180px]">
                     <div className="flex flex-col-reverse lg:flex-row gap-20 items-center">
                         <div className="lg:w-[58%]">

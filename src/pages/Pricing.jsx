@@ -150,7 +150,8 @@ const Pricing = () => {
                 </HeaderContainer>
             </header>
 
-            <section className="w-full bg-[#141817] text-white py-12 mb-[50px] md:-[100px] lg:mb-[180px]">
+            <section className="w-full bg-[#141817] text-white py-12 mb-[50px] md:-[100px] lg:mb-[180px] relative overflow-hidden">
+                <div className="greenCustomAnimationPayment"></div>
                 <MainContainer>
                     <div className="w-fit mx-auto bg-[#9FE870] rounded-full p-2 flex gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
                         <button onClick={() => setSubscriptionType('monthly')} className={`${subscriptionType === 'monthly' ? 'bg-white rounded-full shadow-lg' : 'bg-none'} px-8 md:px-10 py-2 md:py-2.5 text-[#1A1A1A] transition-all duration-200 hover:shadow-lg hover:bg-white hover:rounded-full min-w-fit`}>Monthly</button>

@@ -44,6 +44,8 @@ const Payments = () => {
     const [openBussinessType, setOpenBusinessType] = useState(false)
     const [activeTab, setActiveTab] = useState('In Person')
     const [activeMethod, setActiveMethod] = useState('Contactless')
+    const buttonRefs = useRef([]);
+    const containerRef = useRef(null);
 
     const navigateToGetAQuote = () => {
         getAQuoteRef.current.scrollIntoView()
@@ -60,6 +62,28 @@ const Payments = () => {
             setIsSticky(false);
         }
     };
+    const handleActiveTab = (tab) => {
+        setActiveTab(tab);
+        if (containerRef.current) {
+            setTimeout(() => {
+                let scrollPosition = 0;
+                if (tab === 'In Person') {
+                    scrollPosition = 0;
+                } else if (tab === 'Online') {
+                    scrollPosition = 33;
+                } else if (tab === 'Remote') {
+                    scrollPosition = 165;
+                } else if (tab === 'Buy Now, Pay Later') {
+                    scrollPosition = 600;
+                }
+                containerRef.current.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -107,28 +131,26 @@ const Payments = () => {
                             <div className="w-full md:w-[90%] lg:w-[50%] mt-6">
                                 <Swiper
                                     modules={[Autoplay]}
-                                    autoplay={{
-                                        "delay": 3000,
-                                        "disableOnInteraction": false
-                                    }}
+                                    // autoplay={{
+                                    //     "delay": 3000,
+                                    //     "disableOnInteraction": false
+                                    // }}
                                     className='payment'
                                 >
-                                    <SwiperSlide>
-                                        <img className='w-full h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner} alt="header" />
+                                    <SwiperSlide className='md:px-5 px-[2px]'>
+                                        <img className='w-full   md:h-auto' src={banner} alt="header" />
                                     </SwiperSlide>
-                                    <SwiperSlide>
-                                        <img className='w-full h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner1} alt="header" />
+                                    <SwiperSlide className='md:px-5 px-[2px]'>
+                                        <img className='w-full  md:h-auto' src={banner1} alt="header" />
                                     </SwiperSlide>
-                                    <SwiperSlide>
-                                        <img className='w-full h-[275px] lg:h-[500px] md:h-auto object-cover' src={banner2} alt="header" />
+                                    <SwiperSlide className='md:px-5 px-[2px]'>
+                                        <img className='w-full   md:h-auto' src={banner2} alt="header" />
                                     </SwiperSlide>
-
                                 </Swiper>
-
                             </div>
                         </div>
-                        </HeaderContainer>
-                        <CustomContainar>
+                    </HeaderContainer>
+                    <CustomContainar>
                         {/* large device sticky */}
                         <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
                             <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
@@ -178,12 +200,14 @@ const Payments = () => {
                 <CustomContainar>
                     <section className="my-[60px] md:my-[100px] lg:my-[120px]">
                         <h1 className="w-[90%] text-white sm:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Accept payments anywhere <br /> customers are.</h1>
-                        <div className='hide-scrollbar flex justify-between text-white border-b-[0.5px] border-[#DADADA] mt-[100px] overflow-x-scroll md:overflow-auto'>
-                            {['In Person', 'Online', 'Remote', 'Buy Now, Pay Later'].map((tab) => (
+                        <div ref={containerRef} className='hide-scrollbar flex justify-between text-white border-b-[0.5px] border-[#DADADA] mt-[60px] md:mt-[100px] overflow-x-scroll md:overflow-auto'>
+                            {['In Person', 'Online', 'Remote', 'Buy Now, Pay Later'].map((tab, index) => (
+                                // TODO:
                                 <button
                                     key={tab}
+                                    ref={(el) => (buttonRefs.current[index] = el)}
                                     className={`min-w-fit border-b-[3px] px-10 w-fit ${activeTab === tab ? 'border-primary' : 'border-primary/0'} pb-6`}
-                                    onClick={() => setActiveTab(tab)}>
+                                    onClick={() => handleActiveTab(tab, index)}>
                                     {tab}
                                 </button>
                             ))}
@@ -205,7 +229,7 @@ const Payments = () => {
                                     <div className='flex gap-8 justify-between'>
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-auto ' />
+                                            <img src={buy} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-auto ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -239,7 +263,7 @@ const Payments = () => {
                                     <div className='flex gap-8 justify-between'>
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <img src={online} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -308,7 +332,7 @@ const Payments = () => {
                                     <div className='flex gap-8 justify-between'>
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <img src={buy} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={online} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -332,10 +356,10 @@ const Payments = () => {
                 <CustomContainar>
                     <div className='relative'>
                         <div className="greenCustomAnimationPayment"></div>
-                        <div className="flex flex-col lg:flex-row items-center justify-between">
-                            <div className='w-[90%] lg:w-[30%]'>
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between">
+                            <div className='w-[90%] md:w-[70%] lg:w-[30%]'>
                                 <div className='w-[50%] mx-auto relative'>
-                                    <img src={burgerMobile} alt="burgerMobile" className="" />
+                                    <img src={burgerMobile} alt="burgerMobile" className="block mx-auto" />
                                     <img data-aos="fade-up-left" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute top-[80px] -left-[60px]' src={mastercard} alt="" />
                                     <img data-aos="fade-up-right" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute top-[140px] -right-[90px]' src={googlePay} alt="" />
                                     <img data-aos="fade-down-left" data-aos-delay="400" data-aos-once="true" className='w-[90px] md:w-auto absolute bottom-[100px] -left-[60px]' src={applePay} alt="" />
@@ -355,7 +379,7 @@ const Payments = () => {
                     </div>
                     <section className='my-[60px] md:my-[100px] lg:my-[200px]'>
                         <h1 className='w-[90%] text-white sm:w-4/5 lg:w-[70%] text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold'>Accept any payment methods to ensure secure and stable payment processing.</h1>
-                        <div className='text-white flex h-[500px] overflow-hidden items-center mt-20'>
+                        <div className='text-white flex h-[450px] lg:h-[500px] overflow-hidden items-center lg:mt-20'>
                             <div className='w-[30%]'>
                                 <div onClick={() => setActiveMethod('Contactless')} className='cursor-pointer'>
                                     <p className={`mb-5 text-sm md:text-base cursor-pointer ${activeMethod == 'Contactless' ? 'font-bold' : ''}`}>Contactless</p>
