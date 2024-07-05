@@ -17,6 +17,11 @@ html {
   background: radial-gradient(circle, rgba(0, 54, 32, 1) 0%, rgba(23, 23, 23, 1) 100%);
 }
 
+.navbar-gradient {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.10407913165266103) 0%, rgba(159, 232, 112, 0.20211834733893552) 100%);
+}
+
 /* Define CSS animation for expanding */
 @keyframes expand {
   0% {
@@ -119,14 +124,20 @@ html {
   height: 15px !important;
   opacity: 0.8;
 }
+
 .pricingSwiper .swiper-pagination-bullet-active {
   background-color: #9FE870 !important;
   width: 17px !important;
   height: 17px !important;
 }
-.pricingSwiper .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+
+.pricingSwiper .swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 25px !important;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #9FE870 !important;
   width: 18px !important;

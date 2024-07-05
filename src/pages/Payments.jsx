@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import HeaderContainer from '../components/HeaderContainer';
-import Navbar from '../components/Navbar';
-import banner from '../assets/images/payments/banner.png'
+import MobileNavbar from '../components/MobileNavbar';
 import banner1 from '../assets/images/payments/banner1.png'
 import banner2 from '../assets/images/payments/banner2.png'
 import burgerMobile from '../assets/images/payments/burgerMobile.png'
 import image1 from '../assets/images/payments/image1.png'
 import image2 from '../assets/images/payments/image2.png'
+import online1 from '../assets/images/payments/1.png'
 import contactless from '../assets/images/payments/contactless.png'
 import chip from '../assets/images/payments/chip.png'
 import qr from '../assets/images/payments/qr.png'
-import person from '../assets/images/payments/person.png'
 import online from '../assets/images/payments/online.png'
 import remote from '../assets/images/payments/remote.png'
 import buy from '../assets/images/payments/buy.png'
+import inPerson from '../assets/images/payments/inPerson.png'
 import mobile from '../assets/images/payments/mobile.png'
 import GetAQuote from '../components/GetAQuote';
 import MainContainer from '../components/MainContainer';
@@ -23,25 +23,22 @@ import visa from '../assets/images/animation phone/visa.svg'
 import mastercard from '../assets/images/animation phone/master.svg'
 import applePay from '../assets/images/animation phone/applePay.svg'
 import googlePay from '../assets/images/animation phone/pay.svg'
-
 import Footer from '../components/Footer';
 import send from '../assets/images/pos/send.svg'
-import { FaAngleDown, FaArrowDown, FaArrowRight } from 'react-icons/fa6';
-import messageIcon from "../assets/images/online ordering/messageIcon.svg"
+import { FaArrowRight } from 'react-icons/fa6';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Navbar from '../components/Navbar';
 
 
 const Payments = () => {
     const getAQuoteRef = useRef(null)
     const formRef = useRef(null)
     const [submitMessage, setSubmitMessage] = useState('')
-    const [industry, setIndustry] = useState('Restaurant')
-    const [isSticky, setIsSticky] = useState(false)
-    const [openBussinessType, setOpenBusinessType] = useState(false)
+
     const [activeTab, setActiveTab] = useState('In Person')
     const [activeMethod, setActiveMethod] = useState('Contactless')
     const buttonRefs = useRef([]);
@@ -53,15 +50,7 @@ const Payments = () => {
     const navigateToForm = () => {
         formRef.current.scrollIntoView()
     }
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
-        const triggerScrollPos = 750;
-        if (currentScrollPos > triggerScrollPos) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
+
     const handleActiveTab = (tab) => {
         setActiveTab(tab);
         if (containerRef.current) {
@@ -84,13 +73,6 @@ const Payments = () => {
         }
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
     const handleFormSubmit = (e) => {
         e.preventDefault();
         e.target.reset()
@@ -114,9 +96,14 @@ const Payments = () => {
     return (
         <div className='overflow-hidden'>
             <div className='bg-[#141817] pb-[100px] lg:pb-[200px]'>
-                <header className='w-full mb-0 h-fit lg:h-[911px]'>
+                <header className='w-full mb-0 h-fit lg:h-[911px] pt-[70px] lg:pt-0'>
                     <HeaderContainer>
-                        <Navbar />
+                        <div className="pt-[100px] hidden lg:block">
+                            <Navbar />
+                        </div>
+                        <div className='lg:hidden fixed w-[90%] z-[99] top-0'>
+                            <MobileNavbar />
+                        </div>
                         <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center`}>
                             <div className="w-full lg:w-2/5 flex flex-col mt-10 lg:mt-0">
                                 <h1 className="w-[90%] md:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">Payment </span>Processing</h1>
@@ -138,7 +125,7 @@ const Payments = () => {
                                     className='payment'
                                 >
                                     <SwiperSlide className='md:px-5 px-[2px]'>
-                                        <img className='w-full   md:h-auto' src={banner} alt="header" />
+                                        <img className='w-full md:h-auto' src={buy} alt="header" />
                                     </SwiperSlide>
                                     <SwiperSlide className='md:px-5 px-[2px]'>
                                         <img className='w-full  md:h-auto' src={banner1} alt="header" />
@@ -150,51 +137,6 @@ const Payments = () => {
                             </div>
                         </div>
                     </HeaderContainer>
-                    <CustomContainar>
-                        {/* large device sticky */}
-                        <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
-                            <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
-                                <h4 className="text-medium text-xl">Point of sale</h4>
-                                <div className="flex items-center gap-7">
-                                    <ul className="flex items-center gap-6">
-                                        <li onClick={() => setIndustry("Restaurant")} className={`${industry === 'Restaurant' ? 'text-primary' : ''} cursor-pointer`}>Restaurant</li>
-                                        <li onClick={() => setIndustry("Retail")} className={`${industry === 'Retail' ? 'text-primary' : ''} cursor-pointer`}>Retail</li>
-                                        <li onClick={() => setIndustry("Themes")} className={`${industry === 'Themes' ? 'text-primary' : ''} cursor-pointer`}>Themes</li>
-                                        <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
-                                    </ul>
-                                    <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                        <button onClick={navigateToGetAQuote} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                        <button onClick={navigateToForm} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* small device sticky */}
-                        <div className={`${isSticky ? 'block lg:hidden fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} ${openBussinessType ? 'w-full h-[calc(100vh-54px)]' : 'w-full h-fit'} transition-all`}>
-                            <div onClick={() => setOpenBusinessType(!openBussinessType)} className={`w-full h-[54px] flex gap-5 items-center justify-between px-7 sm:px-10 ${openBussinessType ? 'border-b border-[#d9d9d9] border-opacity-20' : ''}`}>
-                                <h4 className="text-medium">Point of sale</h4>
-                                <button className={`${openBussinessType ? 'rotate-180' : 'rotate-0'} transition-all`}><FaAngleDown /></button>
-                            </div>
-
-                            {openBussinessType && <div className="mt-8">
-                                <div className={`flex justify-center items-center gap-[9px] mb-4 sm:mb-5`}>
-                                    <h3 className={`text-lg font-medium'}`}>Customize your experience by</h3>
-                                    <FaArrowDown />
-                                </div>
-                                <div onClick={() => setOpenBusinessType(false)} className="text-sm flex flex-col items-center justify-center gap-4 w-[80%] sm:w-[70%] mx-auto">
-                                    <button onClick={() => setIndustry("Restaurant")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Restaurant' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Restaurant</button>
-                                    <button onClick={() => setIndustry("Retail")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Retail' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Retail</button>
-                                    <button onClick={() => setIndustry("Themes")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Themes' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Themes</button>
-                                    <button onClick={() => setIndustry("Pricing")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Pricing' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Pricing</button>
-                                </div>
-                            </div>}
-                        </div>
-                        <div className={`${isSticky ? 'lg:hidden bg-[#141817] py-2 w-full fixed text-white z-[99] left-0 bottom-0 right-0 flex gap-4 justify-center border-t border-[#d9d9d9] border-opacity-20' : 'hidden'} transition-all`}>
-                            <img src={messageIcon} alt="" />
-                            <button className="py-2.5 px-12 text-sm rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Create you site</button>
-                        </div>
-                    </CustomContainar>
                 </header>
 
                 <CustomContainar>
@@ -206,7 +148,7 @@ const Payments = () => {
                                 <button
                                     key={tab}
                                     ref={(el) => (buttonRefs.current[index] = el)}
-                                    className={`min-w-fit border-b-[3px] px-10 w-fit ${activeTab === tab ? 'border-primary' : 'border-primary/0'} pb-6`}
+                                    className={`min-w-fit border-b-[3px] px-10 w-fit ${activeTab === tab ? 'border-primary font-bold' : 'border-primary/0'} pb-6`}
                                     onClick={() => handleActiveTab(tab, index)}>
                                     {tab}
                                 </button>
@@ -229,7 +171,7 @@ const Payments = () => {
                                     <div className='flex gap-8 justify-between'>
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <img src={buy} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-auto ' />
+                                            <img src={inPerson} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-auto ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -263,7 +205,7 @@ const Payments = () => {
                                     <div className='flex gap-8 justify-between'>
 
                                         <div className='max-w-[95%] lg:max-w-[82%] mx-auto '>
-                                            <img src={person} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
+                                            <img src={online1} alt="" className='w-full object-cover rounded-[32px] h-[250px]  md:h-[400px] ' />
                                             <div className='text-white'>
                                                 <h2 className='text-[22px] mt-8'>RECOMMENDED PRODUCTS</h2>
                                                 <p className='text-lg my-4'>Take contactless payments with just your Android phone — no hardware needed. Start easily and sell on the go with the latest payment innovation.</p>
@@ -398,11 +340,11 @@ const Payments = () => {
                                     <div className={` mb-10 ${activeMethod == 'Mobile Payment' ? 'w-[100px] md:w-[200px] h-[4px] bg-primary' : 'w-[90px] md:w-[135px] h-[0.5px] bg-white'}`}></div>
                                 </div>
                             </div>
-                            <div className='w-[70%] md:w-[50%] lg:w-[40%] overflow-hidden'>
-                                {activeMethod == 'Contactless' && <img className='w-full' src={contactless} alt="" />}
-                                {activeMethod == 'Chip & PIN' && <img className='w-full' src={chip} alt="" />}
-                                {activeMethod == 'QR Code Payment' && <img className='w-full' src={qr} alt="" />}
-                                {activeMethod == 'Mobile Payment' && <img className='w-full' src={mobile} alt="" />}
+                            <div className='w-[70%] md:w-[50%] lg:w-[40%] '>
+                                {activeMethod == 'Contactless' && <img className='w-full scale-100 lg:scale-110 lg:ml-[100px]' src={contactless} alt="" />}
+                                {activeMethod == 'Chip & PIN' && <img className='w-full scale-100 lg:scale-125 lg:ml-[100px]' src={chip} alt="" />}
+                                {activeMethod == 'QR Code Payment' && <img className='w-full scale-100 lg:scale-150 lg:ml-[100px]' src={qr} alt="" />}
+                                {activeMethod == 'Mobile Payment' && <img className='w-full scale-100 lg:scale-150 lg:ml-[100px]' src={mobile} alt="" />}
                             </div>
                         </div>
                     </section>
@@ -410,11 +352,11 @@ const Payments = () => {
                         <h1 className="w-[90%] text-white sm:w-4/5 lg:w-[80%] text-3xl md:text-4xl lg:text-6xl lg:leading-[65px] xl:leading-[86px] font-bold">Take contactless payments with just your iPhone or Android phone.</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
                             <div>
-                                <img src={image1} alt="" />
+                                <img src={image2} alt="" />
                                 <button className='bg-primary px-2 py-1 mt-5'>Tap to Pay on Smartphone</button>
                             </div>
                             <div>
-                                <img src={image2} alt="" />
+                                <img src={image1} alt="" />
                                 <button className='bg-primary px-2 py-1 mt-5'>Tap to Pay on iPhone</button>
                             </div>
                         </div>

@@ -1,9 +1,8 @@
-import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
-import Navbar from "../components/Navbar";
+import {FaArrowDown, FaArrowRight } from "react-icons/fa6";
+import MobileNavbar from "../components/MobileNavbar";
 import HeaderContainer from "../components/HeaderContainer";
 import { useEffect, useState } from "react";
-import messageIcon from "../assets/images/online ordering/messageIcon.svg"
-import headerImg from "../assets/images/pricing/header-img.png"
+import headerImg from "../assets/images/pricing/header.png"
 import Footer from "../components/Footer";
 import MainContainer from "../components/MainContainer";
 import send from '../assets/images/pos/send.svg'
@@ -15,11 +14,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules'
+import Navbar2 from "../components/Navbar";
+import { HiOutlineArrowRight } from "react-icons/hi";
+import table from '../assets/images/pos/table.png'
+import one from '../assets/images/pricing/1.png'
+import two from '../assets/images/pricing/2.png'
+
 
 const Pricing = () => {
-    const [isSticky, setIsSticky] = useState(false);
-    const [industry, setIndustry] = useState("Restaurant");
-    const [openBussinessType, setOpenBusinessType] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('')
     const [subscriptionType, setSubscriptionType] = useState('monthly')
     const [subscriptionTypeTwo, setSubscriptionTypeTwo] = useState('monthly')
@@ -42,27 +44,10 @@ const Pricing = () => {
         }
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     useEffect(() => {
         setActiveFeature(pricingData[1])
     }, [])
-
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
-        const triggerScrollPos = 750;
-        if (currentScrollPos > triggerScrollPos) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -77,80 +62,41 @@ const Pricing = () => {
         setSubmitMessage('Form submitted successfully!')
     }
 
-    const handleScrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView();
-        }
-    }
-
     return (
-        <>
-            <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
+        <div>
+            <header className={`w-full z-50 bg-[#141817] relative pt-[70px] lg:pt-0 h-fit lg:h-[911px]`}>
                 <HeaderContainer>
-                    <Navbar />
-                    <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse md:gap-y-10 lg:gap-y-0 lg:flex-row lg:justify-between lg:items-center`}>
-                        <div className="w-full lg:w-[45%] flex flex-col mt-10 lg:mt-0">
-                            <h1 className="w-[90%] md:w-4/5 text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold">Simple and transparent <span className="text-[#9FE870]">POS pricing</span></h1>
-                            <p className="mb-6 md:mb-8 mt-4 text-[#CCCCCC] text-xs sm:text-base md:text-lg xl:text-[22px] tracking-widest">Power your business with award-winning, <br /> purpose built technology</p>
-                            <div className="flex gap-4 justify-center md:justify-start md:gap-5 lg:gap-6 xl:gap-8 text-sm md:text-base lg:text-lg font-bold">
-                                <button onClick={() => handleScrollToSection('deeper-pricing-section')} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                <button onClick={() => handleScrollToSection('contact-section')} className="py-2.5 md:py-4 lg:py-[18px] px-6 md:px-7 lg:px-9 w-full md:w-fit rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-[55%] mt-6">
-                            <img className="w-full  scale-x-[1.2] lg:w-[100%] md:scale-100" src={headerImg} alt="header" />
-                        </div>
+                    <div className="pt-[100px] hidden lg:block">
+                        <Navbar2 />
                     </div>
-
-                    {/* large device sticky */}
-                    <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
-                        <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
-                            <h4 className="text-medium text-xl">Pricing</h4>
-                            <div className="flex items-center gap-7">
-                                <ul className="flex items-center gap-6">
-                                    <li onClick={() => setIndustry("Restaurant")} className={`${industry === 'Restaurant' ? 'text-primary' : ''} cursor-pointer`}>Restaurant</li>
-                                    <li onClick={() => setIndustry("Retail")} className={`${industry === 'Retail' ? 'text-primary' : ''} cursor-pointer`}>Retail</li>
-                                    <li onClick={() => setIndustry("Themes")} className={`${industry === 'Themes' ? 'text-primary' : ''} cursor-pointer`}>Themes</li>
-                                    <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
-                                </ul>
-                                <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                    <button onClick={() => handleScrollToSection('deeper-pricing-section')} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button onClick={() => handleScrollToSection('contact-section')} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
-                                </div>
-                            </div>
+                    <div className='lg:hidden fixed w-[90%] z-[99] top-0'>
+                            <MobileNavbar />
                         </div>
-                    </div>
-
-                    {/* small device sticky */}
-                    <div className={`${isSticky ? 'block lg:hidden fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} ${openBussinessType ? 'w-full h-[calc(100vh-54px)]' : 'w-full h-fit'} transition-all`}>
-                        <div onClick={() => setOpenBusinessType(!openBussinessType)} className={`w-full h-[54px] flex gap-5 items-center justify-between px-7 sm:px-10 ${openBussinessType ? 'border-b border-[#d9d9d9] border-opacity-20' : ''}`}>
-                            <h4 className="text-medium">Pricing</h4>
-                            <button className={`${openBussinessType ? 'rotate-180' : 'rotate-0'} transition-all`}><FaAngleDown /></button>
-                        </div>
-
-                        {openBussinessType && <div className="mt-8">
-                            <div className={`flex justify-center items-center gap-[9px] mb-4 sm:mb-5`}>
-                                <h3 className={`text-lg font-medium'}`}>Customize your experience by</h3>
-                                <FaArrowDown />
-                            </div>
-                            <div onClick={() => setOpenBusinessType(false)} className="text-sm flex flex-col items-center justify-center gap-4 w-[80%] sm:w-[70%] mx-auto">
-                                <button onClick={() => setIndustry("Restaurant")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Restaurant' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Restaurant</button>
-                                <button onClick={() => setIndustry("Retail")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Retail' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Retail</button>
-                                <button onClick={() => setIndustry("Themes")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Themes' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Themes</button>
-                                <button onClick={() => setIndustry("Pricing")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Pricing' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Pricing</button>
-                            </div>
-                        </div>}
-                    </div>
-                    <div className={`${isSticky ? 'lg:hidden bg-[#141817] py-2 w-full fixed text-white z-[99] left-0 bottom-0 right-0 flex gap-4 justify-center border-t border-[#d9d9d9] border-opacity-20' : 'hidden'} transition-all`}>
-                        <img src={messageIcon} alt="" />
-                        <button className="py-2.5 px-12 text-sm rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Create you site</button>
-                    </div>
                 </HeaderContainer>
+                <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse md:gap-y-10 lg:gap-y-0 lg:flex-row lg:justify-between lg:items-center`}>
+             
+                    <div className="md:mx-auto">
+                       <HeaderContainer>
+                       <div className="flex gap-x-20 lg:items-center flex-col lg:flex-row gap-6 lg:gap-0 justify-between mb-[80px] lg:w-[85%] w-full mx-auto">
+                            <h1 className="text-[28px] lg:text-[60px] font-bold lg:leading-[86px]">Simple and transparent <br />
+                                <span className="text-primary">POS pricing</span></h1>
+                            <p className="text-[18px] md:text-[22px] text-[#cccccc] font-normal">Power your business with award-winning,<br /> purpose built technology</p>
+                        </div>
+                       <div className=" hidden md:flex justify-center">
+                       <img className="w-[80%] " src={headerImg} alt="" />
+                       </div>
+                       </HeaderContainer>
+                        <div className="overflow-scroll md:overflow-hidden block md:hidden">
+                            <div className="w-[700px] md:w-auto">
+                                <img className="w-full ml-5" src={headerImg} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </header>
 
-            <section className="w-full bg-[#141817] text-white py-12 mb-[50px] md:-[100px] lg:mb-[180px] relative overflow-hidden">
+            <section className="w-full bg-[#141817] text-white py-12 mb-[50px] md:-[100px] lg:mb-[150px] relative overflow-hidden">
                 <div className="greenCustomAnimationPayment"></div>
                 <MainContainer>
                     <div className="w-fit mx-auto bg-[#9FE870] rounded-full p-2 flex gap-2 mb-[90px]" style={{ boxShadow: 'inset 9px 9px 15px 1px rgba(0,0,0,0.2)' }}>
@@ -556,6 +502,43 @@ const Pricing = () => {
                     </div>
                 </MainContainer>
             </section>
+
+            <section className="my-[60px] lg:my-0">
+                <MainContainer>
+                    <h1 className="text-[25px] mb-4 sm:text-[30px] md:text-[45px] lg:text-5xl font-bold">Flexible hardware solutions</h1>
+                    <p>Explore all hardware and accessories</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[40px] md:mt-[60px] gap-7">
+                        <div className='w-full shadow h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Fusion register</h3>
+                            <p className="text-lg my-3 text-center">$799 or $39/mo3 <br /> over 24 months</p>
+                            <img src={table} alt="" className='w-[150px] block absolute bottom-[25%] right-[28%] scale-[1.4]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                        <div className='w-full shadow h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Square stand</h3>
+                            <p className="text-lg my-3 text-center">$149 or $14/mo.3 <br />
+                                over 12 monthss</p>
+                            <img src={one} alt="" className='w-[150px] block absolute bottom-[25%] right-[28%] scale-[1.8]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                        <div className='w-full shadow h-[500px] bg-[#00000010] border border-gray-200 p-10 pb-0 rounded-[32px] relative overflow-hidden'>
+                            <h3 className='text-[20px] md:text-2xl font-bold text-center mb-5'>Kitchen display</h3>
+                            <p className="text-lg my-3 text-center">Streamline service and cut costs using automated customer ordering</p>
+                            <img src={two} alt="" className='w-[150px] block absolute bottom-[25%] right-[28%] scale-[1.6]' />
+                            <button className='group absolute z-10 left-8 bottom-8 flex items-center gap-2 bg-[#9FE870] text-[#1A1A1A] px-5 py-1.5 w-fit'>
+                                <p className='font-semibold text-lg'>Discover More</p>
+                                <HiOutlineArrowRight size={18} />
+                            </button>
+                        </div>
+                    </div>
+                </MainContainer>
+            </section>
             <Faq />
             <CustomerReviews heading="Customers love our products" />
 
@@ -606,7 +589,7 @@ const Pricing = () => {
                 </MainContainer>
             </section>
             <Footer />
-        </>
+        </div>
     );
 }
 export default Pricing;

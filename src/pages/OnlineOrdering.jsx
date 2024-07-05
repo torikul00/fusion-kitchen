@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import HeaderContainer from "../components/HeaderContainer";
-import Navbar from "../components/Navbar";
+import MobileNavbar from "../components/MobileNavbar";
 import MainContainer from "../components/MainContainer";
 import bannerImg from "../assets/images/online ordering/banner.png";
 import bannerImg2 from "../assets/images/online ordering/banner2.png";
@@ -51,14 +51,13 @@ import maShape4 from "../assets/images/online ordering/mashape4.png"
 import mobileApp from "../assets/images/online ordering/mobile-app.png"
 import CustomerReviews from "../components/CustomerReviews";
 import Footer from "../components/Footer";
-import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import done from "../assets/images/online ordering/done.svg";
 import wixLogo from "../assets/images/online ordering/wixLogo.svg";
 import withWix from "../assets/images/online ordering/with-wix.png";
 import phoneTabletCom from "../assets/images/online ordering/phone-table-computer.png";
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
-import messageIcon from "../assets/images/online ordering/messageIcon.svg"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -66,6 +65,7 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import { ReactTyped } from "react-typed";
 import AOS from 'aos';
+import Navbar from "../components/Navbar";
 
 AOS.init({
     duration: 600,
@@ -76,32 +76,12 @@ AOS.init({
 });
 
 const OnlineOrdering = () => {
-    const [isSticky, setIsSticky] = useState(false);
     const [categoryTab, setCategoryTab] = useState("Restaurants");
-    const [openBussinessType, setOpenBusinessType] = useState(false)
-    const [industry, setIndustry] = useState("Restaurant")
     const [submitMessage, setSubmitMessage] = useState('')
     const getAQuoteRef = useRef(null);
     const formRef = useRef(null);
     const swiperRef = useRef(null);
     const tabContainer = useRef(null);
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
-        const triggerScrollPos = 750;
-        if (currentScrollPos > triggerScrollPos) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
     const navigateToGetAQuote = () => {
         getAQuoteRef.current.scrollIntoView()
     }
@@ -165,9 +145,14 @@ const OnlineOrdering = () => {
     }
     return (
         <>
-            <header className={`w-full z-50 bg-[#141817] relative overflow-hidden mb-0 h-fit lg:h-[911px]`}>
+            <header className={`w-full z-50 bg-[#141817] relative overflow-hidden mb-0  pt-[70px] lg:pt-0 h-fit lg:h-[911px]`}>
                 <HeaderContainer>
-                    <Navbar />
+                    <div className="pt-[100px] hidden lg:block">
+                        <Navbar />
+                    </div>
+                    <div className='lg:hidden fixed w-[90%] z-[99] top-0'>
+                            <MobileNavbar />
+                        </div>
                     <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center overflow-hidden`}>
                         <div className="w-full lg:w-[45%] flex flex-col-reverse">
                             <div className="my-10 lg:my-0">
@@ -219,50 +204,6 @@ const OnlineOrdering = () => {
                                 </SwiperSlide>
                             </Swiper>
                         </div>
-                    </div>
-
-                    {/* large device sticky */}
-                    <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
-                        <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
-                            <h4 className="text-medium text-xl">Online Ordering</h4>
-                            <div className="flex items-center gap-7">
-                                <ul className="flex items-center gap-6">
-                                    <li onClick={() => setIndustry("Restaurant")} className={`${industry === 'Restaurant' ? 'text-primary' : ''} cursor-pointer`}>Restaurant</li>
-                                    <li onClick={() => setIndustry("Retail")} className={`${industry === 'Retail' ? 'text-primary' : ''} cursor-pointer`}>Retail</li>
-                                    <li onClick={() => setIndustry("Themes")} className={`${industry === 'Themes' ? 'text-primary' : ''} cursor-pointer`}>Themes</li>
-                                    <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
-                                </ul>
-                                <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                    <button onClick={navigateToGetAQuote} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button onClick={navigateToForm} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* small device sticky */}
-                    <div className={`${isSticky ? 'block lg:hidden fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} ${openBussinessType ? 'w-full h-[calc(100vh-54px)]' : 'w-full h-fit'} transition-all`}>
-                        <div onClick={() => setOpenBusinessType(!openBussinessType)} className={`w-full h-[54px] flex gap-5 items-center justify-between px-7 sm:px-10 ${openBussinessType ? 'border-b border-[#d9d9d9] border-opacity-20' : ''}`}>
-                            <h4 className="text-medium">Online Ordering</h4>
-                            <button className={`${openBussinessType ? 'rotate-180' : 'rotate-0'} transition-all`}><FaAngleDown /></button>
-                        </div>
-
-                        {openBussinessType && <div className="mt-8">
-                            <div className={`flex justify-center items-center gap-[9px] mb-4 sm:mb-5`}>
-                                <h3 className={`text-lg font-medium'}`}>Customize your experience by</h3>
-                                <FaArrowDown />
-                            </div>
-                            <div onClick={() => setOpenBusinessType(false)} className="text-sm flex flex-col items-center justify-center gap-4 w-[80%] sm:w-[70%] mx-auto">
-                                <button onClick={() => setIndustry("Restaurant")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Restaurant' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Restaurant</button>
-                                <button onClick={() => setIndustry("Retail")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Retail' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Retail</button>
-                                <button onClick={() => setIndustry("Themes")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Themes' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Themes</button>
-                                <button onClick={() => setIndustry("Pricing")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Pricing' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Pricing</button>
-                            </div>
-                        </div>}
-                    </div>
-                    <div className={`${isSticky ? 'lg:hidden bg-[#141817] py-2 w-full fixed text-white z-[99] left-0 bottom-0 right-0 flex gap-4 justify-center border-t border-[#d9d9d9] border-opacity-20' : 'hidden'} transition-all`}>
-                        <img src={messageIcon} alt="" />
-                        <button className="py-2.5 px-12 text-sm rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Create you site</button>
                     </div>
                 </HeaderContainer>
             </header>

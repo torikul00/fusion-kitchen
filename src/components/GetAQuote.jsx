@@ -129,7 +129,7 @@ const GetAQuote = () => {
                         simulateTouch={false}
                     >
                         <SwiperSlide>
-                            <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">What type of business do you run?</p>
                                 {requireMessage && <p className='text-primary text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
@@ -154,12 +154,12 @@ const GetAQuote = () => {
                                 </div>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">What type of system do you require?</p>
                                 {requireMessage && <p className='text-primary text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
@@ -181,12 +181,12 @@ const GetAQuote = () => {
                                 </div>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="radial-gradient h-[276px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">How many locations do you have?</p>
                                 {requireMessage && <p className='text-primary text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
@@ -205,12 +205,12 @@ const GetAQuote = () => {
                                 </div>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">What additional features are you interested in?</p>
                                 {requireMessage && <p className='text-primary text-sm mb-4'>{requireMessage}</p>}
                                 <div className="flex justify-start flex-wrap gap-3 md:gap-5">
@@ -272,12 +272,12 @@ const GetAQuote = () => {
                                 </div>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12">
                                 <p className="text-white font-bold text-xl md:text-2xl mb-8">Please provide us with your contact details so we can send you the best quote.</p>
                                 {requireMessage && <p className='text-primary text-sm mb-4'>{requireMessage}</p>}
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5'>
@@ -288,12 +288,12 @@ const GetAQuote = () => {
                                 </div>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12 h-[290px] flex flex-col justify-center items-center">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12 flex flex-col justify-center items-center">
                                 <p className="text-white text-center md:text-left font-bold text-xl md:text-2xl mb-4 md:mb-8">Submit Now to get the best quote for your business.</p>
                                 <button onClick={handleNext} type="button" className="text-white w-fit border-2 border-primary hover:shadow-md hover:shadow-[#9ee8705d] transition-all text-lg font-bold flex gap-3 items-center px-8 py-3 mt-5 rounded-full">
                                     Submit
@@ -303,17 +303,17 @@ const GetAQuote = () => {
                                 </button>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="radial-gradient rounded-3xl pt-6 md:pt-8 p-8 md:p-12 h-[290px] flex flex-col justify-center items-center">
+                            <div className="radial-gradient h-[600px] md:h-[425px] rounded-3xl pt-6 md:pt-8 p-8 md:p-12 flex flex-col justify-center items-center">
                                 <p className="text-white text-center md:text-left font-bold text-xl md:text-2xl">Successfully submitted your information.</p>
                             </div>
                             <div className='flex justify-center gap-5 mt-6 xl:hidden'>
-                                <button onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
-                                <button onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handlePrev}><FaAngleLeft size={20} className={`${step == 1 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
+                                <button className='p-3 rounded-full border border-[#9FE870] text-black bg-light-gray transition-all duration-200' onClick={handleNext}><FaAngleRight size={20} className={`${step == 7 ? 'text-gray-300' : 'text-gray-800'}`} /></button>
                             </div>
                         </SwiperSlide>
                     </Swiper>

@@ -1,16 +1,16 @@
 import HeaderContainer from "../components/HeaderContainer";
 import MainContainer from "../components/MainContainer";
-import Navbar from "../components/Navbar";
+import MobileNavbar from "../components/MobileNavbar";
 import header from '../assets/images/pos/header.png'
-import { FaAngleDown, FaArrowDown, FaArrowRight } from "react-icons/fa6";
-import { useEffect, useRef, useState } from 'react';
+import { FaArrowDown, FaArrowRight } from "react-icons/fa6";
+import {useRef, useState } from 'react';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import ipadMini from '../assets/images/ipad-mini.png'
+import ipadMini from '../assets/images/pos/ipad-mini.png'
 import iphone from '../assets/images/iphone.png'
 import pos1 from '../assets/images/pos1.png'
 import image1 from '../assets/images/pos/image1.png'
@@ -18,6 +18,7 @@ import image2 from '../assets/images/pos/image2.png'
 import image3 from '../assets/images/pos/image3.png'
 import image4 from '../assets/images/pos/image4.png'
 import image5 from '../assets/images/pos/image5.png'
+import stuff from '../assets/images/pos/stuff.png'
 import image6 from '../assets/images/pos/image6.png'
 import shape1 from '../assets/images/pos/Shape.png'
 import shape2 from '../assets/images/pos/Shape (1).png'
@@ -44,13 +45,10 @@ import send from '../assets/images/pos/send.svg'
 import Footer from "../components/Footer";
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
-import messageIcon from "../assets/images/online ordering/messageIcon.svg"
+import Navbar from "../components/Navbar";
 
 const Pos = () => {
     const [swiperInstance, setSwiperInstance] = useState(null)
-    const [isSticky, setIsSticky] = useState(false);
-    const [openBussinessType, setOpenBusinessType] = useState(false)
-    const [industry, setIndustry] = useState("Restaurant")
     const [submitMessage, setSubmitMessage] = useState('')
     const getAQuoteRef = useRef(null)
     const formRef = useRef(null)
@@ -66,23 +64,6 @@ const Pos = () => {
         }
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
-        const triggerScrollPos = 750;
-        if (currentScrollPos > triggerScrollPos) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
     const navigateToGetAQuote = () => {
         getAQuoteRef.current.scrollIntoView()
     }
@@ -112,9 +93,14 @@ const Pos = () => {
     }
     return (
         <div className="overflow-hidden">
-            <header className={`w-full z-50 bg-[#141817] relative mb-0 h-fit lg:h-[911px]`}>
+            <header className={`w-full z-50 bg-[#141817]  pt-[70px] lg:pt-0 relative mb-0 h-fit lg:h-[911px]`}>
                 <HeaderContainer>
-                    <Navbar />
+                <div className="pt-[100px] hidden lg:block">
+                            <Navbar />
+                        </div>
+                         <div className='lg:hidden fixed w-[90%] z-[99] top-0'>
+                            <MobileNavbar />
+                        </div>
                     <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center`}>
                         <div className="w-full lg:w-2/5 flex flex-col mt-10 lg:mt-0">
                             <h1 className="w-[90%] md:w-4/5 lg:w-full text-3xl md:text-4xl lg:text-6xl xl:text-[80px] lg:leading-[65px] xl:leading-[86px] font-bold"><span className="text-[#9FE870]">ePOS </span>Software for Hospitality</h1>
@@ -131,50 +117,7 @@ const Pos = () => {
                             <button onClick={handleScrollBottom} className="lg:flex hidden text-primary  items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
                     </div>
-
-                    {/* large device sticky */}
-                    <div className={`${isSticky ? 'hidden lg:block fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} transition-all sticky-nav`}>
-                        <div className={`w-full h-[70px] flex gap-5 items-center justify-between px-7 sm:px-10`}>
-                            <h4 className="text-medium text-xl">Point of sale</h4>
-                            <div className="flex items-center gap-7">
-                                <ul className="flex items-center gap-6">
-                                    <li onClick={() => setIndustry("Restaurant")} className={`${industry === 'Restaurant' ? 'text-primary' : ''} cursor-pointer`}>Restaurant</li>
-                                    <li onClick={() => setIndustry("Retail")} className={`${industry === 'Retail' ? 'text-primary' : ''} cursor-pointer`}>Retail</li>
-                                    <li onClick={() => setIndustry("Themes")} className={`${industry === 'Themes' ? 'text-primary' : ''} cursor-pointer`}>Themes</li>
-                                    <li onClick={() => setIndustry("Pricing")} className={`${industry === 'Pricing' ? 'text-primary' : ''} cursor-pointer`}>Pricing</li>
-                                </ul>
-                                <div className={`ml-auto w-fit flex gap-4 text-sm font-bold`}>
-                                    <button onClick={navigateToGetAQuote} className="py-2.5 px-6 rounded-full text-[#9FE870] border border-[#9FE870]">Get Started</button>
-                                    <button onClick={navigateToForm} className="py-2.5 px-6 rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Contact Sales</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* small device sticky */}
-                    <div className={`${isSticky ? 'block lg:hidden fixed bg-[#141817] text-white z-[99] top-0 left-0 right-0' : 'hidden'} ${openBussinessType ? 'w-full h-[calc(100vh-54px)]' : 'w-full h-fit'} transition-all`}>
-                        <div onClick={() => setOpenBusinessType(!openBussinessType)} className={`w-full h-[54px] flex gap-5 items-center justify-between px-7 sm:px-10 ${openBussinessType ? 'border-b border-[#d9d9d9] border-opacity-20' : ''}`}>
-                            <h4 className="text-medium">Point of sale</h4>
-                            <button className={`${openBussinessType ? 'rotate-180' : 'rotate-0'} transition-all`}><FaAngleDown /></button>
-                        </div>
-
-                        {openBussinessType && <div className="mt-8">
-                            <div className={`flex justify-center items-center gap-[9px] mb-4 sm:mb-5`}>
-                                <h3 className={`text-lg font-medium'}`}>Customize your experience by</h3>
-                                <FaArrowDown />
-                            </div>
-                            <div onClick={() => setOpenBusinessType(false)} className="text-sm flex flex-col items-center justify-center gap-4 w-[80%] sm:w-[70%] mx-auto">
-                                <button onClick={() => setIndustry("Restaurant")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Restaurant' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Restaurant</button>
-                                <button onClick={() => setIndustry("Retail")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Retail' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Retail</button>
-                                <button onClick={() => setIndustry("Themes")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Themes' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Themes</button>
-                                <button onClick={() => setIndustry("Pricing")} className={`w-full py-2 sm:py-2.5 px-4 rounded-full transition ${industry === 'Pricing' ? 'text-[#173303] border border-[#9FE870] bg-[#9FE870]' : 'text-white border border-white hover:border-[#9FE870] hover:bg-[#9FE870] hover:text-[#173303]'}`}>Pricing</button>
-                            </div>
-                        </div>}
-                    </div>
-                    <div className={`${isSticky ? 'lg:hidden bg-[#141817] py-2 w-full fixed text-white z-[99] left-0 bottom-0 right-0 flex gap-4 justify-center border-t border-[#d9d9d9] border-opacity-20' : 'hidden'} transition-all`}>
-                        <img src={messageIcon} alt="" />
-                        <button className="py-2.5 px-12 text-sm rounded-full text-[#173303] border border-[#9FE870] bg-[#9FE870]">Create you site</button>
-                    </div>
+                   
                 </HeaderContainer>
             </header>
 
@@ -288,7 +231,7 @@ const Pos = () => {
                                     <div style={{ boxShadow: '8px 8px 13px 0px rgba(0,0,0,0.15)' }} className='swipChild w-full h-[500px] bg-[#00000010] border border-gray-200 p-6 pb-0 rounded-[32px] relative'>
                                         <h3 className='text-[20px] md:text-2xl font-semibold text-center mb-5'>Staff management & rotas</h3>
                                         <h3 className='text-[20px] md:text-xl font-medium text-center mb-5'>Create staff rotes. track payroll costs. stay on top of training, assign permissions and track productivity</h3>
-                                        <img src={pos1} alt="" className='w-[240px] block absolute bottom-[7%] lg:bottom-[7%] md:bottom-0 lg:scale-110 right-[13%] md:right-[12%] xl:right-[15%]' />
+                                        <img src={stuff} alt="" className='w-[240px] block absolute bottom-[7%] lg:bottom-[7%] md:bottom-0 lg:scale-110 right-[13%] md:right-[12%] xl:right-[15%]' />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide
@@ -435,19 +378,19 @@ const Pos = () => {
                             </div>
                         </div>
                         <div className="relative pt-[100px] mt-20 hidden lg:block">
-                            <img className="mt-10 lg:block hidden" src={image6} alt="image6" />
+                            <img className="scale-90 mt-[-50px] lg:block hidden" src={image6} alt="image6" />
                             <img data-aos="fade-up" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-0" src={shape1} alt="" />
                             <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-[150px]" src={shape2} alt="" />
                             <img data-aos="fade-right" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-[300px]" src={shape3} alt="" />
                             <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[170px] right-0 absolute top-[450px]" src={shape4} alt="" />
                         </div>
                         <div className="lg:hidden block relative">
-                            <img className="mt-10 " src={image6} alt="image6" />
-                            <img className="mt-10 lg:block hidden" src={image6} alt="image6" />
+                            <img className="lg:mt-10 scale-105" src={image6} alt="image6" />
+                            {/* <img className="mt-10 lg:block hidden" src={image6} alt="image6" />
                             <img data-aos="fade-up" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] left-0 absolute top-0" src={shape1} alt="" />
                             <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] left-0 absolute top-[80px] md:top-[120px]" src={shape2} alt="" />
                             <img data-aos="fade-right" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] -right-3 absolute top-0" src={shape3} alt="" />
-                            <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] -right-3 absolute top-[80px] md:top-[120px]" src={shape4} alt="" />
+                            <img data-aos="fade-left" data-aos-offset={600} data-aos-delay="600" data-aos-once="true" className="w-[90px] md:w-[130px] -right-3 absolute top-[80px] md:top-[120px]" src={shape4} alt="" /> */}
                         </div>
                     </div>
 
