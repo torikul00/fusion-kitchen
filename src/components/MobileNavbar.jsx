@@ -263,7 +263,7 @@ const MobileNavbar = () => {
 
   return (
     <div className="pt-3">
-      <nav className={`h-[60px] shadow xl:h-[90px] w-full flex items-center bg-white justify-between px-5  rounded-[10px]  z-10`}>
+      <nav className={`h-[60px] shadow xl:h-[90px] w-full flex items-center bg-white justify-between px-5  rounded-[12px]  z-10`}>
         <div className="flex gap-10 2xl:gap-[60px] items-center ">
           <Link to="/">
             <img src={logo} alt="" className="h-6 sm:h-7 xl:h-9 w-auto" />

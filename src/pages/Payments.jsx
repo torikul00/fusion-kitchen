@@ -32,6 +32,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Navbar from '../components/Navbar';
+import ScrollBottomBar from '../components/ScrollBottomBar';
 
 
 const Payments = () => {
@@ -118,10 +119,10 @@ const Payments = () => {
                             <div className="w-full md:w-[90%] lg:w-[50%] mt-6">
                                 <Swiper
                                     modules={[Autoplay]}
-                                    // autoplay={{
-                                    //     "delay": 3000,
-                                    //     "disableOnInteraction": false
-                                    // }}
+                                    autoplay={{
+                                        "delay": 3000,
+                                        "disableOnInteraction": false
+                                    }}
                                     className='payment'
                                 >
                                     <SwiperSlide className='md:px-5 px-[2px]'>
@@ -136,6 +137,7 @@ const Payments = () => {
                                 </Swiper>
                             </div>
                         </div>
+                        <ScrollBottomBar />
                     </HeaderContainer>
                 </header>
 

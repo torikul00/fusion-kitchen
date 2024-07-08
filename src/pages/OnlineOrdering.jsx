@@ -66,6 +66,7 @@ import 'swiper/css/effect-fade';
 import { ReactTyped } from "react-typed";
 import AOS from 'aos';
 import Navbar from "../components/Navbar";
+import ScrollBottomBar from "../components/ScrollBottomBar";
 
 AOS.init({
     duration: 600,
@@ -205,6 +206,7 @@ const OnlineOrdering = () => {
                             </Swiper>
                         </div>
                     </div>
+                    <ScrollBottomBar />
                 </HeaderContainer>
             </header>
 

@@ -260,8 +260,8 @@ const Navbar = () => {
 
 
     return (
-        <div className="fixed shadow left-0 top-0 right-0 z-10 max-w-[1620px] mx-auto px-5">
-            <nav className={`bg-white px-[30px] rounded-[20px] relative z-10 transition-all duration-200 ease-linear ${dropdown ? 'h-[400px]' : 'h-[80px] '}`}>
+        <div className="fixed  left-0 top-0 right-0 z-10 max-w-[1620px] mx-auto px-5">
+            <nav className={`bg-white shadow px-[30px] rounded-[20px] relative z-10 transition-all duration-200 ease-linear ${dropdown ? 'h-[400px]' : 'h-[80px] '}`}>
                 <div className='w-full flex items-center mt-[10px]'>
                     <div className="flex items-center justify-between w-full">
                         <div className="flex items-center">
