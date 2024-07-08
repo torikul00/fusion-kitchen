@@ -19,6 +19,7 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 import table from '../assets/images/pos/table.png'
 import one from '../assets/images/pricing/1.png'
 import two from '../assets/images/pricing/2.png'
+import ScrollBottomBar from "../components/ScrollBottomBar";
 
 
 const Pricing = () => {
@@ -72,6 +73,7 @@ const Pricing = () => {
                     <div className='lg:hidden fixed w-[90%] z-[99] top-0'>
                             <MobileNavbar />
                         </div>
+                        <ScrollBottomBar />
                 </HeaderContainer>
                 <div className={`h-fit lg:h-[821px] w-full py-10 lg:py-0 text-white flex flex-col-reverse md:gap-y-10 lg:gap-y-0 lg:flex-row lg:justify-between lg:items-center`}>
              

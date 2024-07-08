@@ -3,6 +3,7 @@ import MobileNavbar from '../components/MobileNavbar';
 import { useState } from 'react';
 import send from '../assets/images/pos/send.svg'
 import Footer from '../components/Footer';
+import ScrollBottomBar from '../components/ScrollBottomBar';
 
 const ContactUs = () => {
     const [submitMessage, setSubmitMessage] = useState('')
@@ -37,7 +38,7 @@ const ContactUs = () => {
                             </h1>
                             <p className='text-[20px] md:text-[22px] text-[#CCCCCC] font-normal mt-7'>Speak to our friendly team today</p>
                         </div>
-
+                        <ScrollBottomBar />
                     </div>
                 </header>
             </div>
