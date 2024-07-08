@@ -46,6 +46,7 @@ import Footer from "../components/Footer";
 import GetAQuote from "../components/GetAQuote";
 import PaymentGridCard from "../components/PaymentGridCard";
 import Navbar from "../components/Navbar";
+import ScrollBottomBar from "../components/ScrollBottomBar";
 
 const Pos = () => {
     const [swiperInstance, setSwiperInstance] = useState(null)
@@ -117,7 +118,7 @@ const Pos = () => {
                             <button onClick={handleScrollBottom} className="lg:flex hidden text-primary  items-center gap-x-3 mt-10 tracking-[3px] animate-bounce">Scroll <FaArrowDown /></button>
                         </div>
                     </div>
-                   
+                    <ScrollBottomBar />
                 </HeaderContainer>
             </header>
 
