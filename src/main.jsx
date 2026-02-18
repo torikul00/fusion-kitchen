@@ -21,6 +21,10 @@ AOS.init({
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <OnlineOrdering />
+  },
+  {
+    path: "/home",
     element: <App />
   },
   {
